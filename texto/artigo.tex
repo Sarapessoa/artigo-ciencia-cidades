@@ -61,7 +61,7 @@ Ciência de Dados Aplicada à Ciência da Cidade \quad$\cdot$\quad novembro de 2
 
 \begin{quote}\small
 \noindent\textbf{Resumo.}
-A extensão da malha cicloviária é o indicador mais divulgado, mas não informa se os trechos estão ligados entre si. Neste trabalho, as ciclovias e ciclofaixas de Fortaleza, obtidas de dados públicos, são representadas como um grafo, e seus componentes conectados são calculados. Os 429~km analisados formam 44 componentes. O maior reúne 241~km (56\% da rede), e outros dois conjuntos, a oeste e a sudeste, somam 131~km sem ligação com ele. Cerca de 1~km de novas ligações, medido em linha reta, elevaria a fração do maior componente para 87\%. O resultado varia pouco com a tolerância usada para unir trechos próximos e se mantém após a conferência, em imagens de satélite, das conexões incertas.
+A extensão da malha cicloviária é o indicador mais divulgado, mas não informa se os trechos estão ligados entre si. Neste trabalho, as ciclovias e ciclofaixas de Fortaleza, obtidas de dados públicos, são representadas como um grafo, e seus componentes conectados são calculados. Os 429~km analisados formam 44 componentes. O maior reúne 241~km (56\% da rede), e outros dois conjuntos, a oeste e a sudeste, somam 131~km sem ligação com ele. A conferência com o OpenStreetMap atual e com imagens de satélite mostra que a base está defasada: o conjunto oeste já se liga ao maior por uma ciclofaixa marcada em 2024. O conjunto sudeste continua separado pelo Parque do Cocó, e cerca de 0,9~km de infraestrutura pelas ruas reuniria 89\% da extensão em um só componente. O resultado varia pouco com a tolerância usada para unir trechos próximos e se mantém após a conferência, em imagens de satélite, das conexões incertas.
 
 \vspace{0.15cm}
 \noindent\textbf{Palavras-chave:} redes espaciais, componentes conectados, infraestrutura cicloviária, Fortaleza.
@@ -102,7 +102,7 @@ entre si?}
 \begin{figure*}[t]
 \centering
 \includegraphics[width=\textwidth]{conectividade.pdf}
-\caption{\textbf{Componentes conectados da rede cicloviária de Fortaleza.} \textbf{(a)} Ciclovias e ciclofaixas coloridas pelos cinco maiores componentes conectados (tolerância de 10~m, sem as passagens em desnível). \textbf{(b)} Extensão de cada componente em ordem decrescente, em escala logarítmica.}
+\caption{\textbf{Componentes conectados da rede cicloviária de Fortaleza.} \textbf{(a)} Ciclovias e ciclofaixas coloridas pelos cinco maiores componentes conectados (tolerância de 10~m, sem as passagens em desnível). Os círculos marcam a ligação C1--C2 registrada no OpenStreetMap em 2024, ausente da base, e a menor ligação pelas ruas entre C1 e C3. \textbf{(b)} Extensão de cada componente em ordem decrescente, em escala logarítmica.}
 \label{fig:conectividade}
 \end{figure*}
 
@@ -131,8 +131,15 @@ unidos.
 passagem, uma amostra de 77 das 275 conexões incertas foi conferida em imagem
 de satélite. A amostra inclui todas as 39 conexões críticas, cuja remoção
 separaria partes da rede, as 18 situadas junto a pontes, viadutos ou túneis no
-OpenStreetMap e 20 sorteadas entre as demais. As 11 passagens em desnível
-encontradas foram removidas.
+OpenStreetMap~\cite{osm2026} e 20 sorteadas entre as demais. As 11 passagens em
+desnível encontradas foram removidas.
+
+\paragraph{Lacunas entre componentes} Para os quatro componentes seguintes ao
+maior, mediu-se a menor ligação até ele pela malha viária do OpenStreetMap, isto
+é, o comprimento mínimo de infraestrutura nova seguindo ruas existentes.
+Verificou-se também se a infraestrutura cicloviária registrada hoje no
+OpenStreetMap já faz essa ligação. Nessa verificação, pontes e túneis só se
+ligam a outras vias pelas próprias extremidades.
 
 \paragraph{Indicadores} Para cada componente conectado, calculou-se a extensão
 total; o indicador principal é a fração da extensão da rede contida no maior
@@ -153,10 +160,17 @@ uma rede com um componente gigante: um conjunto domina a extensão, seguido por
 dois intermediários e uma cauda de pequenos fragmentos
 (Fig.~\ref{fig:conectividade}b).
 
-As separações que isolam C2 e C3 são curtas: em linha reta, 344~m entre C1 e
-C2, na região da Av.~Mister Hull, e 686~m entre C1 e C3, perto da
-Av.~Rogaciano Leite. Ligá-los a C1 exigiria cerca de 1~km de infraestrutura e
-elevaria a fração do maior componente de 56\% para 87\% da extensão. É o
+Em linha reta, C2 e C3 estão a 344~m e 686~m de C1, mas essas distâncias
+enganam. A de C2 cai sob o Viaduto Antônio Bezerra, onde a ciclovia de C1
+passa por baixo; a de C3 atravessa a mata do Parque do Cocó. A conferência
+com o OpenStreetMap mudou a leitura de C2: uma ciclofaixa de 0,8~km no viaduto
+e nas ruas vizinhas, marcada no OpenStreetMap em 2024 e visível em imagem de
+satélite, já liga C2 a C1, mas não consta da base
+(Fig.~\ref{fig:conectividade}a). Com ela, o maior componente reuniria 72\% da
+extensão. C3 continua separado nas duas fontes. A menor ligação pelas ruas tem
+799~m, pela Av.~Eng. Santana Júnior, que cruza o Rio Cocó, e pela
+Av.~Rogaciano Leite, ambas sem infraestrutura cicloviária. Com essa ligação e
+outra de 56~m até C4, o maior componente passaria a 89\% da extensão. É o
 padrão de ``ligações faltantes'' descrito por Natera Orozco \emph{et
 al.}~\cite{natera2020}: poucos trechos curtos e bem posicionados consolidam
 redes fragmentadas.
@@ -174,21 +188,24 @@ só uma era crítica; cinco são cruzamentos da Via Expressa, que continua ligad
 à rede pelas extremidades. Retirar também as inconclusivas reduz o maior
 componente a 55\%.
 
-\paragraph{Conclusão} A rede de ciclovias e ciclofaixas de Fortaleza não é
-contínua. Pouco mais da metade da extensão está em um único componente, e duas
-grandes redes regionais, a oeste e a sudeste, funcionam como ilhas a poucas
-centenas de metros dele. A extensão total, portanto, superestima a rede
-efetivamente utilizável sem trechos em tráfego misto. Cerca de 1~km de novas
-ligações nos pontos identificados reuniria 87\% da extensão em um só
+\paragraph{Conclusão} A rede de ciclovias e ciclofaixas de Fortaleza
+registrada na base oficial não é contínua: pouco mais da metade da extensão
+está em um único componente. A extensão total, portanto, superestima a rede
+efetivamente utilizável sem trechos em tráfego misto. Parte da fragmentação já
+foi resolvida depois da base: a rede do oeste se liga hoje à principal, mas a
+base oficial não registra essa ligação. A separação mais relevante que resta é
+a do sudeste, cuja ligação exige atravessar o Rio Cocó. Cerca de 0,9~km de
+infraestrutura nos pontos identificados reuniria 89\% da extensão em um só
 componente; para a conectividade, a localização dos novos trechos pesa mais
 que sua extensão.
 
 \paragraph{Limitações} Uma desconexão na base não impede a circulação de
 bicicleta pelas vias comuns; indica apenas a falta de infraestrutura dedicada.
 Um encontro em nível não garante travessia sinalizada, e só 15 das conexões
-conferidas tinham sinalização cicloviária visível. As distâncias entre
-componentes foram medidas em linha reta e subestimam a ligação necessária. A
-base reflete principalmente 2022, e as imagens de satélite não têm data
+conferidas tinham sinalização cicloviária visível. O OpenStreetMap é mantido
+por voluntários: a ligação de C2 foi confirmada pelo histórico de edições e
+por imagem, mas não em campo. As ligações pelas ruas indicam o comprimento
+mínimo, não a viabilidade de implantação. A base reflete principalmente 2022, e as imagens de satélite não têm data
 informada. O grafo não direcionado ignora o sentido de circulação das
 ciclofaixas unidirecionais. Por fim, a análise é estrutural e não mede
 segurança, conservação nem uso.

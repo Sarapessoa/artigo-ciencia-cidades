@@ -9,7 +9,7 @@ Para cada componente, calcula:
 - a menor ligação possível pelas ruas (malha viária do OSM), isto é, quantos metros de
   infraestrutura nova seriam necessários seguindo vias existentes.
 
-Saídas: resultados/lacunas.csv e, para conferência visual, recortes de satélite em
+Saídas: resultados/lacunas.csv, as geometrias das ligações em resultados/lacunas.geojson e, para conferência visual, recortes de satélite em
 resultados/lacunas/. Caches do OSM em dados/brutos/ (osm_ruas_fortaleza.json fica fora do git).
 
 Uso: python conferir_lacunas.py
@@ -215,10 +215,15 @@ def main():
     pelo_osm = ligacao_pelo_osm(rede, ciclo)
     pelas_ruas = ligacao_pelas_ruas(rede, ruas)
 
-    linhas = []
+    linhas, geometrias = [], []
     for k in range(2, N_COMPONENTES + 2):
         d_reta, g_reta, i, j = lacuna_reta(rede, k)
         osm_k, ruas_k = pelo_osm[k], pelas_ruas[k]
+        geometrias.append({"componente": k, "tipo": "linha reta", "geometry": g_reta})
+        if ruas_k:
+            geometrias.append({"componente": k, "tipo": "pelas ruas", "geometry": ruas_k[1]})
+        if osm_k is not None and len(osm_k):
+            geometrias.append({"componente": k, "tipo": "OSM atual", "geometry": osm_k.union_all()})
         linhas.append({
             "componente": k,
             "km_componente": round(comp.at[k, "km"], 1),
@@ -243,6 +248,8 @@ def main():
 
     tab = pd.DataFrame(linhas)
     tab.to_csv(RESULTADOS / "lacunas.csv", index=False, encoding="utf-8-sig")
+    gpd.GeoDataFrame(geometrias, crs=CRS_METRICO).to_crs(4326).to_file(
+        RESULTADOS / "lacunas.geojson", driver="GeoJSON")
     print(tab.drop(columns=["osm_ids"]).to_string(index=False))
 
 
