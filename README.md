@@ -115,7 +115,12 @@ O rascunho do artigo está em [texto/main.tex](texto/main.tex). Ele segue o temp
 2. Substitua o `main.tex` pelo deste repositório.
 3. Envie `figuras/conectividade.pdf` para a pasta `figuras/` do projeto.
 
-O pacote `uniforTitle` vem do template e não está neste repositório.
+O pacote `uniforTitle` original vem do template. Em `texto/compilacao_local/` há uma réplica aproximada, feita a partir do PDF de exemplo do template, que serve só para compilar localmente. Não envie a réplica ao Overleaf. O PDF [texto/artigo.pdf](texto/artigo.pdf) foi gerado assim:
+
+```
+cd texto
+TEXINPUTS="./compilacao_local//;../;" pdflatex -output-directory=<pasta temporária> main.tex   # rodar duas vezes
+```
 
 ## Próxima etapa
 

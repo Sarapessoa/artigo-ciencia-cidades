@@ -3,3 +3,8 @@
 __pycache__/
 # recortes de imagem de satélite (Esri World Imagery), regeneráveis com analise/triagem_conexoes.py
 resultados/triagem/
+
+# auxiliares do LaTeX
+texto/*.aux
+texto/*.log
+texto/*.out
