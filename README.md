@@ -109,9 +109,11 @@ A data das imagens não é informada e pode ser diferente da data de referência
 
 ## Texto
 
-O artigo é escrito em LaTeX em [texto/artigo.tex](texto/artigo.tex) e compilado localmente com o MiKTeX, sem Overleaf. O PDF resultante é [texto/artigo.pdf](texto/artigo.pdf).
+O artigo é escrito em LaTeX em [texto/artigo.tex](texto/artigo.tex), com as referências em [texto/referencias.bib](texto/referencias.bib), e compilado localmente com o MiKTeX. O PDF resultante é [texto/artigo.pdf](texto/artigo.pdf).
 
-O formato segue o template [Modelo Unifor](https://www.overleaf.com/latex/templates/modelo-unifor/gscygbjpxjmw) (CC BY 4.0). O cabeçalho e as seções são definidos em `texto/uniforTitle.sty`, recriado a partir do PDF de exemplo do template. A figura é lida diretamente de `figuras/`.
+O formato, em duas colunas e com as seções nomeadas pelas três perguntas do manual do professor, segue o artigo de [skaduhs5232/Tese](https://github.com/skaduhs5232/Tese/blob/main/artigo/main.tex). Desse arquivo foi aproveitado apenas o layout; o conteúdo é deste trabalho. As referências usam `texto/unsrt-pt.bst`, uma cópia do estilo `unsrt` que liga os autores com "e" em vez de "and".
+
+O cabeçalho mostra a logo da Unifor quando existe o arquivo `texto/figs/unifor_logo.png`. Sem ele, aparece uma caixa vermelha no lugar.
 
 Para compilar:
 
@@ -119,8 +121,8 @@ Para compilar:
 powershell -File texto/compilar.ps1
 ```
 
-O script roda o `pdflatex` duas vezes e grava os arquivos auxiliares em `texto/build/`. No VS Code, a extensão LaTeX Workshop usa a configuração de `.vscode/settings.json`: ela recompila a cada vez que o arquivo é salvo e mostra o PDF numa aba ao lado.
+O script roda `pdflatex`, `bibtex` e `pdflatex` mais duas vezes, gravando os arquivos auxiliares em `texto/build/`. No VS Code, a extensão LaTeX Workshop usa a mesma sequência, definida em `.vscode/settings.json`: ela recompila a cada vez que o arquivo é salvo e mostra o PDF numa aba ao lado.
 
 ## Próxima etapa
 
-Revisar o rascunho.
+Incluir a logo da Unifor e revisar o rascunho.

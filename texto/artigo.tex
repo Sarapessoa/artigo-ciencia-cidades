@@ -1,139 +1,200 @@
-\documentclass[10pt,twoside,a4paper]{article}
-\usepackage[T1]{fontenc}
+% =====================================================================
+%  Além dos quilômetros: conectividade da rede cicloviária de Fortaleza
+%  Trabalho final — artigo de no máximo 3 páginas com elemento gráfico
+%
+%  Compilar com: powershell -File texto/compilar.ps1
+%  (pdflatex -> bibtex -> pdflatex 2x)
+% =====================================================================
+\documentclass[10pt,a4paper,twocolumn]{article}
+
 \usepackage[utf8]{inputenc}
-\usepackage[portuges]{babel}
-\usepackage[a4paper]{geometry}
-\geometry{tmargin=1.2cm,bmargin=1.7cm,lmargin=1.5cm,rmargin=1.5cm}
+\usepackage[T1]{fontenc}
+\usepackage[brazilian]{babel}
+\usepackage[top=2cm,bottom=2cm,left=1.8cm,right=1.8cm,columnsep=0.65cm]{geometry}
 \usepackage{graphicx}
+\usepackage{caption}
+\usepackage{xcolor}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{flushend}
+\usepackage{titlesec}
+\usepackage{icomma}
+\usepackage[colorlinks=true,allcolors=blue!70!black]{hyperref}
+
 \graphicspath{{../figuras/}}
-\usepackage{indentfirst}
-\usepackage{uniforTitle}
+\captionsetup{font=small,labelfont=bf}
 
-% Fonte similar à Arial
-\usepackage{helvet}
-\renewcommand{\familydefault}{\sfdefault}
+% Espaçamentos compactos para seções e parágrafos
+\titleformat{\section}{\large\bfseries}{\thesection}{0.7em}{}
+\titlespacing*{\section}{0pt}{1.3ex plus .3ex minus .2ex}{0.7ex plus .2ex}
+\newcommand{\rotuloparagrafo}[1]{#1.}
+\titleformat{\paragraph}[runin]{\normalfont\bfseries}{\theparagraph}{0em}{\rotuloparagrafo}
+\titlespacing*{\paragraph}{0pt}{0.7ex plus .2ex minus .1ex}{0.55em}
 
-
-%===========================
-% VARIÁVEIS DO DOCUMENTO
-%===========================
-\evento{Ciência de Dados Aplicada à Ciência da Cidade}
-\date{novembro de 2026}
-
-\title{Além dos quilômetros: conectividade da rede cicloviária de Fortaleza}
-
-\author[1]{Sara Pessoa\thanks{Estudante de Mestrado, email: sarapessoa.dev@gmail.com}}
-
-\affil[1]{Universidade de Fortaleza -- Programa de Pós-Graduação em Informática Aplicada}
-
-\keywords{Redes espaciais. Componentes conectados. Infraestrutura cicloviária. Fortaleza.}
-
+\pagestyle{empty}
+\renewcommand{\topfraction}{0.88}
+\renewcommand{\floatpagefraction}{0.75}
 
 \begin{document}
-\inserirtitulo
-\linespread{1.5}% Espaçamento 1.5 (como no word)
 
-%==================================
-% RESUMO
-%==================================
-\section{Resumo}
+% ---------------------------------------------------------------- cabeçalho e título
+\twocolumn[
+\begin{@twocolumnfalse}
+\begin{center}
+\IfFileExists{figs/unifor_logo.png}
+  {\includegraphics[height=1.4cm]{figs/unifor_logo.png}\par\vspace{0.2cm}}
+  {\fbox{\parbox{5.5cm}{\centering\footnotesize\color{red}[inserir \texttt{texto/figs/unifor\_logo.png}]}}\par\vspace{0.2cm}}
+
+{\footnotesize\bfseries Universidade de Fortaleza (UNIFOR) \quad$\cdot$\quad Centro de Ciências Tecnológicas\\
+Programa de Pós-Graduação em Informática Aplicada (PPGIA)\\
+Ciência de Dados Aplicada à Ciência da Cidade \quad$\cdot$\quad novembro de 2026\par}
+
+\vspace{0.35cm}
+{\LARGE\bfseries Além dos quilômetros\par}
+\vspace{0.18cm}
+{\large Conectividade da rede cicloviária de Fortaleza\par}
+\vspace{0.25cm}
+{\normalsize\textbf{Sara Pessoa}\par}
+{\footnotesize Mestrado em Informática Aplicada\par}
+\vspace{0.35cm}
+\end{center}
+
+\begin{quote}\small
+\noindent\textbf{Resumo.}
 A extensão da malha cicloviária é o indicador mais divulgado, mas não informa se os trechos estão ligados entre si. Neste trabalho, as ciclovias e ciclofaixas de Fortaleza, obtidas de dados públicos, são representadas como um grafo, e seus componentes conectados são calculados. Os 429~km analisados formam 44 componentes. O maior reúne 241~km (56\% da rede), e outros dois conjuntos, a oeste e a sudeste, somam 131~km sem ligação com ele. Cerca de 1~km de novas ligações, medido em linha reta, elevaria a fração do maior componente para 87\%. O resultado varia pouco com a tolerância usada para unir trechos próximos e se mantém após a conferência, em imagens de satélite, das conexões incertas.
 
-%==================================
-% INTRODUÇÃO
-%==================================
-\section{Introdução}
-Fortaleza ampliou sua infraestrutura cicloviária na última década, orientada pelo Plano Diretor Cicloviário Integrado, que prevê 524~km até 2030. O avanço dessa política costuma ser divulgado como a fração dessa meta de extensão já implantada~\cite{opovo2022}. Para quem pedala, porém, importa também se os trechos se ligam: uma ciclofaixa isolada pouco amplia os destinos alcançáveis com segurança. Hansen~\cite{hansen1959} definiu acessibilidade como o potencial de oportunidades de interação, ponderado pela separação espacial entre elas. Trechos isolados reduzem as oportunidades alcançáveis pela infraestrutura dedicada. Estudos recentes sobre cidades de 15 minutos e sobre o acesso a serviços por bicicleta ou a pé reforçam essa leitura~\cite{bruno2024,xu2020}.
+\vspace{0.15cm}
+\noindent\textbf{Palavras-chave:} redes espaciais, componentes conectados, infraestrutura cicloviária, Fortaleza.
+\end{quote}
+\vspace{0.35cm}
+\end{@twocolumnfalse}
+]
 
-Na ciência das cidades, infraestruturas urbanas são tratadas como redes espaciais~\cite{bettencourt2021,maia2023}. Para redes cicloviárias, Natera Orozco et al.~\cite{natera2020} mostraram que mesmo cidades com tradição de uso da bicicleta têm redes formadas por centenas de fragmentos desconectados. Szell et al.~\cite{szell2022} encontraram retornos decrescentes do investimento até que a rede ultrapasse um limiar crítico, a partir do qual a conectividade cresce. A revisão de Buehler e Dill~\cite{buehler2016} aponta que medidas de rede, e não apenas de extensão, ainda são pouco usadas para avaliar infraestrutura cicloviária. Este trabalho investiga a seguinte questão: \emph{as ciclovias e ciclofaixas de Fortaleza formam uma rede contínua ou conjuntos de trechos desconectados entre si?}
+% ---------------------------------------------------------------- problema
+\section{Qual é o problema?}
 
-%==================================
-% METODOLOGIA
-%==================================
-\section{Metodologia}
-Utilizou-se a malha cicloviária publicada pela Prefeitura no portal de dados abertos~\cite{fortaleza2024}. O arquivo foi atualizado no catálogo em junho de 2024, mas a maioria dos trechos tem 2022 como ano de referência. Foram mantidos os 406 trechos de ciclovias (139,6~km) e ciclofaixas (289,7~km), que somam 429,3~km. Ciclorrotas e passeios compartilhados (17~km) foram excluídos por não oferecerem espaço exclusivo à bicicleta. As geometrias foram projetadas em SIRGAS~2000/UTM~24S, e os comprimentos foram medidos em metros.
+Fortaleza ampliou sua infraestrutura cicloviária na última década, orientada
+pelo Plano Diretor Cicloviário Integrado, que prevê 524~km até 2030. O avanço
+dessa política costuma ser divulgado como a fração dessa meta de extensão já
+implantada~\cite{opovo2022}. Para quem pedala, porém, importa também se os
+trechos se ligam: uma ciclofaixa isolada pouco amplia os destinos alcançáveis
+com segurança. Hansen~\cite{hansen1959} definiu acessibilidade como o potencial
+de oportunidades de interação, ponderado pela separação espacial entre elas.
+Trechos isolados reduzem as oportunidades alcançáveis pela infraestrutura
+dedicada. Estudos recentes sobre cidades de 15 minutos e sobre o acesso a
+serviços por bicicleta ou a pé reforçam essa leitura~\cite{bruno2024,xu2020}.
 
-Construiu-se um grafo não direcionado em que dois trechos são adjacentes quando se cruzam ou quando a extremidade de um está a até 10~m de qualquer ponto do outro. A tolerância absorve imprecisões de desenho, e a análise foi repetida com tolerâncias de 0 a 50~m. Adotou-se 10~m porque, a partir desse valor, o maior componente fica praticamente estável (56,1\% a 56,5\% da extensão até 50~m) e vãos de desenho, como o de 9~m que separava o conjunto do José Walter do maior componente, passam a ser unidos. Como proximidade no mapa não garante passagem, uma amostra de 77 das 275 conexões incertas foi conferida em imagem de satélite. A amostra inclui todas as 39 conexões críticas, cuja remoção separaria partes da rede, as 18 situadas junto a pontes, viadutos ou túneis no OpenStreetMap e 20 sorteadas entre as demais. As 11 passagens em desnível encontradas foram removidas. Para cada componente conectado, calculou-se a extensão total; o indicador principal é a fração da extensão da rede contida no maior componente. O código e os dados estão disponíveis em \texttt{github.com/Sarapessoa/artigo-ciencia-cidades}.
+Na ciência das cidades, infraestruturas urbanas são tratadas como redes
+espaciais~\cite{bettencourt2021,maia2023}. Para redes cicloviárias, Natera
+Orozco \emph{et al.}~\cite{natera2020} mostraram que mesmo cidades com
+tradição de uso da bicicleta têm redes formadas por centenas de fragmentos
+desconectados. Szell \emph{et al.}~\cite{szell2022} encontraram retornos
+decrescentes do investimento até que a rede ultrapasse um limiar crítico, a
+partir do qual a conectividade cresce. A revisão de Buehler e
+Dill~\cite{buehler2016} aponta que medidas de rede, e não apenas de extensão,
+ainda são pouco usadas para avaliar infraestrutura cicloviária.
 
-%==================================
-% RESULTADOS E DISCUSSÃO
-%==================================
-\section{Resultados e Discussão}
-A rede analisada forma 44 componentes, dos quais 32 são trechos isolados (Figura~\ref{fig:conectividade}). O maior componente (C1) tem 241~km, ou 56\% da extensão total, e cobre o Centro, a orla e um eixo que segue do centro para o sul. Os componentes seguintes são grandes e regionais. C2 (67~km), a oeste, inclui Antônio Bezerra, Autran Nunes, Bom Jardim e Conjunto Ceará. C3 (64~km), a sudeste, inclui Cambeba, Cidade dos Funcionários e Edson Queiroz. Os demais 41 componentes têm menos de 12~km cada. A distribuição é típica de uma rede com um componente gigante: um conjunto domina a extensão, seguido por dois intermediários e uma cauda de pequenos fragmentos (Figura~\ref{fig:conectividade}b). As separações que isolam C2 e C3 são curtas: em linha reta, 344~m entre C1 e C2, na região da Av. Mister Hull, e 686~m entre C1 e C3, perto da Av. Rogaciano Leite. Ligá-los a C1 exigiria cerca de 1~km de infraestrutura e elevaria a fração do maior componente de 56\% para 87\% da extensão. É o padrão de ``ligações faltantes'' descrito por Natera Orozco et al.~\cite{natera2020}: poucos trechos curtos e bem posicionados consolidam redes fragmentadas.
+Este trabalho investiga a seguinte questão: \textbf{as ciclovias e ciclofaixas
+de Fortaleza formam uma rede contínua ou conjuntos de trechos desconectados
+entre si?}
 
-\begin{figure}[!hbt]
+% ---- figura
+\begin{figure*}[t]
 \centering
 \includegraphics[width=\textwidth]{conectividade.pdf}
-\caption{(a) Ciclovias e ciclofaixas de Fortaleza coloridas pelos cinco maiores componentes conectados (tolerância de 10~m, sem as passagens em desnível). (b) Extensão de cada componente em ordem decrescente, em escala logarítmica.}
+\caption{\textbf{Componentes conectados da rede cicloviária de Fortaleza.} \textbf{(a)} Ciclovias e ciclofaixas coloridas pelos cinco maiores componentes conectados (tolerância de 10~m, sem as passagens em desnível). \textbf{(b)} Extensão de cada componente em ordem decrescente, em escala logarítmica.}
 \label{fig:conectividade}
-\end{figure}
+\end{figure*}
 
-O resultado varia pouco com a tolerância: entre 5 e 50~m, o maior componente reúne de 52\% a 57\% da extensão. No extremo oposto, sem tolerância e sem cruzamentos, a rede teria 193 componentes, e o maior, só 23~km. Essa fragmentação tem duas origens no desenho da base. A primeira são cruzamentos entre trechos sem vértice comum; considerá-los reduz a rede a 95 componentes. A segunda são pontas desenhadas quase encostadas, absorvidas pela tolerância de 10~m, com a qual restam 43 componentes antes da triagem. Na triagem por satélite, 63 das 77 conexões conferidas eram encontros em nível, 11 eram passagens em desnível e 3 ficaram inconclusivas. Das 11 passagens em desnível, só uma era crítica; cinco são cruzamentos da Via Expressa, que continua ligada à rede pelas extremidades. Retirar também as inconclusivas reduz o maior componente a 55\%.
+% ---------------------------------------------------------------- método
+\section{O que foi feito}
 
-%==================================
-% CONCLUSÃO
-%==================================
-\section{Conclusão}
-A rede de ciclovias e ciclofaixas de Fortaleza não é contínua. Pouco mais da metade da extensão está em um único componente, e duas grandes redes regionais, a oeste e a sudeste, funcionam como ilhas a poucas centenas de metros dele. A extensão total, portanto, superestima a rede efetivamente utilizável sem trechos em tráfego misto. Cerca de 1~km de novas ligações nos pontos identificados reuniria 87\% da extensão em um só componente; para a conectividade, a localização dos novos trechos pesa mais que sua extensão.
+\paragraph{Dados} Utilizou-se a malha cicloviária publicada pela Prefeitura
+no portal de dados abertos~\cite{fortaleza2024}. O arquivo foi atualizado no
+catálogo em junho de 2024, mas a maioria dos trechos tem 2022 como ano de
+referência. Foram mantidos os 406 trechos de ciclovias (139,6~km) e
+ciclofaixas (289,7~km), que somam 429,3~km. Ciclorrotas e passeios
+compartilhados (17~km) foram excluídos por não oferecerem espaço exclusivo à
+bicicleta. As geometrias foram projetadas em SIRGAS~2000/UTM~24S, e os
+comprimentos foram medidos em metros.
 
-O estudo tem limitações. Uma desconexão na base não impede a circulação de bicicleta pelas vias comuns; indica apenas a falta de infraestrutura dedicada. Um encontro em nível não garante travessia sinalizada, e só 15 das conexões conferidas tinham sinalização cicloviária visível. As distâncias entre componentes foram medidas em linha reta e subestimam a ligação necessária. A base reflete principalmente 2022, e as imagens de satélite não têm data informada. O grafo não direcionado ignora o sentido de circulação das ciclofaixas unidirecionais. Por fim, a análise é estrutural e não mede segurança, conservação nem uso.
+\paragraph{Construção da rede} Construiu-se um grafo não direcionado em que
+dois trechos são adjacentes quando se cruzam ou quando a extremidade de um
+está a até 10~m de qualquer ponto do outro. A tolerância absorve imprecisões
+de desenho, e a análise foi repetida com tolerâncias de 0 a 50~m. Adotou-se
+10~m porque, a partir desse valor, o maior componente fica praticamente
+estável (56,1\% a 56,5\% da extensão até 50~m) e vãos de desenho, como o de
+9~m que separava o conjunto do José Walter do maior componente, passam a ser
+unidos.
 
-%==================================
-% REFERÊNCIAS
-%==================================
-\begin{thebibliography}{99}
-\small
+\paragraph{Conferência das conexões} Como proximidade no mapa não garante
+passagem, uma amostra de 77 das 275 conexões incertas foi conferida em imagem
+de satélite. A amostra inclui todas as 39 conexões críticas, cuja remoção
+separaria partes da rede, as 18 situadas junto a pontes, viadutos ou túneis no
+OpenStreetMap e 20 sorteadas entre as demais. As 11 passagens em desnível
+encontradas foram removidas.
 
-\bibitem{bettencourt2021}
-  L.~M.~A. Bettencourt.
-  \emph{Introduction to Urban Science: Evidence and Theory of Cities as Complex Systems}.
-  MIT Press, 2021.
+\paragraph{Indicadores} Para cada componente conectado, calculou-se a extensão
+total; o indicador principal é a fração da extensão da rede contida no maior
+componente. O código e os dados estão disponíveis em
+\url{https://github.com/Sarapessoa/artigo-ciencia-cidades}.
 
-\bibitem{bruno2024}
-  M. Bruno, H.~P.~M. Melo, B. Campanelli, V. Loreto.
-  A universal framework for inclusive 15-minute cities.
-  \emph{Nature Cities}, 1:633--641, 2024.
+% ---------------------------------------------------------------- resultados
+\section{Resultados e conclusões}
 
-\bibitem{buehler2016}
-  R. Buehler, J. Dill.
-  Bikeway networks: a review of effects on cycling.
-  \emph{Transport Reviews}, 36(1):9--27, 2016.
+A rede analisada forma 44 componentes, dos quais 32 são trechos isolados
+(Fig.~\ref{fig:conectividade}). O maior componente (C1) tem 241~km, ou 56\% da
+extensão total, e cobre o Centro, a orla e um eixo que segue do centro para o
+sul. Os componentes seguintes são grandes e regionais. C2 (67~km), a oeste,
+inclui Antônio Bezerra, Autran Nunes, Bom Jardim e Conjunto Ceará. C3
+(64~km), a sudeste, inclui Cambeba, Cidade dos Funcionários e Edson Queiroz.
+Os demais 41 componentes têm menos de 12~km cada. A distribuição é típica de
+uma rede com um componente gigante: um conjunto domina a extensão, seguido por
+dois intermediários e uma cauda de pequenos fragmentos
+(Fig.~\ref{fig:conectividade}b).
 
-\bibitem{fortaleza2024}
-  Prefeitura de Fortaleza.
-  Malha cicloviária. Portal de Dados Abertos de Fortaleza, 2024.
-  Disponível em: \texttt{dados.fortaleza.ce.gov.br}. Acesso em: 19 out. 2026.
+As separações que isolam C2 e C3 são curtas: em linha reta, 344~m entre C1 e
+C2, na região da Av.~Mister Hull, e 686~m entre C1 e C3, perto da
+Av.~Rogaciano Leite. Ligá-los a C1 exigiria cerca de 1~km de infraestrutura e
+elevaria a fração do maior componente de 56\% para 87\% da extensão. É o
+padrão de ``ligações faltantes'' descrito por Natera Orozco \emph{et
+al.}~\cite{natera2020}: poucos trechos curtos e bem posicionados consolidam
+redes fragmentadas.
 
-\bibitem{hansen1959}
-  W.~G. Hansen.
-  How accessibility shapes land use.
-  \emph{Journal of the American Institute of Planners}, 25(2):73--76, 1959.
+O resultado varia pouco com a tolerância: entre 5 e 50~m, o maior componente
+reúne de 52\% a 57\% da extensão. No extremo oposto, sem tolerância e sem
+cruzamentos, a rede teria 193 componentes, e o maior, só 23~km. Essa
+fragmentação tem duas origens no desenho da base. A primeira são cruzamentos
+entre trechos sem vértice comum; considerá-los reduz a rede a 95 componentes.
+A segunda são pontas desenhadas quase encostadas, absorvidas pela tolerância
+de 10~m, com a qual restam 43 componentes antes da triagem. Na triagem por
+satélite, 63 das 77 conexões conferidas eram encontros em nível, 11 eram
+passagens em desnível e 3 ficaram inconclusivas. Das 11 passagens em desnível,
+só uma era crítica; cinco são cruzamentos da Via Expressa, que continua ligada
+à rede pelas extremidades. Retirar também as inconclusivas reduz o maior
+componente a 55\%.
 
-\bibitem{maia2023}
-  G. Maia, C. Ponte, C. Caminha, L.~S. Furtado, H.~P.~M. Melo, V. Furtado.
-  A global empirical study on how street networks facilitate driving longer distances.
-  \emph{Scientific Reports}, 13:18154, 2023.
+\paragraph{Conclusão} A rede de ciclovias e ciclofaixas de Fortaleza não é
+contínua. Pouco mais da metade da extensão está em um único componente, e duas
+grandes redes regionais, a oeste e a sudeste, funcionam como ilhas a poucas
+centenas de metros dele. A extensão total, portanto, superestima a rede
+efetivamente utilizável sem trechos em tráfego misto. Cerca de 1~km de novas
+ligações nos pontos identificados reuniria 87\% da extensão em um só
+componente; para a conectividade, a localização dos novos trechos pesa mais
+que sua extensão.
 
-\bibitem{natera2020}
-  L.~G. Natera Orozco, F. Battiston, G. Iñiguez, M. Szell.
-  Data-driven strategies for optimal bicycle network growth.
-  \emph{Royal Society Open Science}, 7:201130, 2020.
+\paragraph{Limitações} Uma desconexão na base não impede a circulação de
+bicicleta pelas vias comuns; indica apenas a falta de infraestrutura dedicada.
+Um encontro em nível não garante travessia sinalizada, e só 15 das conexões
+conferidas tinham sinalização cicloviária visível. As distâncias entre
+componentes foram medidas em linha reta e subestimam a ligação necessária. A
+base reflete principalmente 2022, e as imagens de satélite não têm data
+informada. O grafo não direcionado ignora o sentido de circulação das
+ciclofaixas unidirecionais. Por fim, a análise é estrutural e não mede
+segurança, conservação nem uso.
 
-\bibitem{opovo2022}
-  O Povo.
-  Malha cicloviária de Fortaleza ainda é concentrada em bairros centrais.
-  Fortaleza, 27 jan. 2022.
-
-\bibitem{szell2022}
-  M. Szell, S. Mimar, T. Perlman, G. Ghoshal, R. Sinatra.
-  Growing urban bicycle networks.
-  \emph{Scientific Reports}, 12:6765, 2022.
-
-\bibitem{xu2020}
-  Y. Xu, L.~E. Olmos, S. Abbar, M.~C. González.
-  Deconstructing laws of accessibility and facility distribution in cities.
-  \emph{Science Advances}, 6(37):eabb4112, 2020.
-
-\end{thebibliography}
+% ---------------------------------------------------------------- refs
+\bibliographystyle{unsrt-pt}
+\bibliography{referencias}
 
 \end{document}
