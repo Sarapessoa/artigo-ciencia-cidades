@@ -61,6 +61,23 @@ def grafo(rede, tol, cruzamentos=True, excluir=()):
     return G
 
 
+def passagens_em_desnivel():
+    """Pares de trechos que a triagem por satélite classificou como passagem em desnível."""
+    triagem = pd.read_csv(RESULTADOS / "triagem_conexoes.csv")
+    return set(triagem.loc[triagem["veredito"] == "desnível", ["i", "j"]]
+               .itertuples(index=False, name=None))
+
+
+def cenario_principal():
+    """Rede do cenário principal, com a coluna `componente` (1 = maior), e a tabela de componentes."""
+    rede = selecionar(ler_bruto())
+    comp = componentes(rede, grafo(rede, TOL_PRINCIPAL, excluir=passagens_em_desnivel()))
+    rede["componente"] = 0
+    for ordem, nos in comp["trechos"].items():
+        rede.loc[nos, "componente"] = ordem
+    return rede, comp
+
+
 def componentes(rede, G):
     linhas = []
     for nos in nx.connected_components(G):

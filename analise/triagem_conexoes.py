@@ -60,15 +60,15 @@ def estruturas_osm(rede):
     return gpd.GeoDataFrame(linhas, crs=4326)
 
 
-def mosaico(caixa):
+def mosaico(caixa, zoom=ZOOM):
     """Junta os tiles de imagem (Web Mercator) que cobrem a caixa; devolve imagem e extensão."""
-    passo = 2 * ORIGEM_MERCATOR / 2 ** ZOOM
+    passo = 2 * ORIGEM_MERCATOR / 2 ** zoom
     c0, c1 = int((caixa[0] + ORIGEM_MERCATOR) // passo), int((caixa[2] + ORIGEM_MERCATOR) // passo)
     l0, l1 = int((ORIGEM_MERCATOR - caixa[3]) // passo), int((ORIGEM_MERCATOR - caixa[1]) // passo)
     img = Image.new("RGB", ((c1 - c0 + 1) * 256, (l1 - l0 + 1) * 256))
     for c in range(c0, c1 + 1):
         for l in range(l0, l1 + 1):
-            req = Request(URL_TILE.format(z=ZOOM, y=l, x=c),
+            req = Request(URL_TILE.format(z=zoom, y=l, x=c),
                           headers={"User-Agent": "artigo-ciclovias-fortaleza"})
             img.paste(Image.open(BytesIO(urlopen(req, timeout=60).read())),
                       ((c - c0) * 256, (l - l0) * 256))
