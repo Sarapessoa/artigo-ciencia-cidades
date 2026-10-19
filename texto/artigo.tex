@@ -102,7 +102,7 @@ entre si?}
 \begin{figure*}[t]
 \centering
 \includegraphics[width=\textwidth]{conectividade.pdf}
-\caption{\textbf{Componentes conectados da rede cicloviária de Fortaleza.} \textbf{(a)} Ciclovias e ciclofaixas coloridas pelos cinco maiores componentes conectados (tolerância de 10~m, sem as passagens em desnível). Os círculos marcam a ligação C1--C2 registrada no OpenStreetMap em 2024, ausente da base, e a menor ligação pelas ruas entre C1 e C3. \textbf{(b)} Extensão de cada componente em ordem decrescente, em escala logarítmica.}
+\caption{\textbf{Componentes conectados da rede cicloviária de Fortaleza.} \textbf{(a)} Ciclovias e ciclofaixas coloridas pelos cinco maiores componentes conectados (tolerância de 10~m, sem as passagens em desnível). Os círculos marcam a ligação C1--C2 registrada no OpenStreetMap em 2024, ausente da base, e a menor ligação pelas ruas entre C1 e C3. \textbf{(b)} Extensão de cada componente em ordem decrescente, em escala logarítmica. \textbf{(c)} Fração da rede no maior componente à medida que se acrescentam ligações pelas ruas, em duas ordens de escolha.}
 \label{fig:conectividade}
 \end{figure*}
 
@@ -141,6 +141,14 @@ Verificou-se também se a infraestrutura cicloviária registrada hoje no
 OpenStreetMap já faz essa ligação. Nessa verificação, pontes e túneis só se
 ligam a outras vias pelas próprias extremidades.
 
+\paragraph{Ligações faltantes} Para estimar quanta infraestrutura uniria a
+rede, adaptou-se a estratégia gulosa de Natera Orozco \emph{et
+al.}~\cite{natera2020}: a cada passo, o maior componente é ligado a outro pelo
+menor caminho na malha viária, e o caminho passa a integrá-lo. Compararam-se
+duas regras de escolha: o componente mais próximo e o que acrescenta mais
+extensão por metro de ligação. O custo inclui o acesso de cada trecho à via
+mais próxima.
+
 \paragraph{Indicadores} Para cada componente conectado, calculou-se a extensão
 total; o indicador principal é a fração da extensão da rede contida no maior
 componente. O código e os dados estão disponíveis em
@@ -170,10 +178,17 @@ satélite, já liga C2 a C1, mas não consta da base
 extensão. C3 continua separado nas duas fontes. A menor ligação pelas ruas tem
 799~m, pela Av.~Eng. Santana Júnior, que cruza o Rio Cocó, e pela
 Av.~Rogaciano Leite, ambas sem infraestrutura cicloviária. Com essa ligação e
-outra de 56~m até C4, o maior componente passaria a 89\% da extensão. É o
-padrão de ``ligações faltantes'' descrito por Natera Orozco \emph{et
-al.}~\cite{natera2020}: poucos trechos curtos e bem posicionados consolidam
-redes fragmentadas.
+outra de 56~m até C4, o maior componente passaria a 89\% da extensão.
+
+A curva das ligações faltantes (Fig.~\ref{fig:conectividade}c) generaliza esse
+resultado. Escolhendo a cada passo o componente de maior ganho por metro,
+1,4~km de ligações, que unem C4, C2 e C3 ao maior componente, elevam sua
+fração de 56\% para 90\% da extensão. Ligar sempre o componente mais próximo
+exige 5,5~km para chegar aos mesmos 90\%. Os últimos 5\% da rede, formados por
+fragmentos isolados, consomem a maior parte dos 18~km necessários para
+conectar tudo. É o padrão de ``ligações faltantes'' descrito por Natera Orozco
+\emph{et al.}~\cite{natera2020}: poucos trechos curtos e bem posicionados
+consolidam redes fragmentadas.
 
 O resultado varia pouco com a tolerância: entre 5 e 50~m, o maior componente
 reúne de 52\% a 57\% da extensão. No extremo oposto, sem tolerância e sem
@@ -196,8 +211,10 @@ foi resolvida depois da base: a rede do oeste se liga hoje à principal, mas a
 base oficial não registra essa ligação. A separação mais relevante que resta é
 a do sudeste, cuja ligação exige atravessar o Rio Cocó. Cerca de 0,9~km de
 infraestrutura nos pontos identificados reuniria 89\% da extensão em um só
-componente; para a conectividade, a localização dos novos trechos pesa mais
-que sua extensão.
+componente. A ordem das ligações também importa: escolhidas pelo ganho por
+metro, 1,4~km levam a base a 90\% da rede, um quarto do que exigiria ligar
+sempre o fragmento mais próximo. Para a conectividade, a localização dos novos
+trechos pesa mais que sua extensão.
 
 \paragraph{Limitações} Uma desconexão na base não impede a circulação de
 bicicleta pelas vias comuns; indica apenas a falta de infraestrutura dedicada.
@@ -205,7 +222,8 @@ Um encontro em nível não garante travessia sinalizada, e só 15 das conexões
 conferidas tinham sinalização cicloviária visível. O OpenStreetMap é mantido
 por voluntários: a ligação de C2 foi confirmada pelo histórico de edições e
 por imagem, mas não em campo. As ligações pelas ruas indicam o comprimento
-mínimo, não a viabilidade de implantação. A base reflete principalmente 2022, e as imagens de satélite não têm data
+mínimo, não a viabilidade de implantação, e a estratégia gulosa não garante a
+combinação ótima de ligações. A base reflete principalmente 2022, e as imagens de satélite não têm data
 informada. O grafo não direcionado ignora o sentido de circulação das
 ciclofaixas unidirecionais. Por fim, a análise é estrutural e não mede
 segurança, conservação nem uso.

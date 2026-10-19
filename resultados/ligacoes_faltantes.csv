@@ -1,0 +1,89 @@
+﻿estrategia,passo,componente,km_componente,ligacao_m,acumulado_m,pct_gigante,absorvidos,ruas,lat,lon
+mais próximo,0,1,241.0,0.0,0.0,56.14,,,,
+mais próximo,1,18,1.2,21.1,21.1,56.42,,,,
+mais próximo,2,35,0.5,21.2,42.3,56.55,,,,
+mais próximo,3,4,11.2,68.5,110.8,59.17,,(sem nome) (56 m),-3.776237,-38.550238
+mais próximo,4,27,0.8,2.7,113.5,59.35,,,,
+mais próximo,5,41,0.4,161.2,274.7,59.44,,Rua Braz de Francesco (158 m),-3.733096,-38.567266
+mais próximo,6,7,3.3,179.0,453.6,60.2,,Avenida Deputado Paulino Rocha (139 m); (sem nome) (14 m),-3.80996,-38.520333
+mais próximo,7,20,1.1,12.9,466.6,60.45,,,,
+mais próximo,8,33,0.7,13.8,480.4,60.61,,,,
+mais próximo,9,32,0.7,23.1,503.5,60.77,,,,
+mais próximo,10,21,1.0,66.3,569.8,61.0,,Avenida Presidente Costa e Silva (46 m),-3.828879,-38.529341
+mais próximo,11,16,1.3,205.0,774.8,61.29,,Rua Ismael Pordeus (129 m); Avenida Clóvis Arrais Maia (51 m),-3.719966,-38.463193
+mais próximo,12,38,0.5,222.2,997.0,61.4,,Rua Alfredo de Castro (218 m),-3.761608,-38.551869
+mais próximo,13,40,0.5,85.8,1082.8,61.51,,Rua Desembargador João Firmino (81 m),-3.761258,-38.552912
+mais próximo,14,25,0.9,253.2,1335.9,61.71,,Rua Emíliano de Almeida Braga (111 m); Rua Renata Braga (97 m); Rua Moacir Marquês (33 m),-3.82053,-38.521989
+mais próximo,15,30,0.7,255.7,1591.6,61.88,,Avenida Doutor Silas Munguba (224 m); Avenida Bernardo Manuel (8 m),-3.788005,-38.547007
+mais próximo,16,29,0.7,118.4,1710.0,62.06,,Rua Leão XIII (111 m),-3.784235,-38.544198
+mais próximo,17,10,2.1,263.6,1973.5,62.55,,Avenida Carlos Amora (237 m),-3.776331,-38.562731
+mais próximo,18,23,0.9,267.5,2241.0,62.77,,(sem nome) (252 m),-3.81862,-38.51894
+mais próximo,19,6,3.4,250.9,2491.9,63.56,,Avenida Deputado Paulino Rocha (221 m); Rua Brisa Leste (13 m),-3.811712,-38.513308
+mais próximo,20,13,1.5,333.5,2825.3,63.91,,Rua Suécia (322 m),-3.783515,-38.558226
+mais próximo,21,28,0.8,370.7,3196.0,64.1,,Avenida Mozart Pinheiro de Lucena (292 m); Rua Baixa do Milagre (57 m),-3.733168,-38.599868
+mais próximo,22,2,66.6,476.7,3672.7,79.62,,Travessa Capiaba (395 m); Travessa Almir Fiusa (39 m); Rua Hilda Chavante (21 m),-3.759347,-38.57295
+mais próximo,23,31,0.7,13.8,3686.5,79.78,,,,
+mais próximo,24,8,2.3,15.2,3701.7,80.32,,,,
+mais próximo,25,26,0.9,18.8,3720.5,80.52,,,,
+mais próximo,26,12,1.6,127.5,3848.0,80.88,,Rua Souza Leão (99 m); Avenida Senador Fernandes Távora (14 m),-3.754704,-38.598623
+mais próximo,27,15,1.3,118.0,3966.0,81.18,,Avenida Senador Fernandes Távora (104 m),-3.754989,-38.599097
+mais próximo,28,9,2.2,375.0,4341.0,81.69,,Rua São João (346 m); Avenida I (18 m),-3.771136,-38.596391
+mais próximo,29,19,1.1,422.7,4763.7,81.95,,Avenida Cônego de Castro (407 m),-3.814574,-38.598716
+mais próximo,30,42,0.2,592.3,5356.0,82.0,,Rua Escrivão Pinheiro (539 m); Avenida Governador Raul Barbosa (41 m),-3.759318,-38.507806
+mais próximo,31,3,64.0,108.2,5464.2,96.91,,Avenida Governador Raul Barbosa (82 m),-3.763788,-38.508428
+mais próximo,32,11,1.6,14.1,5478.3,97.29,,,,
+mais próximo,33,44,0.2,110.0,5588.3,97.33,,Avenida Governador Raul Barbosa (74 m); (sem nome) (31 m),-3.76338,-38.508358
+mais próximo,34,24,0.9,263.2,5851.5,97.54,,Rua Coronel Francisco Flávio Carneiro (182 m); (sem nome) (66 m),-3.780271,-38.487147
+mais próximo,35,22,0.9,549.5,6401.0,97.76,,Túnel Olga Barroso (311 m); Rua Firmino Rocha Aguiar (182 m); (sem nome) (35 m),-3.762884,-38.480872
+mais próximo,36,34,0.6,601.8,7002.8,97.9,,Rua Ademar Paula (318 m); Rua Iraci de Sousa (180 m); Rua Adélia Feijó (86 m),-3.801476,-38.518783
+mais próximo,37,43,0.2,811.1,7813.9,97.95,,Avenida Dolor Barreira (768 m); Avenida Engenheiro Luís Vieira (29 m),-3.732358,-38.471147
+mais próximo,38,17,1.2,855.6,8669.5,98.23,,Avenida Presidente Costa e Silva (841 m),-3.819554,-38.561766
+mais próximo,39,36,0.5,968.3,9637.9,98.35,,Avenida Deputado Castelo de Castro (956 m),-3.836122,-38.521565
+mais próximo,40,14,1.5,891.2,10529.1,98.7,,Rua Jurema (485 m); Rua Um (121 m); Avenida B (68 m); Rua Domingos Alves Ribeiro (67 m); Rua Verde 34 (67 m); (sem nome) (66 m),-3.843376,-38.517882
+mais próximo,41,39,0.5,1075.3,11604.5,98.81,,Rua Padre Pedro de Alencar (1061 m),-3.839799,-38.494275
+mais próximo,42,5,4.6,1910.6,13515.1,99.89,,Avenida Dionísio Leonel Alencar (959 m); Rua Jardim Botânico (939 m),-3.859582,-38.507983
+mais próximo,43,37,0.5,3684.6,17199.7,100.0,,Rua Antero de Quental (1722 m); Rua Porto Feliz (657 m); Rua 1º de Abril (368 m); Rua Primeiro de Abril (289 m); Rua José Aragão (204 m); Rua João Saldanha (128 m); (sem nome) (119 m); Rua 25 de Dezembro (92 m); Rua Padre Pedro de Alencar (87 m),-3.85886,-38.491485
+maior ganho,0,1,241.0,0.0,0.0,56.14,,,,
+maior ganho,1,4,11.2,68.5,68.5,58.76,,(sem nome) (56 m),-3.776237,-38.550238
+maior ganho,2,27,0.8,2.7,71.2,58.95,,,,
+maior ganho,3,2,66.6,476.7,547.8,74.47,,Travessa Capiaba (395 m); Travessa Almir Fiusa (39 m); Rua Hilda Chavante (21 m),-3.759347,-38.57295
+maior ganho,4,8,2.3,15.2,563.0,75.0,,,,
+maior ganho,5,3,64.0,818.3,1381.3,89.91,,Avenida Engenheiro Santana Júnior (504 m); Avenida Rogaciano Leite (278 m); Rua Israel Bezerra (17 m),-3.75501,-38.491331
+maior ganho,6,11,1.6,14.1,1395.5,90.29,,,,
+maior ganho,7,18,1.2,21.1,1416.6,90.57,,,,
+maior ganho,8,31,0.7,13.8,1430.4,90.74,,,,
+maior ganho,9,26,0.9,18.8,1449.2,90.94,,,,
+maior ganho,10,35,0.5,21.2,1470.4,91.07,,,,
+maior ganho,11,7,3.3,179.0,1649.4,91.82,,Avenida Deputado Paulino Rocha (139 m); (sem nome) (14 m),-3.80996,-38.520333
+maior ganho,12,20,1.1,12.9,1662.3,92.07,,,,
+maior ganho,13,33,0.7,13.8,1676.1,92.23,,,,
+maior ganho,14,32,0.7,23.1,1699.3,92.39,,,,
+maior ganho,15,21,1.0,66.3,1765.6,92.62,,Avenida Presidente Costa e Silva (46 m),-3.828879,-38.529341
+maior ganho,16,12,1.6,127.5,1893.1,92.99,,Rua Souza Leão (99 m); Avenida Senador Fernandes Távora (14 m),-3.754704,-38.598623
+maior ganho,17,15,1.3,118.0,2011.1,93.29,,Avenida Senador Fernandes Távora (104 m),-3.754989,-38.599097
+maior ganho,18,10,2.1,263.6,2274.6,93.79,,Avenida Carlos Amora (237 m),-3.776331,-38.562731
+maior ganho,19,16,1.3,205.0,2479.6,94.08,,Rua Ismael Pordeus (129 m); Avenida Clóvis Arrais Maia (51 m),-3.719966,-38.463193
+maior ganho,20,9,2.2,375.0,2854.6,94.59,,Rua São João (346 m); Avenida I (18 m),-3.771136,-38.596391
+maior ganho,21,6,3.4,671.6,3526.3,95.38,,Pista Marginal (471 m); (sem nome) (175 m),-3.782062,-38.513741
+maior ganho,22,13,1.5,333.5,3859.7,95.73,,Rua Suécia (322 m),-3.783515,-38.558226
+maior ganho,23,23,0.9,250.9,4110.6,95.95,,Avenida Deputado Paulino Rocha (221 m); Rua Brisa Leste (13 m),-3.811712,-38.513308
+maior ganho,24,25,0.9,253.2,4363.8,96.15,,Rua Emíliano de Almeida Braga (111 m); Rua Renata Braga (97 m); Rua Moacir Marquês (33 m),-3.82053,-38.521989
+maior ganho,25,24,0.9,263.2,4627.0,96.36,,Rua Coronel Francisco Flávio Carneiro (182 m); (sem nome) (66 m),-3.780271,-38.487147
+maior ganho,26,30,0.7,255.7,4882.6,96.53,,Avenida Doutor Silas Munguba (224 m); Avenida Bernardo Manuel (8 m),-3.788005,-38.547007
+maior ganho,27,29,0.7,118.4,5001.0,96.7,,Rua Leão XIII (111 m),-3.784235,-38.544198
+maior ganho,28,19,1.1,422.7,5423.7,96.96,,Avenida Cônego de Castro (407 m),-3.814574,-38.598716
+maior ganho,29,41,0.4,161.2,5584.9,97.05,,Rua Braz de Francesco (158 m),-3.733096,-38.567266
+maior ganho,30,28,0.8,370.7,5955.6,97.24,,Avenida Mozart Pinheiro de Lucena (292 m); Rua Baixa do Milagre (57 m),-3.733168,-38.599868
+maior ganho,31,38,0.5,222.2,6177.8,97.35,,Rua Alfredo de Castro (218 m),-3.761608,-38.551869
+maior ganho,32,40,0.5,85.8,6263.5,97.45,,Rua Desembargador João Firmino (81 m),-3.761258,-38.552912
+maior ganho,33,42,0.2,108.2,6371.7,97.51,,Avenida Governador Raul Barbosa (82 m),-3.763788,-38.508428
+maior ganho,34,22,0.9,549.5,6921.2,97.72,,Túnel Olga Barroso (311 m); Rua Firmino Rocha Aguiar (182 m); (sem nome) (35 m),-3.762884,-38.480872
+maior ganho,35,5,4.6,2794.3,9715.5,98.8,,Avenida Deputado Castelo de Castro (757 m); Rua Catolé (752 m); Avenida Valparaíso (665 m); Rua Sapucaí (277 m); Rua Ângela Diniz (188 m); Rua Ismael Silva (82 m); (sem nome) (60 m),-3.851372,-38.523349
+maior ganho,36,14,1.5,689.1,10404.6,99.15,,Avenida Valparaíso (397 m); Avenida Aldeni Pontes (283 m),-3.846454,-38.520743
+maior ganho,37,17,1.2,855.6,11260.2,99.44,,Avenida Presidente Costa e Silva (841 m),-3.819554,-38.561766
+maior ganho,38,44,0.2,110.0,11370.2,99.47,,Avenida Governador Raul Barbosa (74 m); (sem nome) (31 m),-3.76338,-38.508358
+maior ganho,39,34,0.6,601.8,11972.1,99.62,,Rua Ademar Paula (318 m); Rua Iraci de Sousa (180 m); Rua Adélia Feijó (86 m),-3.801476,-38.518783
+maior ganho,40,36,0.5,650.9,12623.0,99.73,,Avenida Deputado Castelo de Castro (389 m); Rua Gergelim (132 m); Rua Modesta (58 m); Avenida Castelo de Castro (48 m); (sem nome) (16 m),-3.843441,-38.521543
+maior ganho,41,39,0.5,1075.3,13698.3,99.84,,Rua Padre Pedro de Alencar (1061 m),-3.839799,-38.494275
+maior ganho,42,43,0.2,811.1,14509.4,99.89,,Avenida Dolor Barreira (768 m); Avenida Engenheiro Luís Vieira (29 m),-3.732358,-38.471147
+maior ganho,43,37,0.5,3684.6,18194.0,100.0,,Rua Antero de Quental (1722 m); Rua Porto Feliz (657 m); Rua 1º de Abril (368 m); Rua Primeiro de Abril (289 m); Rua José Aragão (204 m); Rua João Saldanha (128 m); (sem nome) (119 m); Rua 25 de Dezembro (92 m); Rua Padre Pedro de Alencar (87 m),-3.85886,-38.491485

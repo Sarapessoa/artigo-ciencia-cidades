@@ -128,6 +128,17 @@ O que a conferência mostrou:
 - **C3.** A linha reta de 686 m atravessa a mata do Parque do Cocó e não corresponde a uma ligação possível. Pelas ruas, a menor ligação tem 799 m, pela Av. Eng. Santana Júnior (ponte sobre o Rio Cocó) e pela Av. Rogaciano Leite. Nenhuma das duas tem infraestrutura cicloviária, nem na base nem no OSM atual.
 - **C4.** A ligação de 56 m passa por uma viela, ao lado da Av. Sen. Carlos Jereissati.
 
+## Ligações faltantes
+
+O script [analise/ligacoes_faltantes.py](analise/ligacoes_faltantes.py) adapta a estratégia gulosa de Natera Orozco et al. (2020). A cada passo, o maior componente é ligado a outro pelo menor caminho na malha viária do OSM, e o caminho passa a fazer parte dele. O custo inclui o acesso de cada trecho à via. São comparadas duas regras de escolha do próximo componente: o **mais próximo** e o de **maior ganho**, isto é, mais extensão por metro de ligação. Os passos ficam em `resultados/ligacoes_faltantes.csv`, e os caminhos em `.geojson`.
+
+| Fração da rede no maior componente | 75% | 80% | 90% | 95% | 100% |
+|---|---|---|---|---|---|
+| Maior ganho | 0,56 km | 1,38 km | 1,40 km | 3,5 km | 18,2 km |
+| Mais próximo | 3,7 km | 3,7 km | 5,5 km | 5,5 km | 17,2 km |
+
+Pela regra de maior ganho, os três primeiros passos relevantes ligam C4 (68 m), C2 (477 m) e C3 (818 m). A análise usa só a base de 2022: a ligação de C2, que o OSM já registra, entra aqui como se ainda fosse necessária.
+
 ## Texto
 
 O artigo é escrito em LaTeX em [texto/artigo.tex](texto/artigo.tex), com as referências em [texto/referencias.bib](texto/referencias.bib), e compilado localmente com o MiKTeX. O PDF resultante é [texto/artigo.pdf](texto/artigo.pdf).
