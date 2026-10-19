@@ -109,19 +109,18 @@ A data das imagens não é informada e pode ser diferente da data de referência
 
 ## Texto
 
-O rascunho do artigo está em [texto/main.tex](texto/main.tex). Ele segue o template [Modelo Unifor](https://www.overleaf.com/latex/templates/modelo-unifor/gscygbjpxjmw). Para compilar no Overleaf:
+O artigo é escrito em LaTeX em [texto/artigo.tex](texto/artigo.tex) e compilado localmente com o MiKTeX, sem Overleaf. O PDF resultante é [texto/artigo.pdf](texto/artigo.pdf).
 
-1. Abra o template.
-2. Substitua o `main.tex` pelo deste repositório.
-3. Envie `figuras/conectividade.pdf` para a pasta `figuras/` do projeto.
+O formato segue o template [Modelo Unifor](https://www.overleaf.com/latex/templates/modelo-unifor/gscygbjpxjmw) (CC BY 4.0). O cabeçalho e as seções são definidos em `texto/uniforTitle.sty`, recriado a partir do PDF de exemplo do template. A figura é lida diretamente de `figuras/`.
 
-O pacote `uniforTitle` original vem do template. Em `texto/compilacao_local/` há uma réplica aproximada, feita a partir do PDF de exemplo do template, que serve só para compilar localmente. Não envie a réplica ao Overleaf. O PDF [texto/artigo.pdf](texto/artigo.pdf) foi gerado assim:
+Para compilar:
 
 ```
-cd texto
-TEXINPUTS="./compilacao_local//;../;" pdflatex -output-directory=<pasta temporária> main.tex   # rodar duas vezes
+powershell -File texto/compilar.ps1
 ```
+
+O script roda o `pdflatex` duas vezes e grava os arquivos auxiliares em `texto/build/`. No VS Code, a extensão LaTeX Workshop usa a configuração de `.vscode/settings.json`: ela recompila a cada vez que o arquivo é salvo e mostra o PDF numa aba ao lado.
 
 ## Próxima etapa
 
-Revisar o rascunho e conferir no Overleaf se o texto cabe em três páginas.
+Revisar o rascunho.
