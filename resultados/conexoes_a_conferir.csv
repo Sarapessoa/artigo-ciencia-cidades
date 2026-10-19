@@ -1,0 +1,265 @@
+﻿tipo,trecho_a,trecho_b,distancia_m,lat,lon
+cruzamento,Av. Eng. Humberto Monte,Rua Pe. Guerra,0.0,-3.740952,-38.567524
+cruzamento,Av. Bezerra de Menezes,Rua Érico Mota,0.0,-3.735359,-38.56305
+cruzamento,Rio Maranguapinho Leste (Autran Nunes),Av. Porto Velho,0.0,-3.76185,-38.594744
+cruzamento,Rio Maranguapinho Leste (Bonsucesso),Rua Emílio de Menezes,0.0,-3.7799,-38.593954
+cruzamento,Av. Aguanambi,Rua Pe. Miguelino/Pe. Matos Serra,0.0,-3.744064,-38.525639
+cruzamento,Av. Aguanambi,Rua Coronel Solon/Saldanha Marinho,0.0,-3.742862,-38.525832
+cruzamento,Av. Parsifal Barroso,Ligação Bezerra - Parsifal Barroso 1,0.0,-3.733625,-38.568978
+cruzamento,Av. Des. Moreira,Rua Canuto de Aguiar,0.0,-3.730314,-38.496433
+cruzamento,Av. Des. Moreira,Rua Ana Bilhar (parte 1),0.0,-3.729343,-38.496117
+cruzamento,Rua Canuto de Aguiar,Rua Joaquim Nabuco,0.0,-3.729357,-38.499398
+cruzamento,Rua Canuto de Aguiar,Rua Osvaldo Cruz (norte),0.0,-3.729695,-38.498392
+cruzamento,Rua Ana Bilhar (parte 1),Rua Joaquim Nabuco,0.0,-3.72837,-38.499087
+cruzamento,Rua Ana Bilhar (parte 1),Rua Osvaldo Cruz (norte),0.0,-3.728704,-38.498071
+cruzamento,Av. Santos Dumont (trecho antes do binário),Av. Rui Barbosa,0.0,-3.732966,-38.508435
+cruzamento,Av. Santos Dumont (trecho antes do binário),Rua Carlos Vasconcelos,0.0,-3.732257,-38.510591
+cruzamento,Av. Dom Luís,Rua Joaquim Nabuco,0.0,-3.732352,-38.500344
+cruzamento,Av. Dom Luís,Rua Osvaldo Cruz (norte),0.0,-3.732673,-38.499357
+cruzamento,Av. Rui Barbosa,Rua Eduardo Bezerra,0.0,-3.75383,-38.513575
+cruzamento,Av. Rui Barbosa,Av. Antônio Sales (parte 1),0.0,-3.742557,-38.511536
+cruzamento,Av. Rui Barbosa,Rua João Brígido (parte 1),0.0,-3.742029,-38.511365
+cruzamento,Av. Rui Barbosa,Rua Eduardo Salgado,0.0,-3.733993,-38.508768
+cruzamento,Av. Rui Barbosa,Rua Dep. Moreira da Rocha,0.0,-3.726824,-38.50645
+cruzamento,Av. Antônio Sales (parte 1),Rua Osvaldo Cruz (sul),0.0,-3.745093,-38.503447
+cruzamento,Av. Antônio Sales (parte 1),Rua Joaquim Nabuco,0.0,-3.744812,-38.504344
+cruzamento,Av. Antônio Sales (parte 1),Av. Sen. Virgílio Távora,0.0,-3.747265,-38.496521
+cruzamento,Av. Antônio Sales (parte 1),Rua Barbosa de Freitas,0.0,-3.746038,-38.500434
+cruzamento,Av. Antônio Sales (parte 1),Rua Carlos Vasconcelos,0.0,-3.741876,-38.513708
+cruzamento,Rua Carlos Vasconcelos,Rua Eduardo Bezerra,0.0,-3.753941,-38.514746
+cruzamento,Rua Carlos Vasconcelos,Rua João Brígido (parte 1),0.0,-3.741335,-38.513533
+cruzamento,Rua Emílio de Menezes,Perimetral (S/N) - parte 1,0.0,-3.781755,-38.587389
+cruzamento,Rua Emílio de Menezes,Perimetral (N/S) - parte 1,0.0,-3.78135,-38.588821
+cruzamento,Rua Emílio de Menezes,Rua Maria Júlia (parte 1),0.0,-3.779278,-38.596156
+cruzamento,Rua Oscar França,Rua Raimundo Pinheiro,0.0,-3.792422,-38.598072
+cruzamento,Rua Oscar França,Rua Maria Júlia (parte 2),0.0,-3.791879,-38.599729
+cruzamento,Rua Oscar França,Av. Cel. Virgílio Nogueira,0.0,-3.788923,-38.6088
+cruzamento,Rua Oscar França,Rua Ari Maia (parte 2),0.0,-3.784955,-38.621811
+cruzamento,Rua Oscar Araripe,Rua Raimundo Pinheiro,0.0,-3.791679,-38.597838
+cruzamento,Rua Oscar Araripe,Rua Maria Júlia (parte 2),0.0,-3.79115,-38.599499
+cruzamento,Rua Oscar Araripe,Av. Cel. Virgílio Nogueira,0.0,-3.788221,-38.608573
+cruzamento,Rua Oscar Araripe,Rua Ari Maia (parte 2),0.0,-3.784274,-38.621616
+cruzamento,Rua José de Barcelos,Rua Pe. Guerra,0.0,-3.737382,-38.55017
+cruzamento,Rua José de Barcelos,Rua Dom Manuel de Medeiros,0.0,-3.736299,-38.550395
+cruzamento,Rua Raimundo Arruda,Rua Pe. Guerra,0.0,-3.737604,-38.551241
+cruzamento,Rua Raimundo Arruda,Rua Dom Manuel de Medeiros,0.0,-3.736527,-38.551461
+cruzamento,Rua Alberto Magno,Rua Almirante Rufino,0.0,-3.76208,-38.547544
+cruzamento,Rua Alberto Magno,Rua Des. Praxedes,0.0,-3.761247,-38.546815
+cruzamento,Rua Alberto Magno,Rua André Chaves,0.0,-3.756017,-38.542242
+cruzamento,Av. Prof. Gomes de Matos (parte 1),Rua Almirante Rufino,0.0,-3.762594,-38.546887
+cruzamento,Av. Prof. Gomes de Matos (parte 1),Rua Des. Praxedes,0.0,-3.761861,-38.546258
+cruzamento,Av. Prof. Gomes de Matos (parte 1),Rua André Chaves,0.0,-3.756375,-38.54155
+cruzamento,Rua Damasceno Girão (parte 1),Av. Eduardo Girão,0.0,-3.749061,-38.539271
+cruzamento,Rua Érico Mota,Rua Pe. Guerra,0.0,-3.73986,-38.562111
+cruzamento,Rua Érico Mota,Rua Dom Manuel de Medeiros,0.0,-3.738757,-38.562341
+cruzamento,Rua Gen. Tertuliano Potiguara,Av. Sen. Virgílio Távora,0.0,-3.744739,-38.495705
+cruzamento,Rua Gen. Tertuliano Potiguara,Rua Barbosa de Freitas,0.0,-3.743458,-38.499603
+cruzamento,Rua João Brígido (parte 1),Rua Nogueira Acioli (parte 1),0.0,-3.739252,-38.520043
+cruzamento,Rua Dom Expedito Lopes,Rua Joaquim Nabuco,0.0,-3.744118,-38.504116
+cruzamento,Rua General Piragibe,Rua Pe. Guerra,0.0,-3.738952,-38.557736
+cruzamento,Rua General Piragibe,Rua Dom Manuel de Medeiros,0.0,-3.737871,-38.557974
+cruzamento,Rua Dom Lino,Rua Pe. Guerra,0.0,-3.738723,-38.556631
+cruzamento,Rua Dom Lino,Rua Dom Manuel de Medeiros,0.0,-3.737646,-38.556862
+cruzamento,Av. Domingos Olímpio (parte 1),Av. Tristão Gonçalves,0.0,-3.735144,-38.535668
+cruzamento,Av. Domingos Olímpio (parte 1),Av. Imperador,0.0,-3.734836,-38.536679
+cruzamento,Av. Cel. Miguel Dias,Rua Atilano de Moura,0.0,-3.763431,-38.487734
+cruzamento,Av. Eng. Leal Lima Verde,Rua Joaquim Frota,0.0,-3.801605,-38.47519
+cruzamento,Av. Des. Gonzaga,Av. Oliveira Paiva,0.0,-3.797153,-38.499946
+cruzamento,Av. Rogaciano Leite,Av. José Leon (parte 2),0.0,-3.787338,-38.503471
+cruzamento,Av. Gen. Osório de Paiva (parte 1),Perimetral (S/N) - parte 1,0.0,-3.790321,-38.588073
+cruzamento,Av. Sen. Virgílio Távora,Rua Des. Leite Albuquerque,0.0,-3.738806,-38.493788
+cruzamento,Av. Sen. Virgílio Távora,Av. Santos Dumont (trecho binário),0.0,-3.737854,-38.49348
+cruzamento,Rua Coronel Solon/Saldanha Marinho,Rua Jaime Benévolo,0.0,-3.743016,-38.529018
+cruzamento,Rua Coronel Solon/Saldanha Marinho,Rua Barão de Aratanha,0.0,-3.742796,-38.529698
+cruzamento,Rua Pe. Miguelino/Pe. Matos Serra,Rua Jaime Benévolo,0.0,-3.744056,-38.529383
+cruzamento,Rua Pe. Miguelino/Pe. Matos Serra,Rua Barão de Aratanha,0.0,-3.743843,-38.530042
+cruzamento,Rua Joaquim Nabuco,Rua Eduardo Bezerra,0.0,-3.753213,-38.507098
+cruzamento,Rua Joaquim Nabuco,Av. Santos Dumont (trecho binário),0.0,-3.735316,-38.501279
+cruzamento,Rua Osvaldo Cruz (norte),Rua Des. Leite Albuquerque,0.0,-3.736595,-38.500627
+cruzamento,Rua Osvaldo Cruz (norte),Av. Santos Dumont (trecho binário),0.0,-3.73563,-38.500314
+cruzamento,Rua Castro e Silva (parte 1),Rua Floriano Peixoto,0.0,-3.724275,-38.526107
+cruzamento,Av. Santos Dumont (trecho papicu 1),Rua Prof. Otávio Lobo,0.0,-3.742844,-38.477831
+cruzamento,Av. Oliveira Paiva,Rua Cônego Braveza,0.0,-3.796473,-38.498485
+cruzamento,Av. Oliveira Paiva,Rua Chico Lemos,0.0,-3.795837,-38.497118
+cruzamento,Perimetral (S/N) - parte 2,Av. Porto Velho,0.0,-3.766065,-38.586864
+cruzamento,Perimetral (N/S) - parte 2,Av. Porto Velho,0.0,-3.765183,-38.588499
+cruzamento,Av. Duque de Caxias (parte 1),Av. Tristão Gonçalves,0.0,-3.730389,-38.534184
+cruzamento,Av. Duque de Caxias (parte 1),Av. Imperador,0.0,-3.730037,-38.53526
+cruzamento,Rua Guarujá (Rua Chico França),Rua Angélica Gurgel,0.0,-3.834794,-38.499088
+cruzamento,Av. Santos Dumont (trecho binário),Rua Barbosa de Freitas,0.0,-3.736582,-38.49739
+cruzamento,Rua Des. Praxedes,Av. Luciano Carneiro (parte 2),0.0,-3.764964,-38.536701
+cruzamento,Rua Des. Praxedes,Av. dos Expedicionários (parte 1),0.0,-3.763709,-38.540816
+cruzamento,Rua Almirante Rufino,Av. Luciano Carneiro (parte 2),0.0,-3.766567,-38.537197
+cruzamento,Rua Almirante Rufino,Av. dos Expedicionários (parte 1),0.0,-3.765289,-38.541298
+cruzamento,Av. Washington Luiz,Av. Coronel Carvalho,0.0,-3.717474,-38.587947
+cruzamento,Av. Major Assis,Av. Coronel Carvalho,0.0,-3.723766,-38.586269
+cruzamento,Rua Pe. Guerra,Rua Prof. Nogueira,0.0,-3.737157,-38.549087
+cruzamento,Rua Ver. Pedro Paulo,Rua Júnior Rocha,0.0,-3.787192,-38.487352
+cruzamento,Rua Júnior Rocha,Av. José Leon (parte 1),0.0,-3.79132,-38.487749
+cruzamento,Rua Chico Lemos,Rua José Alves Cavalcante,0.0,-3.790909,-38.4993
+cruzamento,Rua Bento Albuquerque,Rua Francisco Matos,0.0,-3.747854,-38.470378
+cruzamento,Av. Eduardo Girão,Av. Luciano Carneiro (parte 2),0.0,-3.752153,-38.532792
+cruzamento,Av. Eduardo Girão,Av. dos Expedicionários (parte 1),0.0,-3.750584,-38.53681
+cruzamento,Av. Eduardo Girão,Av. Dep. Oswaldo Studart (parte 3),0.0,-3.755253,-38.529685
+cruzamento,Rua Guerra Junqueiro,Rua Dr. Justa Araújo,0.0,-3.780235,-38.551632
+cruzamento,Rua Gov. João Carlos,Rua Cônego Lima Sucupira (parte 2),0.0,-3.777949,-38.551537
+cruzamento,Rua Pedro Pereira,Av. Tristão Gonçalves,0.0,-3.728049,-38.533475
+cruzamento,Rua Pedro Pereira,Av. Imperador,0.0,-3.727696,-38.534567
+cruzamento,Rua Des. Leite Albuquerque,Rua Barbosa de Freitas,0.0,-3.737542,-38.497698
+cruzamento,Av. Lineu Machado,Av. Porto Velho,0.0,-3.770203,-38.579167
+extremidade,Av. José Jatahy (parte 1),Av. José Jatahy (parte 2),0.0,-3.739524,-38.543446
+extremidade,Av. Historiador Raimundo Girão,Rua Ildefonso Albano,0.0,-3.721612,-38.509426
+extremidade,Av. Sargento Herminio,Rua Pe. Anchieta (parte 1),0.0,-3.724674,-38.551119
+extremidade,Av. Antônio Sales (parte 1),Rua João Brígido (parte 2),0.0,-3.738585,-38.523603
+extremidade,Rua Pe. Anchieta (parte 2),Rua Pe. Anchieta (parte 1),0.0,-3.724675,-38.551119
+extremidade,Rua Damasceno Girão (parte 1),Rua Damasceno Girão (parte 2),0.0,-3.751449,-38.539803
+extremidade,Rua Dom Expedito Lopes,Rua Osvaldo Cruz (sul),0.0,-3.744376,-38.503284
+extremidade,Av. Mons. Carneiro da Cunha (parte 2),Av. Pinto Bandeira (parte 2),0.0,-3.77698,-38.487858
+extremidade,Av. Gen. Osório de Paiva,Rua Pedro Martins (parte 2),0.0,-3.800834,-38.598318
+extremidade,Av. Washington Soares,Rua Joaquim Frota,0.0,-3.801995,-38.479418
+extremidade,Av. Oliveira Paiva,Rua Pe. Januário Campos,0.0,-3.796001,-38.489653
+extremidade,Rua Min. Joaquim Bastos,Av. Dep. Oswaldo Studart (parte 4),0.0,-3.753755,-38.528251
+extremidade,Av. Beira Mar (parte 1),Av. Des. Moreira,0.1,-3.726116,-38.495064
+extremidade,Av. Aguanambi,Av. Domingos Olímpio (parte 1),0.1,-3.738639,-38.524579
+extremidade,Av. Pres. Castelo Branco (parte 3),Av. Pres. Castelo Branco (parte 1),0.1,-3.714666,-38.54627
+extremidade,Av. Viena Weyne (parte 3),Rua Cândido Portinari,0.1,-3.802233,-38.485027
+extremidade,Av. Beira Mar (parte 1),Av. Beira Mar (trecho Meireles),0.1,-3.725721,-38.494143
+extremidade,Av. Dom Luís,Rua Frederico Borges,0.1,-3.735968,-38.489106
+extremidade,Av. Antônio Sales (parte 1),Av. Domingos Olímpio (parte 2),0.1,-3.738585,-38.523603
+extremidade,Rua Vital Brasil,Rua Antônio Neri (sul),0.1,-3.777387,-38.600009
+extremidade,Rua Antônio Neri (norte),Rua Antônio Neri (sul),0.1,-3.777387,-38.600009
+extremidade,Av. Eng. Humberto Monte,Rua Nestor Barbosa,0.1,-3.745716,-38.563246
+extremidade,Rua Gen. Tertuliano Potiguara,Rua Osvaldo Cruz (central),0.1,-3.742493,-38.502537
+extremidade,Av. Almirante Barroso (parte 1),Av. Almirante Barroso (parte 2),0.1,-3.720105,-38.514582
+extremidade,Av. Domingos Olímpio (parte 1),Av. Domingos Olímpio (parte 2),0.1,-3.738639,-38.524579
+extremidade,Av. Mons. Carneiro da Cunha (parte 2),Av. Mons. Carneiro da Cunha (parte 1),0.1,-3.778314,-38.483177
+extremidade,Rua Júlio Gaspar (parte 1),Rua Júlio Gaspar (parte 2),0.1,-3.783789,-38.561533
+extremidade,Rua Dr. Manoel Teófilo,Rua Júlio Gaspar (parte 2),0.1,-3.783789,-38.561532
+extremidade,Rua Jacinto Matos,Av. Pres. Castelo Branco (parte 1),0.1,-3.714666,-38.54627
+extremidade,Av. Washington Soares,Av. Mons. Carneiro da Cunha (parte 1),0.1,-3.778185,-38.481447
+extremidade,Av. Oliveira Paiva,Rua Júnior Rocha,0.1,-3.796169,-38.488223
+extremidade,Av. Eng. Santana Jr. (parte 1),Av. Eng. Santana Jr. (parte 2),0.1,-3.744935,-38.488845
+extremidade,Rua Min. Joaquim Bastos,Av. Dep. Oswaldo Studart (parte 3),0.1,-3.753678,-38.528342
+extremidade,Rua Mário Mamede,Av. Dep. Oswaldo Studart (parte 4),0.1,-3.752726,-38.52738
+extremidade,Av. Rogaciano Leite,Av. Murilo Borges,0.1,-3.767823,-38.497002
+extremidade,Rua Taquari,Rua Antônio Neri (norte),0.2,-3.776719,-38.599828
+extremidade,Rua Ari Maia (parte 2),Rua Ari Maia (parte 1),0.2,-3.779489,-38.620247
+extremidade,Rua João Oliveira,Rua Letícia,0.2,-3.821786,-38.492574
+extremidade,Rua Vital Brasil,Perimetral (N/S) - parte 1,0.2,-3.780648,-38.588619
+extremidade,Rua Osvaldo Cruz (sul),Rua Eduardo Bezerra,0.2,-3.753101,-38.505927
+extremidade,Av. José Jatahy (parte 2),Rua Dom Manuel de Medeiros,0.2,-3.735041,-38.544246
+extremidade,Rua Gal. Caiado de Castro,Av. José Leon (parte 1),0.2,-3.790854,-38.489457
+extremidade,Av. Beira Mar (parte 1),Av. Beira Mar (parte 2),0.3,-3.725505,-38.491556
+extremidade,Rua Emílio de Menezes,Rua Antônio Neri (sul),0.3,-3.778134,-38.600208
+extremidade,Rua Érico Mota,Rua Nestor Barbosa,0.3,-3.745186,-38.561001
+extremidade,Rua Vital Brasil,Perimetral (S/N) - parte 1,0.3,-3.781055,-38.587203
+extremidade,Rua Nogueira Acioli (parte 1),Rua Pe. Luís Figueira,0.3,-3.731499,-38.517299
+extremidade,Av. Santos Dumont (praia do futuro),Av. Santos Dumont (trecho papicu 2),0.3,-3.745491,-38.469659
+extremidade,Av. Santos Dumont (trecho papicu 2),Rua Francisco Matos,0.3,-3.745491,-38.46966
+extremidade,Rua Prof. Otávio Lobo,Rua Bento Albuquerque,0.3,-3.745029,-38.47921
+extremidade,Av. Washington Soares,Av. Edilson Brasil Soares,0.3,-3.789451,-38.480518
+extremidade,Av. Cel. Matos Dourado (parte 2),Rua Franco Rocha,0.4,-3.753378,-38.582333
+extremidade,Rio Maranguapinho Oeste (Canindezinho) - parte 2,Rua Francisco,0.4,-3.818828,-38.613284
+extremidade,Rua Pereira de Miranda,Av. dos Jangadeiros (parte 1),0.4,-3.738468,-38.486165
+extremidade,Av. Bezerra de Menezes,Av. Domingos Olímpio (parte 1),0.4,-3.731143,-38.54285
+extremidade,Rotatória Castelão,Av. Juscelino Kubitschek (parte 1),0.4,-3.80761,-38.525166
+extremidade,Av. Bezerra de Menezes,Ligação Bezerra - Parsifal Barroso 1,0.4,-3.736472,-38.568387
+extremidade,Rua Carlos Vasconcelos,Rua Pe. Luís Figueira,0.4,-3.733467,-38.510984
+extremidade,Av. Germano Franck,Rua Cônego Lima Sucupira (parte 2),0.4,-3.775177,-38.559566
+extremidade,Rua Equador (Ligação Montese),Rua Dom Carloto Távora (Ligação Montese),0.4,-3.771489,-38.551634
+extremidade,Av. José Bastos,Rua Pe. Cícero,0.4,-3.744412,-38.544922
+extremidade,Av. Pompílio Gomes (parte 1),Av. Pompílio Gomes (parte 3),0.5,-3.815513,-38.520894
+extremidade,Av. Bezerra de Menezes,Rua José Cândido,0.5,-3.73294,-38.551476
+extremidade,Av. Bezerra de Menezes,Rua Pe. Anchieta (parte 2),0.6,-3.733112,-38.552301
+extremidade,Rua Franco Rocha,Rua Pe. Sá Leitão,0.6,-3.755916,-38.578813
+extremidade,Av. Godofredo Maciel,Rua Nereu Ramos,0.6,-3.787158,-38.566825
+extremidade,Rua Livino de Carvalho (Ligação Montese),Rua Equador (Ligação Montese),0.6,-3.773482,-38.552165
+extremidade,Av. Pe. Antônio Tomás (parte 3),Valdetário Mota,0.6,-3.744133,-38.485235
+extremidade,Rua Dom Manuel de Medeiros,Rua Prof. Nogueira,0.6,-3.73607,-38.549313
+extremidade,Av. Alberto Craveiro (parte 2),Av. Alberto Craveiro,0.6,-3.786108,-38.517128
+extremidade,Rua João Brígido (parte 1),Rua João Brígido (parte 2),0.7,-3.738637,-38.522167
+extremidade,Rua César Fonseca,Rua Des. Lauro Nogueira,0.7,-3.741903,-38.472593
+extremidade,Av. Duque de Caxias (parte 1),Av. Duque de Caxias (parte 2),0.7,-3.729698,-38.536287
+extremidade,Av. Santos Dumont (trecho papicu 3),Av. Santos Dumont (alça),0.7,-3.740534,-38.485131
+extremidade,Av. Pompílio Gomes (parte 1),Av. Pompílio Gomes (parte 5),0.8,-3.823489,-38.521276
+extremidade,Rio Maranguapinho Leste (Canindezinho) - parte 1,Rua Francisco,0.8,-3.819639,-38.612147
+extremidade,Av. Pe. Antônio Tomás (parte 1),Av. Pe. Antônio Tomás (parte 2),0.8,-3.744051,-38.487676
+extremidade,Av. Mister Hull,Ligação Bezerra - Parsifal Barroso 2,0.8,-3.736652,-38.569294
+extremidade,Av. Pres. Castelo Branco (parte 3),Rua Adolfo Caminha,0.8,-3.720995,-38.528195
+extremidade,Av. Viena Weyne (parte 1),Av. Viena Weyne (parte 3),0.9,-3.801194,-38.488534
+extremidade,Av. Dom Luís,Rua Barbosa de Freitas,0.9,-3.733635,-38.496441
+extremidade,Av. Parsifal Barroso,Av. Sargento Heminio,1.0,-3.727995,-38.569291
+extremidade,Rio Maranguapinho Leste (Bonsucesso),Rua Vital Brasil,1.1,-3.77903,-38.594286
+extremidade,Rio Maranguapinho Leste (Canindezinho) - parte 2,Av. José Tavares,1.1,-3.811955,-38.599314
+extremidade,Av. Beira Mar (trecho Meireles),Av. Historiador Raimundo Girão,1.1,-3.723149,-38.506115
+extremidade,Rua Rio Grande do Sul,Rua Pernambuco,1.1,-3.760011,-38.568464
+extremidade,Rua Ver. Pedro Paulo,Rua Gal. Caiado de Castro,1.1,-3.787002,-38.488971
+extremidade,Rua Equador (Ligação Montese),Rua Elcias Lopes (Ligação Montese),1.1,-3.772437,-38.551916
+extremidade,Rua Carlos Vasconcelos,Rua Prof. Carvalho,1.2,-3.756162,-38.514322
+extremidade,Rua Pe. Januário Campos,Av. José Leon (parte 1),1.2,-3.790953,-38.48911
+extremidade,Av. Bezerra de Menezes,Av. José Jatahy (parte 4),1.2,-3.731557,-38.544866
+extremidade,Rua Ildefonso Albano,Av. Beira Mar (trecho Praia de Iracema),1.3,-3.720931,-38.509252
+extremidade,Av. Dom Luís,Av. Júlio Abreu/Av. Dom Luís,1.3,-3.735974,-38.489106
+extremidade,Raul Cabral / Isaie Boris,Av. dos Expedicionários,1.3,-3.769581,-38.542609
+extremidade,Av. Mister Hull,Av. Bezerra de Menezes,1.4,-3.736632,-38.569153
+extremidade,Rua Prof. Otávio Lobo,Rua Andrade Furtado (parte 2),1.4,-3.745774,-38.479677
+extremidade,Av. Bezerra de Menezes,Rua Cel. Mozart Gondim,1.5,-3.73445,-38.558728
+extremidade,Rua Dr. Pergentino Maia,Rua Cel. Dionísio Alencar,1.5,-3.831548,-38.487748
+extremidade,Rua Dr. Pergentino Maia,Rua Antônio Barros,1.5,-3.831377,-38.488971
+extremidade,Rua Vital Brasil,Perimetral (S/N) - parte 2,1.8,-3.781059,-38.587151
+extremidade,Rua Guerra Junqueiro,Rua Gov. João Carlos,2.0,-3.780006,-38.552353
+extremidade,Av. Pres. Castelo Branco (parte 3),Av. Filomeno Gomes,2.0,-3.715511,-38.542038
+extremidade,Via Expressa,Rua Canuto de Aguiar,2.1,-3.732713,-38.483047
+extremidade,Av. Maestro Lisboa,Av. Eng. Leal Lima Verde,2.1,-3.807861,-38.474667
+extremidade,Av. Eng. Humberto Monte,Rua José de Pontes,2.1,-3.739463,-38.568576
+extremidade,Av. Des. Gonzaga,Rua José Alves Cavalcante,2.1,-3.7922,-38.502192
+extremidade,Av. Eng. Humberto Monte,Av. Mister Hull,2.2,-3.736632,-38.569149
+extremidade,Rio Maranguapinho Leste (João XXIII),Rua Vital Brasil,2.2,-3.778914,-38.594641
+extremidade,Av. Duque de Caxias (parte 1),Rua Nogueira Acioli (parte 1),2.2,-3.735447,-38.518715
+extremidade,Av. Beira Mar (trecho Praia de Iracema),Av. Almirante Barroso (parte 1),2.3,-3.719904,-38.513169
+extremidade,Rua Antônio Fiúza (Ligação Montese),Raul Cabral / Isaie Boris,2.3,-3.76847,-38.551596
+extremidade,Av. Mons. Carneiro da Cunha (parte 2),Rua Rev. Bolivar Pinto Bandeira,2.5,-3.77501,-38.493856
+extremidade,Av. Gen. Osório de Paiva,Av. José Tavares,2.5,-3.808134,-38.605431
+extremidade,Av. Des. Gonzaga,Av. Rogaciano Leite,2.8,-3.788597,-38.50383
+extremidade,Av. Washington Soares,Rua João Oliveira,3.1,-3.823642,-38.481338
+extremidade,Av. José Bastos,Rua José Façanha,3.1,-3.754305,-38.554835
+extremidade,Perimetral (N/S) - parte 1,Av. Gen. Osório de Paiva (parte 2),3.1,-3.790917,-38.588651
+extremidade,Av. D (Cj. Ceará),Rua José Mendonça,3.3,-3.76183,-38.603039
+extremidade,Av. dos Expedicionários (parte 1),Raul Cabral / Isaie Boris,3.3,-3.769561,-38.542602
+extremidade,Av. Godofredo Maciel,Rua Antônio Bandeira,3.4,-3.783268,-38.565825
+extremidade,Rua Prof. Carvalho,Rua Mons. Salazar,3.6,-3.756146,-38.514318
+extremidade,Rua Capitão Melo,Rua Mons. Salazar,3.8,-3.756041,-38.513169
+extremidade,Rua Marechal Lott,Av. Eng. Agronômo José Guimarães Duque,3.9,-3.801656,-38.496786
+extremidade,Rua Taquatiara,Rua Herbene,4.0,-3.829824,-38.504209
+extremidade,Av. Dolor Barreira (parte 1),Av. Santos Dumont (praia do futuro),4.4,-3.747369,-38.46371
+extremidade,Av. Domingos Olímpio (parte 1),Rua Barão do Rio Branco,4.6,-3.736628,-38.531472
+extremidade,Av. dos Expedicionários (parte 1),Av. dos Expedicionários,4.7,-3.769567,-38.542604
+extremidade,Av. G (José Walter),Av. I,4.8,-3.839067,-38.554951
+extremidade,Av. Eng. Humberto Monte,Rua Rio Grande do Sul,4.9,-3.749224,-38.560321
+extremidade,Av. José Jatahy (parte 3),Av. Francisco Sá,4.9,-3.720859,-38.546775
+extremidade,Rua Escrivão Pinheiro,Rua Mons. Salazar,4.9,-3.755556,-38.507876
+extremidade,Av. Godofredo Maciel,Rua Miguel Aragão,5.0,-3.83605,-38.582665
+extremidade,Rua José Mendonça,Av. Porto Velho,5.2,-3.760256,-38.602736
+extremidade,Perimetral (S/N) - parte 2,Perimetral (N/S) - parte 2,5.7,-3.753525,-38.582651
+extremidade,Rio Cocó Leste (Barroso) - parte 1,Av. Pompílio Gomes (parte 6),5.9,-3.824823,-38.521299
+extremidade,Perimetral (S/N) - parte 1,Perimetral (S/N) - parte 2,6.0,-3.781054,-38.587176
+extremidade,Rua Cônego Braveza,Rua José Alves Cavalcante,6.0,-3.791552,-38.500674
+extremidade,Rua Gen. Tertuliano Potiguara,Rua Osvaldo Cruz (norte),6.2,-3.742467,-38.502528
+extremidade,Av. dos Expedicionários (parte 1),Av. dos Expedicionários (parte 2),6.6,-3.74507,-38.535096
+extremidade,Av. Aguanambi,Rua Mons. Salazar,6.7,-3.756802,-38.521366
+extremidade,Av. dos Jangadeiros (parte 2),Av. dos Jangadeiros (parte 1),6.7,-3.738463,-38.486197
+extremidade,Av. Sargento Herminio,Rua Cel. Mozart Gondim,6.8,-3.726512,-38.561351
+extremidade,Rua Chico Lemos,Av. José Leon (parte 2),7.0,-3.788163,-38.500494
+extremidade,Av. Cearenses,Av. Sargento Heminio,7.5,-3.727531,-38.566731
+extremidade,Av. Maestro Lisboa,Av. Sabiaguaba (CE-010),7.7,-3.810637,-38.429001
+extremidade,Rua Equador (Ligação Montese),Rua da Saudade / Rua Aquiles Bóris,7.8,-3.769044,-38.55078
+extremidade,Rua Vital Brasil,Rua Maria Júlia (parte 1),7.9,-3.778581,-38.595969
+extremidade,Av. Domingos Olímpio (parte 1),Av. da Universidade,8.0,-3.735626,-38.534206
+extremidade,Av. Eduardo Girão,Rua Min. Joaquim Bastos,8.3,-3.755611,-38.526097
+extremidade,Av. João de Araújo Lima,Av. H,8.4,-3.840233,-38.562218
+extremidade,Av. Bezerra de Menezes,Rua Eretides Martins,8.8,-3.734182,-38.557605
+extremidade,Av. D (José Walter),Avenida D,9.1,-3.832512,-38.552871
+extremidade,Av. Godofredo Maciel,Av. Benjamim Brasil,9.2,-3.803285,-38.572034
+extremidade,Rua Marechal Lott,Rua Chico Lemos,9.5,-3.800737,-38.494948
+extremidade,Av. Eng. Santana Jr. (parte 1),Av. Pe. Antônio Tomás (parte 2),9.7,-3.744052,-38.487809
+extremidade,Rio Maranguapinho Leste - parte 3,Av. José Tavares,9.8,-3.811326,-38.600437

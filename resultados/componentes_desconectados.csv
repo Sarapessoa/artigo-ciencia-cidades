@@ -1,0 +1,44 @@
+﻿ordem,n_trechos,km,dist_maior_m,vias,bairros
+2,52,66.62,344,Av. Carneiro de Mendonça (parte 2); Av. Cel. Matos Dourado (parte 1); Av. Cel. Matos Dourado (parte 2); Av. Cel. Virgíli,"Antônio Bezerra, Autran Nunes, Bom Jardim, Bonsucesso, Canindezinho, Conjunto Ceará I, Conjunto Ceará II, Dom Lustosa, G"
+3,57,64.02,686,Av. Cel. Miguel Dias; Av. Chanceler Edson Queiroz; Av. Des. Gonzaga; Av. Des. Gonzaga AMC; Av. Edilson Brasil Soares; Av,"Cambeba, Cidade dos Funcionários, Coaçu, Edson Queiroz, Engenheiro Luciano Cavalcante, Guajeru, Guararapes, Jardim das O"
+4,9,11.24,62,Av. Alberto Craveiro; Av. Alberto Craveiro (parte 1); Av. Alberto Craveiro (parte 2); Av. Juscelino Kubitschek (parte 1),"Aerolândia, Aeroporto, Boa Vista/Castelão, Dias Macedo, Dias Macêdo, Passaré, Serrinha"
+5,1,4.65,2197,Av. Quarto Anel Viário (parte 1),"Ancuri, Conjunto Palmeiras, Jangurussu, Pedras"
+6,2,3.39,2922,Rio Cocó Leste (Cajazeiras) - parte 1; Rio Cocó Leste (Cajazeiras) - parte 2,Cajazeiras
+7,8,3.26,1160,Av. Castelo de Castro (parte 1); Av. Pompílio Gomes (parte 1); Av. Pompílio Gomes (parte 2); Av. Pompílio Gomes (parte 3,"Barroso, Jangurussu, Passaré"
+8,1,2.29,2123,Rio Maranguapinho Oeste (Canindezinho) - parte 1,Canindezinho
+9,1,2.16,2674,Av. Min. Albuquerque Lima (Cj. Ceará),"Conjunto Ceará I, Conjunto Ceará II"
+10,1,2.14,156,Ciclovia METROFOR,"Couto Fernandes, Demócrito Rocha, Itaoca, Montese, Parangaba"
+11,1,1.63,4976,Rua Crisanto Moreira da Rocha,Cambeba
+12,1,1.58,1034,Rio Maranguapinho Leste (Ant. Bezerra),"Antônio Bezerra, Autran Nunes"
+13,3,1.53,323,Rua Carlos Juaçaba; Rua Equador (continuação),"Dendê, Itaperi, Maraponga"
+14,3,1.51,1301,Av. Valparaíso; Av. Valparaíso (parte 1); Av. Valparaíso (parte 2),Jangurussu
+15,1,1.28,1332,Rio Maranguapinho Oeste (Genibaú),Genibaú
+16,1,1.28,147,Av. Pontamar,Cais do Porto
+17,1,1.21,848,Rua Pref. Evandro Ayres de Moura,Mondubim
+18,1,1.2,21,Vila do Mar (2ª etapa),"Jacarecanga, Pirambu"
+19,1,1.12,1429,Rua Eduardo Araújo,Parque Santa Rosa
+20,1,1.07,1079,Rio Cocó Oeste (Passaré),Passaré
+21,1,0.98,928,Av. Pres. Costa e Silva (parte 1),Prefeito José Walter
+22,1,0.92,1711,Av. Ipanema,Edson Queiroz
+23,2,0.91,2735,Rio Cocó Leste (Barroso) - parte 2; Rio Cocó Leste (Barroso) - parte 3,Barroso
+24,1,0.9,3137,Tribunal Regional Eleitoral do Ceará,Engenheiro Luciano Cavalcante
+25,2,0.87,1901,Rua Emiliano de Almeida Braga; Rua Estrada do Itaperi,Passaré
+26,1,0.85,1976,Rio Maranguapinho Leste (Parque São José),Parque São José
+27,1,0.79,2866,Av. Dep. Paulino Rocha,Passaré
+28,1,0.79,304,Rio Maranguapinho Leste (parte 1),Quintinho Cunha
+29,1,0.73,358,Rua Freire Alemão,Serrinha
+30,1,0.73,241,Rua Prof. Heloísa Ferreira Lima,Serrinha
+31,2,0.72,2194,Rio Maranguapinho Leste (Canindezinho) - parte 3; Rio Maranguapinho Leste (Canindezinho) - parte 4,Canindezinho
+32,1,0.71,1099,Av. Pres. Costa e Silva (parte 2),Jangurussu
+33,1,0.67,1990,Rio Cocó Leste (Barroso) - parte 4,Barroso
+34,1,0.64,3846,Rio Cocó Oeste (Boa Vista),Boa Vista/Castelão
+35,1,0.55,21,Rua Minervino de Castro,
+36,1,0.49,758,Praça Tamandaré,Jangurussu
+37,1,0.47,5000,Av. Quarto Anel Viário (parte 2),Paupina
+38,1,0.47,216,Rua Miguel Gonçalves,"Bela Vista, Montese"
+39,1,0.46,3319,Rua Luiz Alves Tomaz,Parque Santa Maria
+40,1,0.46,216,Rua Álvaro Fernandes,"Bela Vista, Montese"
+41,2,0.38,161,Rua Olavo Bilac; Rua Tabelião Fabião,Presidente Kennedy
+42,1,0.22,563,Av. Gov. Raul Barbosa (lado oeste),"Alto da Balança, Tauape"
+43,1,0.21,772,Av. Dolor Barreira (parte 3),Vicente Pinzón
+44,1,0.15,563,Av. Gov. Raul Barbosa (lado leste),"Alto da Balança, Tauape"

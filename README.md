@@ -66,6 +66,8 @@ Conforme [instrucoes.pdf](instrucoes.pdf), o artigo deve:
 - Descrever a metodologia.
 - Apresentar resultados, conclusões e limitações.
 
+O texto será escrito no Overleaf a partir do template [Modelo Unifor](https://www.overleaf.com/latex/templates/modelo-unifor/gscygbjpxjmw). Esse template usa classe `article`, folha A4, fonte Helvetica e espaçamento 1,5, além de referências manuais com `thebibliography`.
+
 Os slides e a bibliografia fornecidos estão em [material](material/). A seleção das referências específicas será feita durante a preparação do artigo.
 
 ## Limites de interpretação
@@ -74,6 +76,37 @@ Uma desconexão na infraestrutura cicloviária selecionada não significa necess
 
 Erros geométricos e desatualização cadastral podem produzir descontinuidades artificiais. O artigo analisará a rede representada na base, com conferência dos casos relevantes, sem afirmar efeitos causais sobre uso da bicicleta ou acidentes.
 
+## Como reproduzir
+
+```
+python -m venv .venv
+.venv/Scripts/python -m pip install -r requirements.txt
+cd analise && ../.venv/Scripts/python -m nbconvert --to notebook --execute --inplace conectividade.ipynb
+```
+
+O notebook [analise/conectividade.ipynb](analise/conectividade.ipynb) baixa os dados para `dados/brutos/`, se ainda não estiverem lá, grava as tabelas em `resultados/` e gera a figura em `figuras/conectividade.pdf`.
+
+## Triagem das conexões incertas
+
+O cenário principal usa tolerância de 10 m e conta os cruzamentos como conexões. Há 275 conexões incertas: cruzamentos sem extremidade próxima e uniões que só existem com tolerância acima de 0 m. Uma amostra foi conferida em imagem de satélite (Esri World Imagery) com [analise/triagem_conexoes.py](analise/triagem_conexoes.py). A amostra tem 77 conexões:
+
+- as 39 **críticas**, cuja remoção separa parte da rede;
+- as 18 restantes a até 20 m de ponte, viaduto ou túnel no OpenStreetMap;
+- um sorteio de 20 entre as demais.
+
+Os vereditos estão em `resultados/triagem_conexoes.csv`:
+
+| Veredito | Críticas | Perto de estrutura (OSM) | Sorteio | Total |
+|---|---|---|---|---|
+| Confirmada (travessia ou continuidade visível) | 12 | 0 | 3 | 15 |
+| Em nível (encontro em nível, sem sinalização visível) | 26 | 7 | 15 | 48 |
+| Desnível (viaduto, túnel ou passagem inferior) | 1 | 9 | 1 | 11 |
+| Inconclusiva | 0 | 2 | 1 | 3 |
+
+As 11 passagens em desnível são removidas do cenário principal. Só uma delas era crítica: a Av. Dep. Paulino Rocha sob a Rotatória do Castelão, que separa 0,8 km. Com isso, a rede fica com 44 componentes, e o maior soma 241,0 km (56,1%). Sem as 3 inconclusivas, o maior componente cai para 236,4 km (55,1%).
+
+A data das imagens não é informada e pode ser diferente da data de referência da base (2022). Uma travessia "em nível" indica apenas que as vias se encontram, não que haja sinalização cicloviária.
+
 ## Próxima etapa
 
-Baixar e inspecionar a base pública para confirmar a viabilidade do recorte e definir as regras de construção da rede. Ainda não há resultados calculados.
+Selecionar as referências e escrever o artigo no template do Overleaf.

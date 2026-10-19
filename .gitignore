@@ -1,0 +1,5 @@
+.venv/
+.ipynb_checkpoints/
+__pycache__/
+# recortes de imagem de satélite (Esri World Imagery), regeneráveis com analise/triagem_conexoes.py
+resultados/triagem/
