@@ -119,4 +119,4 @@ O pacote `uniforTitle` vem do template e não está neste repositório.
 
 ## Próxima etapa
 
-Revisar o rascunho e preencher os campos marcados com `TODO`: disciplina ou evento, data e programa de pós-graduação. Depois, conferir no Overleaf se o texto cabe em três páginas.
+Revisar o rascunho e conferir no Overleaf se o texto cabe em três páginas.
