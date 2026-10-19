@@ -1,0 +1,39 @@
+% Réplica aproximada do pacote uniforTitle do template "Modelo Unifor" do Overleaf,
+% feita a partir do PDF de exemplo do template, só para compilar o artigo localmente.
+% No Overleaf, use o uniforTitle original do template e NÃO envie este arquivo.
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{uniforTitle}[2026/10/19 replica local]
+\RequirePackage{xcolor}
+\RequirePackage[affil-it]{authblk}
+
+\renewcommand\Authfont{\bfseries\large}
+\renewcommand\Affilfont{\itshape\small}
+\renewcommand\Authands{, e }
+
+\newcommand{\evento}[1]{\def\@evento{#1}}
+\newcommand{\keywords}[1]{\def\@keywords{#1}}
+\newcommand{\contatoemail}[1]{}
+
+\newcommand{\inserirtitulo}{%
+  \thispagestyle{plain}%
+  \noindent\colorbox{black}{\parbox{\dimexpr\linewidth-2\fboxsep}{\centering\color{white}\bfseries
+    \vspace{2mm}{\Large\MakeUppercase{\@evento}}\par
+    {\large Universidade de Fortaleza}\par
+    {\large\@date}\par\vspace{2mm}}}\par
+  \vspace{6mm}%
+  {\centering{\Large\bfseries\@title\par}\vspace{4mm}%
+   \renewcommand\thefootnote{\fnsymbol{footnote}}%
+   \let\thanks\footnote
+   \@author\par}%
+  \vspace{6mm}%
+  \noindent\textbf{Palavras-chave:} \textit{\@keywords}\par
+  \vspace{2mm}%
+  \setcounter{footnote}{0}%
+}
+
+% Seções sem número, em faixa preta
+\renewcommand{\section}{\@ifstar\uniforsecao\uniforsecao}
+\newcommand{\uniforsecao}[1]{%
+  \par\vspace{3mm}%
+  \noindent\colorbox{black}{\parbox{\dimexpr\linewidth-2\fboxsep}{\color{white}\bfseries\large #1}}\par
+  \vspace{2mm}\@afterindenttrue\@afterheading}
