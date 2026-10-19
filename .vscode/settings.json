@@ -1,8 +1,8 @@
 {
   "latex-workshop.latex.recipes": [
     {
-      "name": "pdflatex (2x)",
-      "tools": ["pdflatex", "pdflatex"]
+      "name": "pdflatex -> bibtex -> pdflatex (2x)",
+      "tools": ["pdflatex", "bibtex", "pdflatex", "pdflatex"]
     }
   ],
   "latex-workshop.latex.tools": [
@@ -16,6 +16,11 @@
         "-aux-directory=build",
         "%DOC%"
       ]
+    },
+    {
+      "name": "bibtex",
+      "command": "bibtex",
+      "args": ["build/%DOCFILE%"]
     }
   ],
   "latex-workshop.latex.outDir": "%DIR%",
