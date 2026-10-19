@@ -113,11 +113,11 @@ O artigo é escrito em LaTeX em [texto/artigo.tex](texto/artigo.tex), com as ref
 
 O formato, em duas colunas e com as seções nomeadas pelas três perguntas do manual do professor, segue o artigo de [skaduhs5232/Tese](https://github.com/skaduhs5232/Tese/blob/main/artigo/main.tex). Desse arquivo foi aproveitado apenas o layout; o conteúdo é deste trabalho. As referências usam `texto/unsrt-pt.bst`, uma cópia do estilo `unsrt` que liga os autores com "e" em vez de "and".
 
-O cabeçalho mostra a logo da Unifor quando existe o arquivo `texto/figs/unifor_logo.png`. Sem ele, aparece uma caixa vermelha no lugar.
+A logo da Unifor do cabeçalho está em `texto/figs/unifor_logo.png`.
 
 O texto final é compilado no **Overleaf**. Para criar o projeto:
 
-1. Gere o pacote com `python texto/gerar_overleaf.py`. O resultado é `texto/overleaf.zip`, que fica fora do git. Ele contém `main.tex`, `referencias.bib`, `unsrt-pt.bst`, `figuras/conectividade.pdf` e, se existir, a logo.
+1. Gere o pacote com `python texto/gerar_overleaf.py`. O resultado é `texto/overleaf.zip`, que fica fora do git. Ele contém `main.tex`, `referencias.bib`, `unsrt-pt.bst`, `figuras/conectividade.pdf` e `figs/unifor_logo.png`.
 2. No Overleaf, use **New Project → Upload Project** e escolha o zip.
 3. Confirme que o compilador é **pdfLaTeX** (Menu → Compiler). O Overleaf roda o BibTeX automaticamente.
 
@@ -125,4 +125,4 @@ Para compilar localmente, sem Overleaf, use `powershell -File texto/compilar.ps1
 
 ## Próxima etapa
 
-Incluir a logo da Unifor e revisar o rascunho.
+Criar o projeto no Overleaf e revisar o rascunho.
