@@ -8,3 +8,5 @@ resultados/triagem/
 texto/*.aux
 texto/*.log
 texto/*.out
+texto/build/
+texto/*.synctex.gz
