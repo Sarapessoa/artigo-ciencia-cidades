@@ -136,8 +136,11 @@ def ligacao_pelo_osm(rede, ciclo):
     return resultado
 
 
-def ligacao_pelas_ruas(rede, ruas_elementos):
-    """Para cada componente, o menor caminho pela malha viária até C1."""
+def malha_viaria(ruas_elementos):
+    """Grafo da malha viária do OSM (nós = vértices, peso = metros) e o nome da via de cada aresta.
+
+    Pontes e túneis só compartilham vértices com outras vias nas extremidades, então o grafo
+    não cria cruzamentos onde há desnível."""
     tr = Transformer.from_crs(4326, CRS_METRICO, always_xy=True)
     R = nx.Graph()
     nome = {}
@@ -146,12 +149,35 @@ def ligacao_pelas_ruas(rede, ruas_elementos):
         for a, b in zip(pts, pts[1:]):
             R.add_edge(a, b, w=float(np.hypot(a[0] - b[0], a[1] - b[1])))
             nome[frozenset((a, b))] = e["tags"].get("name", "(sem nome)")
+    return R, nome
+
+
+def vertices_perto(R, rede, com_distancia=False):
+    """Para cada componente, os vértices da malha viária a até RAIO_RUAS_M dele.
+
+    Com `com_distancia`, devolve {vértice: distância até o componente} em vez de um conjunto."""
     lista = list(R.nodes)
     vertices = gpd.GeoSeries([Point(n) for n in lista], crs=CRS_METRICO)
+    resultado = {}
+    for k, trechos in rede.groupby("componente"):
+        g = trechos.union_all()
+        idx = vertices.sindex.query(g, predicate="dwithin", distance=RAIO_RUAS_M)
+        resultado[k] = ({lista[i]: vertices[i].distance(g) for i in idx} if com_distancia
+                        else {lista[i] for i in idx})
+    return resultado
 
-    def perto(k):
-        g = rede[rede["componente"] == k].union_all()
-        return {lista[i] for i in vertices.sindex.query(g, predicate="dwithin", distance=RAIO_RUAS_M)}
+
+def ruas_do_caminho(R, nome, cam):
+    ruas = {}
+    for a, b in zip(cam, cam[1:]):
+        ruas[nome[frozenset((a, b))]] = ruas.get(nome[frozenset((a, b))], 0) + R[a][b]["w"]
+    return ruas
+
+
+def ligacao_pelas_ruas(rede, ruas_elementos):
+    """Para cada componente, o menor caminho pela malha viária até C1."""
+    R, nome = malha_viaria(ruas_elementos)
+    perto = vertices_perto(R, rede).get
 
     dist, caminhos = nx.multi_source_dijkstra(R, perto(1), weight="w")
     resultado = {}
@@ -162,10 +188,8 @@ def ligacao_pelas_ruas(rede, ruas_elementos):
             continue
         fim = min(alcancados, key=dist.get)
         cam = caminhos[fim]
-        ruas = {}
-        for a, b in zip(cam, cam[1:]):
-            ruas[nome[frozenset((a, b))]] = ruas.get(nome[frozenset((a, b))], 0) + R[a][b]["w"]
-        resultado[k] = (dist[fim], LineString(cam) if len(cam) > 1 else Point(cam[0]), ruas)
+        resultado[k] = (dist[fim], LineString(cam) if len(cam) > 1 else Point(cam[0]),
+                        ruas_do_caminho(R, nome, cam))
     return resultado
 
 
