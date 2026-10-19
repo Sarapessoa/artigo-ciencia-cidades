@@ -1,0 +1,5 @@
+﻿componente,km_componente,reta_m,reta_entre,ligado_pelo_osm,osm_m,osm_vias,osm_ids,ruas_m,ruas_vias
+2,66.6,344,Av. Mister Hull x Av. Cel. Matos Dourado (parte 1),True,785.0,Avenida Coronel Matos Dourado; Rua Demétrio Menezes; Rua Doutor Catunda Gondim; Viaduto Antônio Bezerra,508545968 361767241 1113380075 626688386 114379389 913312581 1312316393,455,Travessa Capiaba (395 m); Travessa Almir Fiusa (39 m); Rua Hilda Chavante (21 m)
+3,64.0,686,Rua Santa Teresinha do Menino Jesus x Av. Rogaciano Leite,False,,,,799,Avenida Engenheiro Santana Júnior (504 m); Avenida Rogaciano Leite (278 m); Rua Israel Bezerra (17 m)
+4,11.2,62,Rua Dr. Justa Araújo x Av. Sen. Carlos Jereissati,False,,,,56,(sem nome) (56 m)
+5,4.6,2197,Av. D (José Walter) x Av. Quarto Anel Viário (parte 1),False,,,,2780,Avenida Deputado Castelo de Castro (757 m); Rua Catolé (752 m); Avenida Valparaíso (665 m); Rua Sapucaí (277 m); Rua Ângela Diniz (188 m); Rua Ismael Silva (82 m); (sem nome) (60 m)

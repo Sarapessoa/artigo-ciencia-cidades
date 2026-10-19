@@ -107,6 +107,27 @@ As 11 passagens em desnível são removidas do cenário principal. Só uma delas
 
 A data das imagens não é informada e pode ser diferente da data de referência da base (2022). Uma travessia "em nível" indica apenas que as vias se encontram, não que haja sinalização cicloviária.
 
+## Conferência das lacunas
+
+O script [analise/conferir_lacunas.py](analise/conferir_lacunas.py) examina as separações entre o maior componente (C1) e os quatro seguintes. A tabela resultante é `resultados/lacunas.csv`. Para cada componente, ele calcula:
+
+- a lacuna em **linha reta**;
+- se a infraestrutura cicloviária do **OpenStreetMap atual** (19/10/2026, em `dados/brutos/osm_ciclovias_fortaleza.json`) já liga o componente a C1. Pontes e túneis do OSM só se ligam a outras vias pelas próprias extremidades;
+- a menor ligação **pelas ruas**, na malha viária do OSM.
+
+| | Extensão | Linha reta | Pelo OSM atual | Pelas ruas |
+|---|---|---|---|---|
+| C2 (oeste) | 66,6 km | 344 m | ligado, com 785 m de vias ausentes da base | 455 m |
+| C3 (sudeste) | 64,0 km | 686 m | sem ligação | 799 m |
+| C4 | 11,2 km | 62 m | sem ligação | 56 m |
+| C5 | 4,6 km | 2 197 m | sem ligação | 2 780 m |
+
+O que a conferência mostrou:
+
+- **C2.** A linha reta de 344 m cai num cruzamento em desnível: a ciclovia de C1 na Av. Mister Hull passa sob o Viaduto Antônio Bezerra. No OSM, a ciclofaixa do viaduto e das ruas Dr. Catunda Gondim e Coronel Matos Dourado liga C2 a C1. Essas vias receberam a marcação de ciclofaixa em 30/08/2024 e 22/11/2024, segundo o histórico do OSM, e a faixa aparece na imagem de satélite. A ligação é posterior ao ano de referência da base (2022) ou foi omitida nela.
+- **C3.** A linha reta de 686 m atravessa a mata do Parque do Cocó e não corresponde a uma ligação possível. Pelas ruas, a menor ligação tem 799 m, pela Av. Eng. Santana Júnior (ponte sobre o Rio Cocó) e pela Av. Rogaciano Leite. Nenhuma das duas tem infraestrutura cicloviária, nem na base nem no OSM atual.
+- **C4.** A ligação de 56 m passa por uma viela, ao lado da Av. Sen. Carlos Jereissati.
+
 ## Texto
 
 O artigo é escrito em LaTeX em [texto/artigo.tex](texto/artigo.tex), com as referências em [texto/referencias.bib](texto/referencias.bib), e compilado localmente com o MiKTeX. O PDF resultante é [texto/artigo.pdf](texto/artigo.pdf).
