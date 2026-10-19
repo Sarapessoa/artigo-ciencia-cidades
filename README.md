@@ -107,6 +107,16 @@ As 11 passagens em desnível são removidas do cenário principal. Só uma delas
 
 A data das imagens não é informada e pode ser diferente da data de referência da base (2022). Uma travessia "em nível" indica apenas que as vias se encontram, não que haja sinalização cicloviária.
 
+## Texto
+
+O rascunho do artigo está em [texto/main.tex](texto/main.tex). Ele segue o template [Modelo Unifor](https://www.overleaf.com/latex/templates/modelo-unifor/gscygbjpxjmw). Para compilar no Overleaf:
+
+1. Abra o template.
+2. Substitua o `main.tex` pelo deste repositório.
+3. Envie `figuras/conectividade.pdf` para a pasta `figuras/` do projeto.
+
+O pacote `uniforTitle` vem do template e não está neste repositório.
+
 ## Próxima etapa
 
-Selecionar as referências e escrever o artigo no template do Overleaf.
+Revisar o rascunho e preencher os campos marcados com `TODO`: disciplina ou evento, data e programa de pós-graduação. Depois, conferir no Overleaf se o texto cabe em três páginas.
