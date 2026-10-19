@@ -1,0 +1,8 @@
+{
+  "url": "https://dados.fortaleza.ce.gov.br/dataset/047e6dd6-cf6d-4a76-9ff0-0895d85bbf14/resource/e1f5e293-a452-4aa9-9357-b4e0f9f5a7a1/download/malha_cicloviaria.geojson",
+  "obtido_em": "2026-10-19",
+  "catalogo_atualizado_em": "2024-06-07T18:30:30.646138",
+  "recurso_atualizado_em": "2024-06-07T18:30:29.664691",
+  "licenca": "não informada",
+  "limite_municipal": "https://servicodados.ibge.gov.br/api/v3/malhas/municipios/2304400?formato=application/vnd.geo+json&qualidade=maxima"
+}

@@ -1,0 +1,276 @@
+﻿id,i,j,tipo,trecho_a,trecho_b,tipologia_a,tipologia_b,distancia_m,critica,km_separados,osm_estrutura,lat,lon,amostra,imagem
+0,36,103,extremidade,Rio Maranguapinho Leste (João XXIII),Rua Vital Brasil,Ciclovias,Ciclofaixas,2.2,False,0.0,,-3.778914,-38.594641,,
+1,37,72,extremidade,Av. Beira Mar (parte 1),Av. Des. Moreira,Ciclovias,Ciclovias,0.1,False,0.0,,-3.726116,-38.495064,,
+2,40,164,extremidade,Av. Cel. Matos Dourado (parte 2),Rua Franco Rocha,Ciclovias,Ciclofaixas,0.4,False,0.0,,-3.753378,-38.582333,,
+3,42,173,extremidade,Av. José Jatahy (parte 1),Av. José Jatahy (parte 2),Ciclovias,Ciclofaixas,0.0,False,0.0,,-3.739524,-38.543446,,
+4,46,103,extremidade,Rio Maranguapinho Leste (Bonsucesso),Rua Vital Brasil,Ciclovias,Ciclofaixas,1.1,False,0.0,,-3.77903,-38.594286,,
+5,48,152,extremidade,Av. Aguanambi,Av. Domingos Olímpio (parte 1),Ciclovias,Ciclofaixas,0.1,False,0.0,,-3.738639,-38.524579,,
+6,48,278,extremidade,Av. Aguanambi,Rua Mons. Salazar,Ciclovias,Ciclofaixas,6.7,False,0.0,,-3.756802,-38.521366,,
+7,37,73,extremidade,Av. Beira Mar (parte 1),Av. Beira Mar (trecho Meireles),Ciclovias,Ciclovias,0.1,False,0.0,,-3.725721,-38.494143,,
+8,73,78,extremidade,Av. Beira Mar (trecho Meireles),Av. Historiador Raimundo Girão,Ciclovias,Ciclovias,1.1,False,0.0,,-3.723149,-38.506115,,
+9,78,79,extremidade,Av. Historiador Raimundo Girão,Rua Ildefonso Albano,Ciclovias,Ciclovias,0.0,False,0.0,,-3.721612,-38.509426,,
+10,79,80,extremidade,Rua Ildefonso Albano,Av. Beira Mar (trecho Praia de Iracema),Ciclovias,Ciclovias,1.3,False,0.0,,-3.720931,-38.509252,,
+11,80,135,extremidade,Av. Beira Mar (trecho Praia de Iracema),Av. Almirante Barroso (parte 1),Ciclovias,Ciclofaixas,2.3,False,0.0,,-3.719904,-38.513169,,
+12,97,232,extremidade,Av. Dom Luís,Av. Júlio Abreu/Av. Dom Luís,Ciclofaixas,Ciclofaixas,1.3,False,0.0,,-3.735974,-38.489106,,
+13,97,114,extremidade,Av. Dom Luís,Rua Frederico Borges,Ciclofaixas,Ciclofaixas,0.1,False,0.0,,-3.735968,-38.489106,,
+14,100,234,extremidade,Av. Antônio Sales (parte 1),Rua João Brígido (parte 2),Ciclofaixas,Ciclofaixas,0.0,False,0.0,,-3.738585,-38.523603,,
+15,101,268,extremidade,Rua Carlos Vasconcelos,Rua Prof. Carvalho,Ciclofaixas,Ciclofaixas,1.2,False,0.0,,-3.756162,-38.514322,,
+16,102,244,extremidade,Rua Emílio de Menezes,Rua Antônio Neri (sul),Ciclofaixas,Ciclofaixas,0.3,False,0.0,,-3.778134,-38.600208,,
+17,103,244,extremidade,Rua Vital Brasil,Rua Antônio Neri (sul),Ciclofaixas,Ciclofaixas,0.1,False,0.0,,-3.777387,-38.600009,,
+18,107,244,extremidade,Rua Antônio Neri (norte),Rua Antônio Neri (sul),Ciclofaixas,Ciclofaixas,0.1,False,0.0,,-3.777387,-38.600009,,
+19,16,108,extremidade,Av. Bezerra de Menezes,Rua José Cândido,Ciclovias,Ciclofaixas,0.5,False,0.0,,-3.73294,-38.551476,,
+20,110,249,extremidade,Rua Pe. Anchieta (parte 2),Rua Pe. Anchieta (parte 1),Ciclofaixas,Ciclofaixas,0.0,False,0.0,,-3.724675,-38.551119,,
+21,16,110,extremidade,Av. Bezerra de Menezes,Rua Pe. Anchieta (parte 2),Ciclovias,Ciclofaixas,0.6,False,0.0,,-3.733112,-38.552301,,
+22,112,226,extremidade,Rua Pereira de Miranda,Av. dos Jangadeiros (parte 1),Ciclofaixas,Ciclofaixas,0.4,False,0.0,,-3.738468,-38.486165,,
+23,119,246,extremidade,Rua Damasceno Girão (parte 1),Rua Damasceno Girão (parte 2),Ciclofaixas,Ciclofaixas,0.0,False,0.0,,-3.751449,-38.539803,,
+24,123,129,extremidade,Rua Érico Mota,Rua Nestor Barbosa,Ciclofaixas,Ciclofaixas,0.3,False,0.0,,-3.745186,-38.561001,,
+25,13,129,extremidade,Av. Eng. Humberto Monte,Rua Nestor Barbosa,Ciclovias,Ciclofaixas,0.1,False,0.0,,-3.745716,-38.563246,,
+26,131,132,extremidade,Rua Gen. Tertuliano Potiguara,Rua Osvaldo Cruz (central),Ciclofaixas,Ciclofaixas,0.1,False,0.0,,-3.742493,-38.502537,,
+27,131,203,extremidade,Rua Gen. Tertuliano Potiguara,Rua Osvaldo Cruz (norte),Ciclofaixas,Ciclofaixas,6.2,False,0.0,,-3.742467,-38.502528,,
+28,133,234,extremidade,Rua João Brígido (parte 1),Rua João Brígido (parte 2),Ciclofaixas,Ciclofaixas,0.7,False,0.0,,-3.738637,-38.522167,,
+29,135,364,extremidade,Av. Almirante Barroso (parte 1),Av. Almirante Barroso (parte 2),Ciclofaixas,Ciclofaixas,0.1,False,0.0,,-3.720105,-38.514582,,
+30,81,139,extremidade,Av. Sargento Herminio,Rua Cel. Mozart Gondim,Ciclovias,Ciclofaixas,6.8,False,0.0,,-3.726512,-38.561351,,
+31,16,139,extremidade,Av. Bezerra de Menezes,Rua Cel. Mozart Gondim,Ciclovias,Ciclofaixas,1.5,False,0.0,,-3.73445,-38.558728,,
+32,16,141,extremidade,Av. Bezerra de Menezes,Rua Eretides Martins,Ciclovias,Ciclofaixas,8.8,False,0.0,,-3.734182,-38.557605,,
+33,146,245,extremidade,Rua Ari Maia (parte 2),Rua Ari Maia (parte 1),Ciclofaixas,Ciclofaixas,0.2,False,0.0,,-3.779489,-38.620247,,
+34,103,147,extremidade,Rua Vital Brasil,Rua Maria Júlia (parte 1),Ciclofaixas,Ciclofaixas,7.9,False,0.0,,-3.778581,-38.595969,,
+35,13,148,extremidade,Av. Eng. Humberto Monte,Rua Rio Grande do Sul,Ciclovias,Ciclofaixas,4.9,False,0.0,,-3.749224,-38.560321,,
+36,16,152,extremidade,Av. Bezerra de Menezes,Av. Domingos Olímpio (parte 1),Ciclovias,Ciclofaixas,0.4,False,0.0,,-3.731143,-38.54285,,
+37,152,233,extremidade,Av. Domingos Olímpio (parte 1),Av. Domingos Olímpio (parte 2),Ciclofaixas,Ciclofaixas,0.1,False,0.0,,-3.738639,-38.524579,,
+38,155,157,extremidade,Rua Dr. Pergentino Maia,Rua Cel. Dionísio Alencar,Ciclofaixas,Ciclofaixas,1.5,False,0.0,,-3.831548,-38.487748,,
+39,155,159,extremidade,Rua Dr. Pergentino Maia,Rua Antônio Barros,Ciclofaixas,Ciclofaixas,1.5,False,0.0,,-3.831377,-38.488971,,
+40,164,165,extremidade,Rua Franco Rocha,Rua Pe. Sá Leitão,Ciclofaixas,Ciclofaixas,0.6,False,0.0,,-3.755916,-38.578813,,
+41,172,237,extremidade,Av. Mons. Carneiro da Cunha (parte 2),Av. Mons. Carneiro da Cunha (parte 1),Ciclofaixas,Ciclofaixas,0.1,False,0.0,,-3.778314,-38.483177,,
+42,152,177,extremidade,Av. Domingos Olímpio (parte 1),Rua Barão do Rio Branco,Ciclofaixas,Ciclofaixas,4.6,False,0.0,,-3.736628,-38.531472,,
+43,185,190,extremidade,Av. Des. Gonzaga,Av. Rogaciano Leite,Ciclofaixas,Ciclofaixas,2.8,False,0.0,,-3.788597,-38.50383,,
+44,103,192,extremidade,Rua Vital Brasil,Perimetral (N/S) - parte 1,Ciclofaixas,Ciclofaixas,0.2,False,0.0,,-3.780648,-38.588619,,
+45,193,217,extremidade,Perimetral (S/N) - parte 1,Perimetral (S/N) - parte 2,Ciclofaixas,Ciclofaixas,6.0,False,0.0,,-3.781054,-38.587176,,
+46,134,202,extremidade,Rua Dom Expedito Lopes,Rua Osvaldo Cruz (sul),Ciclofaixas,Ciclofaixas,0.0,False,0.0,,-3.744376,-38.503284,,
+47,204,247,extremidade,Rua Júlio Gaspar (parte 1),Rua Júlio Gaspar (parte 2),Ciclofaixas,Ciclofaixas,0.1,False,0.0,,-3.783789,-38.561533,,
+48,208,247,extremidade,Rua Dr. Manoel Teófilo,Rua Júlio Gaspar (parte 2),Ciclofaixas,Ciclofaixas,0.1,False,0.0,,-3.783789,-38.561532,,
+49,172,210,extremidade,Av. Mons. Carneiro da Cunha (parte 2),Rua Rev. Bolivar Pinto Bandeira,Ciclofaixas,Ciclofaixas,2.5,False,0.0,,-3.77501,-38.493856,,
+50,212,374,extremidade,Rua César Fonseca,Rua Des. Lauro Nogueira,Ciclofaixas,Ciclofaixas,0.7,False,0.0,,-3.741903,-38.472593,,
+51,103,217,extremidade,Rua Vital Brasil,Perimetral (S/N) - parte 2,Ciclofaixas,Ciclofaixas,1.8,False,0.0,,-3.781059,-38.587151,,
+52,217,218,extremidade,Perimetral (S/N) - parte 2,Perimetral (N/S) - parte 2,Ciclofaixas,Ciclofaixas,5.7,False,0.0,,-3.753525,-38.582651,,
+53,219,308,extremidade,Av. Duque de Caxias (parte 1),Rua Nogueira Acioli (parte 1),Ciclofaixas,Ciclofaixas,2.2,False,0.0,,-3.735447,-38.518715,,
+54,219,235,extremidade,Av. Duque de Caxias (parte 1),Av. Duque de Caxias (parte 2),Ciclofaixas,Ciclofaixas,0.7,False,0.0,,-3.729698,-38.536287,,
+55,221,242,extremidade,Rua Jacinto Matos,Av. Pres. Castelo Branco (parte 1),Ciclofaixas,Ciclofaixas,0.1,False,0.0,,-3.714666,-38.54627,,
+56,223,393,extremidade,Av. José Jatahy (parte 3),Av. Francisco Sá,Ciclofaixas,Ciclofaixas,4.9,False,0.0,,-3.720859,-38.546775,,
+57,172,238,extremidade,Av. Mons. Carneiro da Cunha (parte 2),Av. Pinto Bandeira (parte 2),Ciclofaixas,Ciclofaixas,0.0,False,0.0,,-3.77698,-38.487858,,
+58,202,262,extremidade,Rua Osvaldo Cruz (sul),Rua Eduardo Bezerra,Ciclofaixas,Ciclofaixas,0.2,False,0.0,,-3.753101,-38.505927,,
+59,268,278,extremidade,Rua Prof. Carvalho,Rua Mons. Salazar,Ciclofaixas,Ciclofaixas,3.6,False,0.0,,-3.756146,-38.514318,,
+60,269,278,extremidade,Rua Capitão Melo,Rua Mons. Salazar,Ciclofaixas,Ciclofaixas,3.8,False,0.0,,-3.756041,-38.513169,,
+61,270,278,extremidade,Rua Escrivão Pinheiro,Rua Mons. Salazar,Ciclofaixas,Ciclofaixas,4.9,False,0.0,,-3.755556,-38.507876,,
+62,71,281,extremidade,Av. José Bastos,Rua José Façanha,Ciclovias,Ciclofaixas,3.1,False,0.0,,-3.754305,-38.554835,,
+63,173,284,extremidade,Av. José Jatahy (parte 2),Rua Dom Manuel de Medeiros,Ciclofaixas,Ciclofaixas,0.2,False,0.0,,-3.735041,-38.544246,,
+64,297,301,extremidade,Rua Ver. Pedro Paulo,Rua Gal. Caiado de Castro,Ciclofaixas,Ciclofaixas,1.1,False,0.0,,-3.787002,-38.488971,,
+65,211,299,extremidade,Av. Oliveira Paiva,Rua Júnior Rocha,Ciclofaixas,Ciclofaixas,0.1,False,0.0,,-3.796169,-38.488223,,
+66,300,303,extremidade,Rua Pe. Januário Campos,Av. José Leon (parte 1),Ciclofaixas,Ciclofaixas,1.2,False,0.0,,-3.790953,-38.48911,,
+67,211,300,extremidade,Av. Oliveira Paiva,Rua Pe. Januário Campos,Ciclofaixas,Ciclofaixas,0.0,False,0.0,,-3.796001,-38.489653,,
+68,301,303,extremidade,Rua Gal. Caiado de Castro,Av. José Leon (parte 1),Ciclofaixas,Ciclofaixas,0.2,False,0.0,,-3.790854,-38.489457,,
+69,13,304,extremidade,Av. Eng. Humberto Monte,Rua José de Pontes,Ciclovias,Ciclofaixas,2.1,False,0.0,,-3.739463,-38.568576,,
+70,16,305,extremidade,Av. Bezerra de Menezes,Ligação Bezerra - Parsifal Barroso 1,Ciclovias,Ciclofaixas,0.4,False,0.0,,-3.736472,-38.568387,,
+71,309,311,extremidade,Rua Cônego Braveza,Rua José Alves Cavalcante,Ciclofaixas,Ciclofaixas,6.0,False,0.0,,-3.791552,-38.500674,,
+72,228,310,extremidade,Rua Marechal Lott,Rua Chico Lemos,Ciclofaixas,Ciclofaixas,9.5,False,0.0,,-3.800737,-38.494948,,
+73,310,357,extremidade,Rua Chico Lemos,Av. José Leon (parte 2),Ciclofaixas,Ciclofaixas,7.0,False,0.0,,-3.788163,-38.500494,,
+74,185,311,extremidade,Av. Des. Gonzaga,Rua José Alves Cavalcante,Ciclofaixas,Ciclofaixas,2.1,False,0.0,,-3.7922,-38.502192,,
+75,261,314,extremidade,Rua Prof. Otávio Lobo,Rua Andrade Furtado (parte 2),Ciclofaixas,Ciclofaixas,1.4,False,0.0,,-3.745774,-38.479677,,
+76,192,319,extremidade,Perimetral (N/S) - parte 1,Av. Gen. Osório de Paiva (parte 2),Ciclofaixas,Ciclofaixas,3.1,False,0.0,,-3.790917,-38.588651,,
+77,327,334,extremidade,Rua Guerra Junqueiro,Rua Gov. João Carlos,Ciclofaixas,Ciclofaixas,2.0,False,0.0,,-3.780006,-38.552353,,
+78,101,343,extremidade,Rua Carlos Vasconcelos,Rua Pe. Luís Figueira,Ciclofaixas,Ciclofaixas,0.4,False,0.0,,-3.733467,-38.510984,,
+79,308,343,extremidade,Rua Nogueira Acioli (parte 1),Rua Pe. Luís Figueira,Ciclofaixas,Ciclofaixas,0.3,False,0.0,,-3.731499,-38.517299,,
+80,346,395,extremidade,Av. G (José Walter),Av. I,Ciclofaixas,Ciclofaixas,4.8,False,0.0,,-3.839067,-38.554951,,
+81,348,349,extremidade,Rua Livino de Carvalho (Ligação Montese),Rua Equador (Ligação Montese),Ciclofaixas,Ciclofaixas,0.6,False,0.0,,-3.773482,-38.552165,,
+82,349,391,extremidade,Rua Equador (Ligação Montese),Rua da Saudade / Rua Aquiles Bóris,Ciclofaixas,Ciclofaixas,7.8,False,0.0,,-3.769044,-38.55078,,
+83,349,350,extremidade,Rua Equador (Ligação Montese),Rua Elcias Lopes (Ligação Montese),Ciclofaixas,Ciclofaixas,1.1,False,0.0,,-3.772437,-38.551916,,
+84,152,354,extremidade,Av. Domingos Olímpio (parte 1),Av. da Universidade,Ciclofaixas,Ciclofaixas,8.0,False,0.0,,-3.735626,-38.534206,,
+85,356,390,extremidade,Av. dos Expedicionários (parte 1),Av. dos Expedicionários,Ciclofaixas,Ciclofaixas,4.7,False,0.0,,-3.769567,-38.542604,,
+86,356,389,extremidade,Av. dos Expedicionários (parte 1),Raul Cabral / Isaie Boris,Ciclofaixas,Ciclofaixas,3.3,False,0.0,,-3.769561,-38.542602,,
+87,356,358,extremidade,Av. dos Expedicionários (parte 1),Av. dos Expedicionários (parte 2),Ciclofaixas,Ciclofaixas,6.6,False,0.0,,-3.74507,-38.535096,,
+88,97,359,extremidade,Av. Dom Luís,Rua Barbosa de Freitas,Ciclofaixas,Ciclofaixas,0.9,False,0.0,,-3.733635,-38.496441,,
+89,67,362,extremidade,Av. Pres. Castelo Branco (parte 3),Rua Adolfo Caminha,Ciclovias,Ciclofaixas,0.8,False,0.0,,-3.720995,-38.528195,,
+90,41,365,extremidade,Av. Germano Franck,Rua Cônego Lima Sucupira (parte 2),Ciclovias,Ciclofaixas,0.4,False,0.0,,-3.775177,-38.559566,,
+91,16,366,extremidade,Av. Bezerra de Menezes,Av. José Jatahy (parte 4),Ciclovias,Ciclofaixas,1.2,False,0.0,,-3.731557,-38.544866,,
+92,322,369,extremidade,Rua Min. Joaquim Bastos,Av. Dep. Oswaldo Studart (parte 3),Ciclofaixas,Ciclofaixas,0.1,False,0.0,,-3.753678,-38.528342,,
+93,321,371,extremidade,Rua Mário Mamede,Av. Dep. Oswaldo Studart (parte 4),Ciclofaixas,Ciclofaixas,0.1,False,0.0,,-3.752726,-38.52738,,
+94,373,375,extremidade,Av. Santos Dumont (praia do futuro),Av. Santos Dumont (trecho papicu 2),Ciclofaixas,Ciclofaixas,0.3,False,0.0,,-3.745491,-38.469659,,
+95,349,379,extremidade,Rua Equador (Ligação Montese),Rua Dom Carloto Távora (Ligação Montese),Ciclofaixas,Ciclofaixas,0.4,False,0.0,,-3.771489,-38.551634,,
+96,261,387,extremidade,Rua Prof. Otávio Lobo,Rua Bento Albuquerque,Ciclofaixas,Ciclofaixas,0.3,False,0.0,,-3.745029,-38.47921,,
+97,313,388,extremidade,Av. Pe. Antônio Tomás (parte 3),Valdetário Mota,Ciclofaixas,Ciclofaixas,0.6,False,0.0,,-3.744133,-38.485235,,
+98,351,389,extremidade,Rua Antônio Fiúza (Ligação Montese),Raul Cabral / Isaie Boris,Ciclofaixas,Ciclofaixas,2.3,False,0.0,,-3.76847,-38.551596,,
+99,389,390,extremidade,Raul Cabral / Isaie Boris,Av. dos Expedicionários,Ciclofaixas,Ciclofaixas,1.3,False,0.0,,-3.769581,-38.542609,,
+100,171,394,extremidade,Av. João de Araújo Lima,Av. H,Ciclofaixas,Ciclofaixas,8.4,False,0.0,,-3.840233,-38.562218,,
+101,67,397,extremidade,Av. Pres. Castelo Branco (parte 3),Av. Filomeno Gomes,Ciclovias,Ciclofaixas,2.0,False,0.0,,-3.715511,-38.542038,,
+102,60,398,extremidade,Av. Parsifal Barroso,Av. Sargento Heminio,Ciclovias,Ciclofaixas,1.0,False,0.0,,-3.727995,-38.569291,,
+103,71,399,extremidade,Av. José Bastos,Rua Pe. Cícero,Ciclovias,Ciclofaixas,0.4,False,0.0,,-3.744412,-38.544922,,
+104,284,401,extremidade,Rua Dom Manuel de Medeiros,Rua Prof. Nogueira,Ciclofaixas,Ciclofaixas,0.6,False,0.0,,-3.73607,-38.549313,,
+105,16,123,cruzamento,Av. Bezerra de Menezes,Rua Érico Mota,Ciclovias,Ciclofaixas,0.0,False,0.0,,-3.735359,-38.56305,,
+106,27,384,cruzamento,Rio Maranguapinho Leste (Autran Nunes),Av. Porto Velho,Ciclovias,Ciclofaixas,0.0,False,0.0,,-3.76185,-38.594744,,
+107,46,102,cruzamento,Rio Maranguapinho Leste (Bonsucesso),Rua Emílio de Menezes,Ciclovias,Ciclofaixas,0.0,False,0.0,,-3.7799,-38.593954,,
+108,48,199,cruzamento,Av. Aguanambi,Rua Pe. Miguelino/Pe. Matos Serra,Ciclovias,Ciclofaixas,0.0,False,0.0,,-3.744064,-38.525639,,
+109,48,198,cruzamento,Av. Aguanambi,Rua Coronel Solon/Saldanha Marinho,Ciclovias,Ciclofaixas,0.0,False,0.0,,-3.742862,-38.525832,,
+110,60,305,cruzamento,Av. Parsifal Barroso,Ligação Bezerra - Parsifal Barroso 1,Ciclovias,Ciclofaixas,0.0,False,0.0,,-3.733625,-38.568978,,
+111,72,94,cruzamento,Av. Des. Moreira,Rua Canuto de Aguiar,Ciclovias,Ciclofaixas,0.0,False,0.0,,-3.730314,-38.496433,,
+112,72,95,cruzamento,Av. Des. Moreira,Rua Ana Bilhar (parte 1),Ciclovias,Ciclofaixas,0.0,False,0.0,,-3.729343,-38.496117,,
+113,94,201,cruzamento,Rua Canuto de Aguiar,Rua Joaquim Nabuco,Ciclofaixas,Ciclofaixas,0.0,False,0.0,,-3.729357,-38.499398,,
+114,94,203,cruzamento,Rua Canuto de Aguiar,Rua Osvaldo Cruz (norte),Ciclofaixas,Ciclofaixas,0.0,False,0.0,,-3.729695,-38.498392,,
+115,95,201,cruzamento,Rua Ana Bilhar (parte 1),Rua Joaquim Nabuco,Ciclofaixas,Ciclofaixas,0.0,False,0.0,,-3.72837,-38.499087,,
+116,95,203,cruzamento,Rua Ana Bilhar (parte 1),Rua Osvaldo Cruz (norte),Ciclofaixas,Ciclofaixas,0.0,False,0.0,,-3.728704,-38.498071,,
+117,96,98,cruzamento,Av. Santos Dumont (trecho antes do binário),Av. Rui Barbosa,Ciclofaixas,Ciclofaixas,0.0,False,0.0,,-3.732966,-38.508435,,
+118,96,101,cruzamento,Av. Santos Dumont (trecho antes do binário),Rua Carlos Vasconcelos,Ciclofaixas,Ciclofaixas,0.0,False,0.0,,-3.732257,-38.510591,,
+119,97,201,cruzamento,Av. Dom Luís,Rua Joaquim Nabuco,Ciclofaixas,Ciclofaixas,0.0,False,0.0,,-3.732352,-38.500344,,
+120,97,203,cruzamento,Av. Dom Luís,Rua Osvaldo Cruz (norte),Ciclofaixas,Ciclofaixas,0.0,False,0.0,,-3.732673,-38.499357,,
+121,98,262,cruzamento,Av. Rui Barbosa,Rua Eduardo Bezerra,Ciclofaixas,Ciclofaixas,0.0,False,0.0,,-3.75383,-38.513575,,
+122,98,100,cruzamento,Av. Rui Barbosa,Av. Antônio Sales (parte 1),Ciclofaixas,Ciclofaixas,0.0,False,0.0,,-3.742557,-38.511536,,
+123,98,372,cruzamento,Av. Rui Barbosa,Rua Eduardo Salgado,Ciclofaixas,Ciclofaixas,0.0,False,0.0,,-3.733993,-38.508768,,
+124,100,202,cruzamento,Av. Antônio Sales (parte 1),Rua Osvaldo Cruz (sul),Ciclofaixas,Ciclofaixas,0.0,False,0.0,,-3.745093,-38.503447,,
+125,100,201,cruzamento,Av. Antônio Sales (parte 1),Rua Joaquim Nabuco,Ciclofaixas,Ciclofaixas,0.0,False,0.0,,-3.744812,-38.504344,,
+126,100,195,cruzamento,Av. Antônio Sales (parte 1),Av. Sen. Virgílio Távora,Ciclofaixas,Ciclofaixas,0.0,False,0.0,,-3.747265,-38.496521,,
+127,100,359,cruzamento,Av. Antônio Sales (parte 1),Rua Barbosa de Freitas,Ciclofaixas,Ciclofaixas,0.0,False,0.0,,-3.746038,-38.500434,,
+128,100,101,cruzamento,Av. Antônio Sales (parte 1),Rua Carlos Vasconcelos,Ciclofaixas,Ciclofaixas,0.0,False,0.0,,-3.741876,-38.513708,,
+129,101,262,cruzamento,Rua Carlos Vasconcelos,Rua Eduardo Bezerra,Ciclofaixas,Ciclofaixas,0.0,False,0.0,,-3.753941,-38.514746,,
+130,101,133,cruzamento,Rua Carlos Vasconcelos,Rua João Brígido (parte 1),Ciclofaixas,Ciclofaixas,0.0,False,0.0,,-3.741335,-38.513533,,
+131,102,193,cruzamento,Rua Emílio de Menezes,Perimetral (S/N) - parte 1,Ciclofaixas,Ciclofaixas,0.0,False,0.0,,-3.781755,-38.587389,,
+132,102,192,cruzamento,Rua Emílio de Menezes,Perimetral (N/S) - parte 1,Ciclofaixas,Ciclofaixas,0.0,False,0.0,,-3.78135,-38.588821,,
+133,102,147,cruzamento,Rua Emílio de Menezes,Rua Maria Júlia (parte 1),Ciclofaixas,Ciclofaixas,0.0,False,0.0,,-3.779278,-38.596156,,
+134,104,258,cruzamento,Rua Oscar França,Rua Raimundo Pinheiro,Ciclofaixas,Ciclofaixas,0.0,False,0.0,,-3.792422,-38.598072,,
+135,104,248,cruzamento,Rua Oscar França,Rua Maria Júlia (parte 2),Ciclofaixas,Ciclofaixas,0.0,False,0.0,,-3.791879,-38.599729,,
+136,104,256,cruzamento,Rua Oscar França,Av. Cel. Virgílio Nogueira,Ciclofaixas,Ciclofaixas,0.0,False,0.0,,-3.788923,-38.6088,,
+137,104,146,cruzamento,Rua Oscar França,Rua Ari Maia (parte 2),Ciclofaixas,Ciclofaixas,0.0,False,0.0,,-3.784955,-38.621811,,
+138,105,258,cruzamento,Rua Oscar Araripe,Rua Raimundo Pinheiro,Ciclofaixas,Ciclofaixas,0.0,False,0.0,,-3.791679,-38.597838,,
+139,105,248,cruzamento,Rua Oscar Araripe,Rua Maria Júlia (parte 2),Ciclofaixas,Ciclofaixas,0.0,False,0.0,,-3.79115,-38.599499,,
+140,105,256,cruzamento,Rua Oscar Araripe,Av. Cel. Virgílio Nogueira,Ciclofaixas,Ciclofaixas,0.0,False,0.0,,-3.788221,-38.608573,,
+141,105,146,cruzamento,Rua Oscar Araripe,Rua Ari Maia (parte 2),Ciclofaixas,Ciclofaixas,0.0,False,0.0,,-3.784274,-38.621616,,
+142,109,285,cruzamento,Rua José de Barcelos,Rua Pe. Guerra,Ciclofaixas,Ciclofaixas,0.0,False,0.0,,-3.737382,-38.55017,,
+143,109,284,cruzamento,Rua José de Barcelos,Rua Dom Manuel de Medeiros,Ciclofaixas,Ciclofaixas,0.0,False,0.0,,-3.736299,-38.550395,,
+144,111,285,cruzamento,Rua Raimundo Arruda,Rua Pe. Guerra,Ciclofaixas,Ciclofaixas,0.0,False,0.0,,-3.737604,-38.551241,,
+145,111,284,cruzamento,Rua Raimundo Arruda,Rua Dom Manuel de Medeiros,Ciclofaixas,Ciclofaixas,0.0,False,0.0,,-3.736527,-38.551461,,
+146,115,265,cruzamento,Rua Alberto Magno,Rua Almirante Rufino,Ciclofaixas,Ciclofaixas,0.0,False,0.0,,-3.76208,-38.547544,,
+147,115,264,cruzamento,Rua Alberto Magno,Rua Des. Praxedes,Ciclofaixas,Ciclofaixas,0.0,False,0.0,,-3.761247,-38.546815,,
+148,115,128,cruzamento,Rua Alberto Magno,Rua André Chaves,Ciclofaixas,Ciclofaixas,0.0,False,0.0,,-3.756017,-38.542242,,
+149,116,265,cruzamento,Av. Prof. Gomes de Matos (parte 1),Rua Almirante Rufino,Ciclofaixas,Ciclofaixas,0.0,False,0.0,,-3.762594,-38.546887,,
+150,116,264,cruzamento,Av. Prof. Gomes de Matos (parte 1),Rua Des. Praxedes,Ciclofaixas,Ciclofaixas,0.0,False,0.0,,-3.761861,-38.546258,,
+151,116,128,cruzamento,Av. Prof. Gomes de Matos (parte 1),Rua André Chaves,Ciclofaixas,Ciclofaixas,0.0,False,0.0,,-3.756375,-38.54155,,
+152,123,285,cruzamento,Rua Érico Mota,Rua Pe. Guerra,Ciclofaixas,Ciclofaixas,0.0,False,0.0,,-3.73986,-38.562111,,
+153,131,195,cruzamento,Rua Gen. Tertuliano Potiguara,Av. Sen. Virgílio Távora,Ciclofaixas,Ciclofaixas,0.0,False,0.0,,-3.744739,-38.495705,,
+154,131,359,cruzamento,Rua Gen. Tertuliano Potiguara,Rua Barbosa de Freitas,Ciclofaixas,Ciclofaixas,0.0,False,0.0,,-3.743458,-38.499603,,
+155,133,308,cruzamento,Rua João Brígido (parte 1),Rua Nogueira Acioli (parte 1),Ciclofaixas,Ciclofaixas,0.0,False,0.0,,-3.739252,-38.520043,,
+156,134,201,cruzamento,Rua Dom Expedito Lopes,Rua Joaquim Nabuco,Ciclofaixas,Ciclofaixas,0.0,False,0.0,,-3.744118,-38.504116,,
+157,140,285,cruzamento,Rua General Piragibe,Rua Pe. Guerra,Ciclofaixas,Ciclofaixas,0.0,False,0.0,,-3.738952,-38.557736,,
+158,140,284,cruzamento,Rua General Piragibe,Rua Dom Manuel de Medeiros,Ciclofaixas,Ciclofaixas,0.0,False,0.0,,-3.737871,-38.557974,,
+159,142,285,cruzamento,Rua Dom Lino,Rua Pe. Guerra,Ciclofaixas,Ciclofaixas,0.0,False,0.0,,-3.738723,-38.556631,,
+160,142,284,cruzamento,Rua Dom Lino,Rua Dom Manuel de Medeiros,Ciclofaixas,Ciclofaixas,0.0,False,0.0,,-3.737646,-38.556862,,
+161,152,338,cruzamento,Av. Domingos Olímpio (parte 1),Av. Imperador,Ciclofaixas,Ciclofaixas,0.0,False,0.0,,-3.734836,-38.536679,,
+162,185,211,cruzamento,Av. Des. Gonzaga,Av. Oliveira Paiva,Ciclofaixas,Ciclofaixas,0.0,False,0.0,,-3.797153,-38.499946,,
+163,190,357,cruzamento,Av. Rogaciano Leite,Av. José Leon (parte 2),Ciclofaixas,Ciclofaixas,0.0,False,0.0,,-3.787338,-38.503471,,
+164,191,193,cruzamento,Av. Gen. Osório de Paiva (parte 1),Perimetral (S/N) - parte 1,Ciclofaixas,Ciclofaixas,0.0,False,0.0,,-3.790321,-38.588073,,
+165,195,339,cruzamento,Av. Sen. Virgílio Távora,Rua Des. Leite Albuquerque,Ciclofaixas,Ciclofaixas,0.0,False,0.0,,-3.738806,-38.493788,,
+166,195,240,cruzamento,Av. Sen. Virgílio Távora,Av. Santos Dumont (trecho binário),Ciclofaixas,Ciclofaixas,0.0,False,0.0,,-3.737854,-38.49348,,
+167,198,316,cruzamento,Rua Coronel Solon/Saldanha Marinho,Rua Jaime Benévolo,Ciclofaixas,Ciclofaixas,0.0,False,0.0,,-3.743016,-38.529018,,
+168,198,317,cruzamento,Rua Coronel Solon/Saldanha Marinho,Rua Barão de Aratanha,Ciclofaixas,Ciclofaixas,0.0,False,0.0,,-3.742796,-38.529698,,
+169,199,316,cruzamento,Rua Pe. Miguelino/Pe. Matos Serra,Rua Jaime Benévolo,Ciclofaixas,Ciclofaixas,0.0,False,0.0,,-3.744056,-38.529383,,
+170,199,317,cruzamento,Rua Pe. Miguelino/Pe. Matos Serra,Rua Barão de Aratanha,Ciclofaixas,Ciclofaixas,0.0,False,0.0,,-3.743843,-38.530042,,
+171,201,262,cruzamento,Rua Joaquim Nabuco,Rua Eduardo Bezerra,Ciclofaixas,Ciclofaixas,0.0,False,0.0,,-3.753213,-38.507098,,
+172,201,240,cruzamento,Rua Joaquim Nabuco,Av. Santos Dumont (trecho binário),Ciclofaixas,Ciclofaixas,0.0,False,0.0,,-3.735316,-38.501279,,
+173,203,339,cruzamento,Rua Osvaldo Cruz (norte),Rua Des. Leite Albuquerque,Ciclofaixas,Ciclofaixas,0.0,False,0.0,,-3.736595,-38.500627,,
+174,203,240,cruzamento,Rua Osvaldo Cruz (norte),Av. Santos Dumont (trecho binário),Ciclofaixas,Ciclofaixas,0.0,False,0.0,,-3.73563,-38.500314,,
+175,205,335,cruzamento,Rua Castro e Silva (parte 1),Rua Floriano Peixoto,Ciclofaixas,Ciclofaixas,0.0,False,0.0,,-3.724275,-38.526107,,
+176,209,261,cruzamento,Av. Santos Dumont (trecho papicu 1),Rua Prof. Otávio Lobo,Ciclofaixas,Ciclofaixas,0.0,False,0.0,,-3.742844,-38.477831,,
+177,211,309,cruzamento,Av. Oliveira Paiva,Rua Cônego Braveza,Ciclofaixas,Ciclofaixas,0.0,False,0.0,,-3.796473,-38.498485,,
+178,211,310,cruzamento,Av. Oliveira Paiva,Rua Chico Lemos,Ciclofaixas,Ciclofaixas,0.0,False,0.0,,-3.795837,-38.497118,,
+179,217,384,cruzamento,Perimetral (S/N) - parte 2,Av. Porto Velho,Ciclofaixas,Ciclofaixas,0.0,False,0.0,,-3.766065,-38.586864,,
+180,218,384,cruzamento,Perimetral (N/S) - parte 2,Av. Porto Velho,Ciclofaixas,Ciclofaixas,0.0,False,0.0,,-3.765183,-38.588499,,
+181,219,337,cruzamento,Av. Duque de Caxias (parte 1),Av. Tristão Gonçalves,Ciclofaixas,Ciclofaixas,0.0,False,0.0,,-3.730389,-38.534184,,
+182,219,338,cruzamento,Av. Duque de Caxias (parte 1),Av. Imperador,Ciclofaixas,Ciclofaixas,0.0,False,0.0,,-3.730037,-38.53526,,
+183,240,359,cruzamento,Av. Santos Dumont (trecho binário),Rua Barbosa de Freitas,Ciclofaixas,Ciclofaixas,0.0,False,0.0,,-3.736582,-38.49739,,
+184,264,355,cruzamento,Rua Des. Praxedes,Av. Luciano Carneiro (parte 2),Ciclofaixas,Ciclofaixas,0.0,False,0.0,,-3.764964,-38.536701,,
+185,264,356,cruzamento,Rua Des. Praxedes,Av. dos Expedicionários (parte 1),Ciclofaixas,Ciclofaixas,0.0,False,0.0,,-3.763709,-38.540816,,
+186,265,355,cruzamento,Rua Almirante Rufino,Av. Luciano Carneiro (parte 2),Ciclofaixas,Ciclofaixas,0.0,False,0.0,,-3.766567,-38.537197,,
+187,265,356,cruzamento,Rua Almirante Rufino,Av. dos Expedicionários (parte 1),Ciclofaixas,Ciclofaixas,0.0,False,0.0,,-3.765289,-38.541298,,
+188,285,401,cruzamento,Rua Pe. Guerra,Rua Prof. Nogueira,Ciclofaixas,Ciclofaixas,0.0,False,0.0,,-3.737157,-38.549087,,
+189,297,299,cruzamento,Rua Ver. Pedro Paulo,Rua Júnior Rocha,Ciclofaixas,Ciclofaixas,0.0,False,0.0,,-3.787192,-38.487352,,
+190,310,311,cruzamento,Rua Chico Lemos,Rua José Alves Cavalcante,Ciclofaixas,Ciclofaixas,0.0,False,0.0,,-3.790909,-38.4993,,
+191,315,376,cruzamento,Rua Bento Albuquerque,Rua Francisco Matos,Ciclofaixas,Ciclofaixas,0.0,False,0.0,,-3.747854,-38.470378,,
+192,327,333,cruzamento,Rua Guerra Junqueiro,Rua Dr. Justa Araújo,Ciclofaixas,Ciclofaixas,0.0,False,0.0,,-3.780235,-38.551632,,
+193,334,365,cruzamento,Rua Gov. João Carlos,Rua Cônego Lima Sucupira (parte 2),Ciclofaixas,Ciclofaixas,0.0,False,0.0,,-3.777949,-38.551537,,
+194,336,337,cruzamento,Rua Pedro Pereira,Av. Tristão Gonçalves,Ciclofaixas,Ciclofaixas,0.0,False,0.0,,-3.728049,-38.533475,,
+195,336,338,cruzamento,Rua Pedro Pereira,Av. Imperador,Ciclofaixas,Ciclofaixas,0.0,False,0.0,,-3.727696,-38.534567,,
+196,339,359,cruzamento,Rua Des. Leite Albuquerque,Rua Barbosa de Freitas,Ciclofaixas,Ciclofaixas,0.0,False,0.0,,-3.737542,-38.497698,,
+197,368,384,cruzamento,Av. Lineu Machado,Av. Porto Velho,Ciclofaixas,Ciclofaixas,0.0,False,0.0,,-3.770203,-38.579167,,
+198,11,93,extremidade,Av. Godofredo Maciel,Av. Benjamim Brasil,Ciclovias,Ciclofaixas,9.2,True,16.11,,-3.803285,-38.572034,crítica,11_93.png
+199,2,263,extremidade,Av. Washington Soares,Rua Joaquim Frota,Ciclovias,Ciclofaixas,0.0,True,13.75,,-3.801995,-38.479418,crítica,2_263.png
+200,179,263,cruzamento,Av. Eng. Leal Lima Verde,Rua Joaquim Frota,Ciclofaixas,Ciclofaixas,0.0,True,12.8,,-3.801605,-38.47519,crítica,179_263.png
+201,17,179,extremidade,Av. Maestro Lisboa,Av. Eng. Leal Lima Verde,Ciclovias,Ciclofaixas,2.1,True,10.73,,-3.807861,-38.474667,crítica,17_179.png
+202,0,367,extremidade,Av. Gen. Osório de Paiva,Av. José Tavares,Ciclovias,Ciclofaixas,2.5,True,6.54,,-3.808134,-38.605431,crítica,0_367.png
+203,89,367,extremidade,Rio Maranguapinho Leste - parte 3,Av. José Tavares,Ciclovias,Ciclofaixas,9.8,True,4.79,,-3.811326,-38.600437,crítica,89_367.png
+204,17,45,extremidade,Av. Maestro Lisboa,Av. Sabiaguaba (CE-010),Ciclovias,Ciclovias,7.7,True,4.61,ponte/viaduto Rodovia Deputado Joaquim Noronha Mota,-3.810637,-38.429001,crítica,17_45.png
+205,62,403,extremidade,Av. Alberto Craveiro (parte 2),Av. Alberto Craveiro,Ciclovias,Ciclofaixas,0.6,True,4.25,,-3.786108,-38.517128,crítica,62_403.png
+206,0,250,extremidade,Av. Gen. Osório de Paiva,Rua Pedro Martins (parte 2),Ciclovias,Ciclofaixas,0.0,True,4.21,,-3.800834,-38.598318,crítica,0_250.png
+207,37,57,extremidade,Av. Beira Mar (parte 1),Av. Beira Mar (parte 2),Ciclovias,Ciclovias,0.3,True,3.44,,-3.725505,-38.491556,crítica,37_57.png
+208,12,77,extremidade,Av. D (José Walter),Avenida D,Ciclovias,Ciclovias,9.1,True,2.98,,-3.832512,-38.552871,crítica,12_77.png
+209,277,382,cruzamento,Av. Major Assis,Av. Coronel Carvalho,Ciclofaixas,Ciclofaixas,0.0,True,2.91,,-3.723766,-38.586269,crítica,277_382.png
+210,54,55,extremidade,Rio Maranguapinho Oeste (Canindezinho) - parte 2,Rua Francisco,Ciclovias,Ciclovias,0.4,True,2.62,,-3.818828,-38.613284,crítica,54_55.png
+211,136,236,extremidade,Rotatória Castelão,Av. Juscelino Kubitschek (parte 1),Ciclofaixas,Ciclofaixas,0.4,True,2.54,,-3.80761,-38.525166,crítica,136_236.png
+212,23,55,extremidade,Rio Maranguapinho Leste (Canindezinho) - parte 1,Rua Francisco,Ciclovias,Ciclovias,0.8,True,2.47,ponte/viaduto Ciclovia Rua Francisco,-3.819639,-38.612147,crítica,23_55.png
+213,280,373,extremidade,Av. Dolor Barreira (parte 1),Av. Santos Dumont (praia do futuro),Ciclofaixas,Ciclofaixas,4.4,True,2.39,,-3.747369,-38.46371,crítica,280_373.png
+214,271,382,cruzamento,Av. Washington Luiz,Av. Coronel Carvalho,Ciclofaixas,Ciclofaixas,0.0,True,1.78,,-3.717474,-38.587947,crítica,271_382.png
+215,283,384,extremidade,Rua José Mendonça,Av. Porto Velho,Ciclofaixas,Ciclofaixas,5.2,True,1.65,,-3.760256,-38.602736,crítica,283_384.png
+216,11,206,extremidade,Av. Godofredo Maciel,Rua Antônio Bandeira,Ciclovias,Ciclofaixas,3.4,True,1.64,,-3.783268,-38.565825,crítica,11_206.png
+217,186,188,extremidade,Rua Taquatiara,Rua Herbene,Ciclofaixas,Ciclofaixas,4.0,True,1.62,,-3.829824,-38.504209,crítica,186_188.png
+218,2,153,extremidade,Av. Washington Soares,Rua João Oliveira,Ciclovias,Ciclofaixas,3.1,True,1.6,,-3.823642,-38.481338,crítica,2_153.png
+219,4,58,extremidade,Av. Pompílio Gomes (parte 1),Av. Pompílio Gomes (parte 5),Ciclovias,Ciclovias,0.8,True,1.49,,-3.823489,-38.521276,crítica,4_58.png
+220,190,402,extremidade,Av. Rogaciano Leite,Av. Murilo Borges,Ciclofaixas,Ciclofaixas,0.1,True,1.32,,-3.767823,-38.497002,crítica,190_402.png
+221,148,163,extremidade,Rua Rio Grande do Sul,Rua Pernambuco,Ciclofaixas,Ciclofaixas,1.1,True,1.25,,-3.760011,-38.568464,crítica,148_163.png
+222,11,194,extremidade,Av. Godofredo Maciel,Rua Nereu Ramos,Ciclovias,Ciclofaixas,0.6,True,1.24,,-3.787158,-38.566825,crítica,11_194.png
+223,228,383,extremidade,Rua Marechal Lott,Av. Eng. Agronômo José Guimarães Duque,Ciclofaixas,Ciclofaixas,3.9,True,1.01,,-3.801656,-38.496786,crítica,228_383.png
+224,229,289,cruzamento,Rua Guarujá (Rua Chico França),Rua Angélica Gurgel,Ciclofaixas,Ciclofaixas,0.0,True,0.99,,-3.834794,-38.499088,crítica,229_289.png
+225,50,59,extremidade,Rio Cocó Leste (Barroso) - parte 1,Av. Pompílio Gomes (parte 6),Ciclovias,Ciclovias,5.9,True,0.86,ponte/viaduto Avenida Pompílio Gomes,-3.824823,-38.521299,crítica,50_59.png
+226,145,283,extremidade,Av. D (Cj. Ceará),Rua José Mendonça,Ciclofaixas,Ciclofaixas,3.3,True,0.82,,-3.76183,-38.603039,crítica,145_283.png
+227,28,136,cruzamento,Av. Dep. Paulino Rocha,Rotatória Castelão,Ciclovias,Ciclofaixas,0.0,True,0.79,ponte/viaduto ; ponte/viaduto Rotatória do Castelão,-3.806926,-38.525143,crítica,28_136.png
+228,52,367,extremidade,Rio Maranguapinho Leste (Canindezinho) - parte 2,Av. José Tavares,Ciclovias,Ciclofaixas,1.1,True,0.78,,-3.811955,-38.599314,crítica,52_367.png
+229,2,404,extremidade,Av. Washington Soares,Av. Edilson Brasil Soares,Ciclovias,Ciclofaixas,0.3,True,0.71,,-3.789451,-38.480518,crítica,2_404.png
+230,66,68,extremidade,Av. Viena Weyne (parte 1),Av. Viena Weyne (parte 3),Ciclovias,Ciclovias,0.9,True,0.68,,-3.801194,-38.488534,crítica,66_68.png
+231,4,272,extremidade,Av. Pompílio Gomes (parte 1),Av. Pompílio Gomes (parte 3),Ciclovias,Ciclofaixas,0.5,True,0.6,,-3.815513,-38.520894,crítica,4_272.png
+232,286,398,extremidade,Av. Cearenses,Av. Sargento Heminio,Ciclofaixas,Ciclofaixas,7.5,True,0.54,,-3.727531,-38.566731,crítica,286_398.png
+233,153,154,extremidade,Rua João Oliveira,Rua Letícia,Ciclofaixas,Ciclofaixas,0.2,True,0.29,,-3.821786,-38.492574,crítica,153_154.png
+234,11,35,extremidade,Av. Godofredo Maciel,Rua Miguel Aragão,Ciclovias,Ciclovias,5.0,True,0.28,,-3.83605,-38.582665,crítica,11_35.png
+235,14,306,extremidade,Av. Mister Hull,Ligação Bezerra - Parsifal Barroso 2,Ciclovias,Ciclofaixas,0.8,True,0.28,túnel,-3.736652,-38.569294,crítica,14_306.png
+236,68,344,extremidade,Av. Viena Weyne (parte 3),Rua Cândido Portinari,Ciclovias,Ciclofaixas,0.1,True,0.27,,-3.802233,-38.485027,crítica,68_344.png
+237,13,14,extremidade,Av. Eng. Humberto Monte,Av. Mister Hull,Ciclovias,Ciclovias,2.2,False,0.0,túnel,-3.736632,-38.569149,osm,13_14.png
+238,14,16,extremidade,Av. Mister Hull,Av. Bezerra de Menezes,Ciclovias,Ciclovias,1.4,False,0.0,túnel,-3.736632,-38.569153,osm,14_16.png
+239,1,94,extremidade,Via Expressa,Rua Canuto de Aguiar,Ciclovias,Ciclofaixas,2.1,False,0.0,ponte/viaduto ; túnel Avenida Engenheiro Alberto Sá,-3.732713,-38.483047,osm,1_94.png
+240,161,331,extremidade,Av. Eng. Santana Jr. (parte 1),Av. Pe. Antônio Tomás (parte 2),Ciclofaixas,Ciclofaixas,9.7,False,0.0,túnel ; túnel Avenida Engenheiro Santana Júnior,-3.744052,-38.487809,osm,161_331.png
+241,162,331,extremidade,Av. Pe. Antônio Tomás (parte 1),Av. Pe. Antônio Tomás (parte 2),Ciclofaixas,Ciclofaixas,0.8,False,0.0,túnel,-3.744051,-38.487676,osm,162_331.png
+242,225,227,extremidade,Av. Santos Dumont (trecho papicu 3),Av. Santos Dumont (alça),Ciclofaixas,Ciclofaixas,0.7,False,0.0,ponte/viaduto Avenida Engenheiro Santana Júnior,-3.740534,-38.485131,osm,225_227.png
+243,318,322,extremidade,Av. Eduardo Girão,Rua Min. Joaquim Bastos,Ciclofaixas,Ciclofaixas,8.3,False,0.0,ponte/viaduto Rua François Teles de Menezes,-3.755611,-38.526097,osm,318_322.png
+244,1,331,extremidade,Via Expressa,Av. Pe. Antônio Tomás (parte 2),Ciclovias,Ciclofaixas,0.1,False,0.0,túnel Avenida Padre Antônio Tomás,-3.743464,-38.48942,osm,1_331.png
+245,1,290,cruzamento,Via Expressa,Rua Santa Teresinha do Menino Jesus,Ciclovias,Ciclofaixas,0.0,False,0.0,ponte/viaduto ; ponte/viaduto Avenida Almirante Henrique Sabóia,-3.751604,-38.497164,osm,1_290.png
+246,1,225,cruzamento,Via Expressa,Av. Santos Dumont (trecho papicu 3),Ciclovias,Ciclofaixas,0.0,False,0.0,túnel Avenida Santos Dumont,-3.739786,-38.487503,osm,1_225.png
+247,1,232,cruzamento,Via Expressa,Av. Júlio Abreu/Av. Dom Luís,Ciclovias,Ciclofaixas,0.0,False,0.0,ponte/viaduto ; ponte/viaduto Avenida Almirante Henrique Sabóia,-3.7362,-38.485285,osm,1_232.png
+248,1,230,cruzamento,Via Expressa,Av. Antônio Sales (parte 2),Ciclovias,Ciclofaixas,0.0,False,0.0,ponte/viaduto ; ponte/viaduto Avenida Almirante Henrique Sabóia,-3.74838,-38.492942,osm,1_230.png
+249,31,71,cruzamento,Rua Prof. Costa Mendes,Av. José Bastos,Ciclovias,Ciclovias,0.0,False,0.0,ponte/viaduto ; ponte/viaduto Avenida José Bastos,-3.750762,-38.551247,osm,31_71.png
+250,42,71,cruzamento,Av. José Jatahy (parte 1),Av. José Bastos,Ciclovias,Ciclovias,0.0,False,0.0,ponte/viaduto ; ponte/viaduto Avenida José Jatahy,-3.742899,-38.543374,osm,42_71.png
+251,119,318,cruzamento,Rua Damasceno Girão (parte 1),Av. Eduardo Girão,Ciclofaixas,Ciclofaixas,0.0,False,0.0,ponte/viaduto ; ponte/viaduto Rua Damasceno Girão,-3.749061,-38.539271,osm,119_318.png
+252,225,341,cruzamento,Av. Santos Dumont (trecho papicu 3),Av. Eng. Santana Jr. (parte 2),Ciclofaixas,Ciclofaixas,0.0,False,0.0,ponte/viaduto Avenida Engenheiro Santana Júnior,-3.740522,-38.485181,osm,225_341.png
+253,318,355,cruzamento,Av. Eduardo Girão,Av. Luciano Carneiro (parte 2),Ciclofaixas,Ciclofaixas,0.0,False,0.0,ponte/viaduto Avenida Luciano Carneiro,-3.752153,-38.532792,osm,318_355.png
+254,378,405,cruzamento,Av. Rad. José Lima Verde,Ponte Rio Cocó,Ciclofaixas,Ciclofaixas,0.0,False,0.0,ponte/viaduto Ponte Sobre o Rio Ceará,-3.699819,-38.588061,osm,378_405.png
+255,67,242,extremidade,Av. Pres. Castelo Branco (parte 3),Av. Pres. Castelo Branco (parte 1),Ciclovias,Ciclofaixas,0.1,False,0.0,,-3.714666,-38.54627,sorteio,67_242.png
+256,81,249,extremidade,Av. Sargento Herminio,Rua Pe. Anchieta (parte 1),Ciclovias,Ciclofaixas,0.0,False,0.0,,-3.724674,-38.551119,sorteio,81_249.png
+257,100,233,extremidade,Av. Antônio Sales (parte 1),Av. Domingos Olímpio (parte 2),Ciclofaixas,Ciclofaixas,0.1,False,0.0,,-3.738585,-38.523603,sorteio,100_233.png
+258,106,107,extremidade,Rua Taquari,Rua Antônio Neri (norte),Ciclofaixas,Ciclofaixas,0.2,False,0.0,,-3.776719,-38.599828,sorteio,106_107.png
+259,113,226,extremidade,Av. dos Jangadeiros (parte 2),Av. dos Jangadeiros (parte 1),Ciclofaixas,Ciclofaixas,6.7,False,0.0,,-3.738463,-38.486197,sorteio,113_226.png
+260,103,193,extremidade,Rua Vital Brasil,Perimetral (S/N) - parte 1,Ciclofaixas,Ciclofaixas,0.3,False,0.0,,-3.781055,-38.587203,sorteio,103_193.png
+261,2,237,extremidade,Av. Washington Soares,Av. Mons. Carneiro da Cunha (parte 1),Ciclovias,Ciclofaixas,0.1,False,0.0,,-3.778185,-38.481447,sorteio,2_237.png
+262,161,341,extremidade,Av. Eng. Santana Jr. (parte 1),Av. Eng. Santana Jr. (parte 2),Ciclofaixas,Ciclofaixas,0.1,False,0.0,,-3.744935,-38.488845,sorteio,161_341.png
+263,322,371,extremidade,Rua Min. Joaquim Bastos,Av. Dep. Oswaldo Studart (parte 4),Ciclofaixas,Ciclofaixas,0.0,False,0.0,,-3.753755,-38.528251,sorteio,322_371.png
+264,375,376,extremidade,Av. Santos Dumont (trecho papicu 2),Rua Francisco Matos,Ciclofaixas,Ciclofaixas,0.3,False,0.0,,-3.745491,-38.46966,sorteio,375_376.png
+265,13,285,cruzamento,Av. Eng. Humberto Monte,Rua Pe. Guerra,Ciclovias,Ciclofaixas,0.0,False,0.0,,-3.740952,-38.567524,sorteio,13_285.png
+266,98,133,cruzamento,Av. Rui Barbosa,Rua João Brígido (parte 1),Ciclofaixas,Ciclofaixas,0.0,False,0.0,,-3.742029,-38.511365,sorteio,98_133.png
+267,98,99,cruzamento,Av. Rui Barbosa,Rua Dep. Moreira da Rocha,Ciclofaixas,Ciclofaixas,0.0,False,0.0,,-3.726824,-38.50645,sorteio,98_99.png
+268,123,284,cruzamento,Rua Érico Mota,Rua Dom Manuel de Medeiros,Ciclofaixas,Ciclofaixas,0.0,False,0.0,,-3.738757,-38.562341,sorteio,123_284.png
+269,152,337,cruzamento,Av. Domingos Olímpio (parte 1),Av. Tristão Gonçalves,Ciclofaixas,Ciclofaixas,0.0,False,0.0,,-3.735144,-38.535668,sorteio,152_337.png
+270,174,293,cruzamento,Av. Cel. Miguel Dias,Rua Atilano de Moura,Ciclofaixas,Ciclofaixas,0.0,False,0.0,,-3.763431,-38.487734,sorteio,174_293.png
+271,299,303,cruzamento,Rua Júnior Rocha,Av. José Leon (parte 1),Ciclofaixas,Ciclofaixas,0.0,False,0.0,,-3.79132,-38.487749,sorteio,299_303.png
+272,318,356,cruzamento,Av. Eduardo Girão,Av. dos Expedicionários (parte 1),Ciclofaixas,Ciclofaixas,0.0,False,0.0,ponte/viaduto ; ponte/viaduto Avenida dos Expedicionários,-3.750584,-38.53681,sorteio,318_356.png
+273,318,369,cruzamento,Av. Eduardo Girão,Av. Dep. Oswaldo Studart (parte 3),Ciclofaixas,Ciclofaixas,0.0,False,0.0,ponte/viaduto Avenida Deputado Oswaldo Studart,-3.755253,-38.529685,sorteio,318_369.png
+274,331,341,cruzamento,Av. Pe. Antônio Tomás (parte 2),Av. Eng. Santana Jr. (parte 2),Ciclofaixas,Ciclofaixas,0.0,False,0.0,túnel Avenida Engenheiro Santana Júnior,-3.743944,-38.488008,sorteio,331_341.png
