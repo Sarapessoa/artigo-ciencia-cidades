@@ -115,13 +115,13 @@ O formato, em duas colunas e com as seções nomeadas pelas três perguntas do m
 
 O cabeçalho mostra a logo da Unifor quando existe o arquivo `texto/figs/unifor_logo.png`. Sem ele, aparece uma caixa vermelha no lugar.
 
-Para compilar:
+O texto final é compilado no **Overleaf**. Para criar o projeto:
 
-```
-powershell -File texto/compilar.ps1
-```
+1. Gere o pacote com `python texto/gerar_overleaf.py`. O resultado é `texto/overleaf.zip`, que fica fora do git. Ele contém `main.tex`, `referencias.bib`, `unsrt-pt.bst`, `figuras/conectividade.pdf` e, se existir, a logo.
+2. No Overleaf, use **New Project → Upload Project** e escolha o zip.
+3. Confirme que o compilador é **pdfLaTeX** (Menu → Compiler). O Overleaf roda o BibTeX automaticamente.
 
-O script roda `pdflatex`, `bibtex` e `pdflatex` mais duas vezes, gravando os arquivos auxiliares em `texto/build/`. No VS Code, a extensão LaTeX Workshop usa a mesma sequência, definida em `.vscode/settings.json`: ela recompila a cada vez que o arquivo é salvo e mostra o PDF numa aba ao lado.
+Para compilar localmente, sem Overleaf, use `powershell -File texto/compilar.ps1`. O script roda `pdflatex`, `bibtex` e `pdflatex` mais duas vezes, com os auxiliares em `texto/build/`. O LaTeX Workshop do VS Code usa a mesma sequência (`.vscode/settings.json`).
 
 ## Próxima etapa
 
