@@ -10,3 +10,4 @@ texto/*.log
 texto/*.out
 texto/build/
 texto/*.synctex.gz
+texto/overleaf.zip
