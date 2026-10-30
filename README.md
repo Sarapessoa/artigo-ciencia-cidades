@@ -153,6 +153,14 @@ O texto final é compilado no **Overleaf**. Para criar o projeto:
 2. No Overleaf, use **New Project → Upload Project** e escolha o zip.
 3. Confirme que o compilador é **pdfLaTeX** (Menu → Compiler). O Overleaf roda o BibTeX automaticamente.
 
+Com um plano que inclua a integração Git, os envios seguintes dispensam o upload manual:
+
+```
+python texto/gerar_overleaf.py --enviar https://git.overleaf.com/<id-do-projeto>
+```
+
+O endereço aparece em Menu → Integrations → Git e só é necessário na primeira vez. O script clona o projeto em `texto/overleaf/`, que fica fora do git, copia os arquivos, faz o commit e envia. Na clonagem, o Git pede usuário `git` e, como senha, um token gerado nas configurações da conta do Overleaf; o gerenciador de credenciais guarda o token, que não fica no repositório. Se houver edições feitas direto no Overleaf, o script as baixa para `texto/overleaf/` e para sem sobrescrevê-las; passe-as para `texto/artigo.tex` e rode de novo.
+
 Para compilar localmente, sem Overleaf, use `powershell -File texto/compilar.ps1`. O script roda `pdflatex`, `bibtex` e `pdflatex` mais duas vezes, com os auxiliares em `texto/build/`. O LaTeX Workshop do VS Code usa a mesma sequência (`.vscode/settings.json`).
 
 ## Próxima etapa
