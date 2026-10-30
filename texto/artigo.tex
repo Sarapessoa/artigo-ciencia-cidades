@@ -32,6 +32,7 @@
 \titlespacing*{\paragraph}{0pt}{0.7ex plus .2ex minus .1ex}{0.55em}
 
 \pagestyle{empty}
+\raggedbottom % espaço livre no fim da coluna, não entre os parágrafos
 \renewcommand{\topfraction}{0.88}
 \renewcommand{\floatpagefraction}{0.75}
 
@@ -61,7 +62,7 @@ Ciência de Dados Aplicado à Ciência de Cidades \quad$\cdot$\quad Prof. Hygor 
 
 \begin{quote}\small
 \noindent\textbf{Resumo.}
-A extensão implantada é o indicador mais usado para acompanhar a política cicloviária, mas não informa se os trechos estão ligados entre si nem quem mora perto deles. Neste trabalho, as ciclovias e ciclofaixas de Fortaleza, obtidas de dados abertos da Prefeitura, são representadas como um grafo, e seus componentes conectados são cruzados com a população e a renda dos setores do Censo 2022. Os 429~km analisados formam 44 componentes. O maior reúne 56\% da extensão, e dois conjuntos regionais, no oeste e no sudeste, somam 131~km sem ligação com ele. Cerca de 1,4~km de novas ligações pelas ruas, em pontos bem escolhidos, reuniriam 90\% da extensão num só componente. O acesso à parte conectada da rede varia com a renda: a até 300~m pelas ruas, estão perto do maior componente 66\% dos moradores do décimo mais rico e apenas 11\% dos do décimo mais pobre. A ligação do conjunto oeste, registrada no OpenStreetMap desde 2024 mas ausente da base oficial, reduz essa desigualdade pela metade. Os resultados indicam que a política cicloviária deveria ser acompanhada também pela conectividade e pela população atendida, e não só pelos quilômetros.
+O avanço da rede cicloviária de Fortaleza costuma ser medido em quilômetros, mas esse número não mostra se os trechos se ligam nem quem mora perto deles. Este trabalho analisa as ciclovias e ciclofaixas da cidade como uma rede, com dados abertos da Prefeitura, do Censo 2022 e do OpenStreetMap. Os 429~km estão divididos em 44 partes desconectadas, e a maior reúne 56\% da extensão. Cerca de 1,4~km de novas ligações, em pontos bem escolhidos, uniriam 90\% da rede. A desconexão afeta mais os mais pobres: entre os 10\% de menor renda, só 11\% moram a até 300~m da parte principal da rede, contra 66\% entre os 10\% de maior renda. Uma ligação no oeste da cidade, que existe nas ruas desde 2024 mas não consta do mapa oficial, reduz essa diferença pela metade. Medir a rede também pela conectividade e pela população atendida ajudaria a orientar novos investimentos.
 
 \vspace{0.15cm}
 \noindent\textbf{Palavras-chave:} redes espaciais; infraestrutura cicloviária; desigualdade de acesso.
@@ -73,165 +74,129 @@ A extensão implantada é o indicador mais usado para acompanhar a política cic
 % ---------------------------------------------------------------- problema
 \section{Qual é o problema?}
 
-Fortaleza ampliou bastante sua infraestrutura cicloviária na última década,
-seguindo o Plano Diretor Cicloviário Integrado, que prevê 524~km até 2030. O
-avanço dessa política costuma ser acompanhado pela extensão implantada em
-relação à meta~\cite{opovo2022}. Esse número, porém, não mostra se os trechos
-se ligam uns aos outros. Uma ciclofaixa isolada ajuda pouco quem precisa
-atravessar a cidade, porque o ciclista volta ao tráfego misto quando ela
-termina. Na definição clássica de Hansen~\cite{hansen1959}, acessibilidade é o
-potencial de alcançar oportunidades, levando em conta a separação espacial
-entre elas. Por esse raciocínio, trechos desconectados diminuem o que se
-consegue alcançar usando apenas a infraestrutura dedicada.
+Fortaleza tem cerca de 430~km de ciclovias e ciclofaixas, e o Plano Diretor
+Cicloviário Integrado prevê 524~km até 2030. O avanço dessa política costuma
+ser divulgado em quilômetros~\cite{opovo2022}, mas esse número não diz se os
+trechos se ligam. Quando uma ciclofaixa termina no meio do caminho, o ciclista
+volta a dividir a rua com os carros. Uma rede com muitos trechos soltos pode
+somar muitos quilômetros e, ainda assim, permitir poucos trajetos completos em
+segurança, o que reduz a acessibilidade, entendida como a facilidade de
+alcançar destinos~\cite{hansen1959}.
 
-Na ciência das cidades, uma forma de estudar esse problema é tratar a
-infraestrutura urbana como uma rede espacial~\cite{bettencourt2021,maia2023}.
-Natera Orozco \emph{et al.}~\cite{natera2020} aplicaram essa ideia a redes
-cicloviárias e encontraram centenas de fragmentos desconectados mesmo em
-cidades com tradição no uso da bicicleta. Szell \emph{et al.}~\cite{szell2022}
-mostraram que o investimento em ciclovias rende pouco enquanto a rede não
-atinge certo grau de conectividade. Mesmo assim, as avaliações de
-infraestrutura cicloviária ainda usam pouco as medidas de
-rede~\cite{buehler2016}. Há também a questão de quem se beneficia. Estudos
-sobre cidades de 15 minutos e sobre a distribuição de serviços urbanos indicam
-que a acessibilidade varia muito dentro de uma mesma
-cidade~\cite{bruno2024,xu2020}.
+A ciência das cidades estuda infraestruturas urbanas como
+redes~\cite{bettencourt2021,maia2023}. Aplicada às ciclovias, essa abordagem
+mostra que redes formadas por centenas de pedaços desconectados são comuns,
+mesmo em cidades com tradição no uso da bicicleta~\cite{natera2020}, e que o
+investimento só passa a render quando esses pedaços se unem~\cite{szell2022}.
+Ainda assim, as avaliações de infraestrutura cicloviária raramente consideram a
+conectividade~\cite{buehler2016}. Há também a questão de quem se beneficia, já
+que o acesso a infraestrutura e serviços costuma ser desigual dentro de uma
+mesma cidade~\cite{bruno2024,xu2020}.
 
-Com base nisso, este trabalho busca responder a duas perguntas. \textbf{As ciclovias e
-ciclofaixas de Fortaleza formam uma rede contínua? E quem mora perto da parte
-conectada dessa rede?}
+Este trabalho responde a duas perguntas: \textbf{as ciclovias e ciclofaixas de
+Fortaleza formam uma rede contínua? E quem mora perto da parte conectada?}
 
 % ---- figura
 \begin{figure*}[t]
 \centering
 \includegraphics[width=\textwidth]{conectividade.pdf}
-\caption{\textbf{Conectividade da rede cicloviária de Fortaleza e população atendida.} \textbf{(a)} Ciclovias e ciclofaixas coloridas pelos cinco maiores componentes conectados (tolerância de 10~m, sem as passagens em desnível). Os círculos marcam a ligação entre C1 e C2 registrada no OpenStreetMap em 2024, que não consta da base, e a menor ligação pelas ruas entre C1 e C3. \textbf{(b)} Moradores a até 300~m pelas ruas de algum trecho, de C1 e de C1 ou C2, por décimo de renda do setor censitário. Entre parênteses, o índice de concentração de cada curva. \textbf{(c)} Parcela da extensão no maior componente à medida que se acrescentam ligações pelas ruas, com duas regras de escolha.}
+\caption{\textbf{Conectividade da rede cicloviária de Fortaleza e população atendida.} \textbf{(a)} Ciclovias e ciclofaixas coloridas pelos cinco maiores componentes, isto é, conjuntos de trechos ligados entre si. Os círculos marcam a ligação entre C1 e C2, que existe desde 2024 mas não está no mapa oficial, e a menor ligação possível entre C1 e C3. \textbf{(b)} Moradores a até 300~m, pelas ruas, de algum trecho, de C1 e de C1 ou C2, por décimo de renda; entre parênteses, o índice de concentração. \textbf{(c)} Parcela da rede no maior componente à medida que se acrescentam novas ligações pelas ruas, em duas ordens de escolha.}
 \label{fig:conectividade}
 \end{figure*}
 
 % ---------------------------------------------------------------- método
 \section{O que foi feito para resolvê-lo?}
 
-\paragraph{Dados} Utilizou-se a malha cicloviária publicada pela Prefeitura no
-portal de dados abertos~\cite{fortaleza2024}. O arquivo foi atualizado em junho
-de 2024, mas a maior parte dos trechos tem 2022 como ano de referência.
-Foram mantidos os 406 trechos de ciclovias (139,6~km) e de ciclofaixas (289,7~km), que
-somam 429,3~km. Ficaram de fora as ciclorrotas e os passeios compartilhados
-(17~km), porque neles a bicicleta não tem espaço exclusivo. O número de
-moradores e o rendimento médio dos responsáveis pelos domicílios vêm dos
-setores censitários do Censo 2022~\cite{ibge2022}, e a malha viária, do
-OpenStreetMap~\cite{osm2026}. Todas as distâncias foram medidas em metros, na
-projeção SIRGAS~2000/UTM~24S.
+\paragraph{Dados} Foram usados três conjuntos de dados públicos: o mapa de
+ciclovias e ciclofaixas da Prefeitura~\cite{fortaleza2024}, com 406 trechos e
+429~km, a maioria com referência em 2022; os setores do Censo
+2022~\cite{ibge2022}, com o número de moradores e a renda média de cada um; e
+o mapa de ruas do OpenStreetMap~\cite{osm2026}. Ciclorrotas e passeios
+compartilhados (17~km) ficaram de fora, porque neles a bicicleta não tem espaço
+próprio.
 
-\paragraph{Construção da rede} Cada trecho foi representado como um nó de um grafo
-não direcionado, e dois trechos ficam ligados quando se cruzam ou quando a ponta de
-um está a até 10~m do outro. Essa tolerância foi necessária porque muitos
-trechos que se encontram na rua aparecem no arquivo separados por pequenos
-vãos de desenho. Foram testados valores de 0 a 50~m, e adotou-se 10~m porque, a partir
-dele, o tamanho do maior componente quase não muda. Proximidade no mapa, no
-entanto, não garante passagem, já que um cruzamento pode ser um viaduto. Por
-isso, 77 das 275 conexões duvidosas foram conferidas em imagem de satélite,
-entre elas todas as 39 cuja remoção separaria partes da rede, e as 11
-passagens em desnível encontradas foram retiradas. O indicador principal é a parcela da extensão total
-que fica no maior componente.
+\paragraph{Construção da rede} Dois trechos foram considerados ligados quando
+se cruzam ou quando a ponta de um fica a até 10~m do outro, margem que corrige
+pequenas falhas de desenho do mapa. Com essas ligações, a rede foi dividida em
+componentes: grupos de trechos entre os quais é possível pedalar sem sair da
+infraestrutura cicloviária. Como um cruzamento no mapa pode ser, na verdade, um
+viaduto, as 77 ligações mais duvidosas foram conferidas em imagem de satélite,
+e as 11 passagens em níveis diferentes foram descartadas.
 
-\paragraph{Ligações faltantes} Para os maiores componentes, calculou-se a menor
-ligação até o maior seguindo as ruas e verificou-se no OpenStreetMap atual se
-ela já existia. Para estimar quanta infraestrutura seria preciso para unir a
-rede, adaptou-se a estratégia gulosa de Natera Orozco
-\emph{et al.}~\cite{natera2020}. A cada passo, o maior componente é ligado a
-outro pelo caminho mais curto nas ruas, e esse caminho passa a fazer parte
-dele. Foram comparadas duas regras de escolha: ligar o componente mais próximo ou o
-que traz mais extensão por metro de ligação.
+\paragraph{Ligações faltantes} Para cada componente separado do maior,
+mediu-se o menor trajeto pelas ruas que o ligaria a ele. Seguindo Natera Orozco
+\emph{et al.}~\cite{natera2020}, essas ligações foram acrescentadas uma a uma,
+começando pelas que unem mais quilômetros de rede por metro construído.
 
-\paragraph{População atendida} Para saber quem mora perto da rede, a população
-de cada setor foi distribuída numa grade de 50~m, supondo que ela é uniforme dentro
-do setor. Considera-se que um morador está perto de um componente quando há um
-trecho dele a até 300~m pelo caminho mais curto nas ruas; o cálculo foi
-repetido com 200 e 500~m. Para comparar grupos de renda, os moradores foram divididos em décimos
-pela renda do setor, e calculou-se o índice de concentração~\cite{wagstaff1991}.
-Esse índice vale zero quando o acesso é igual entre ricos e pobres e fica
-positivo quando favorece os mais ricos. O código e os dados estão em
+\paragraph{População atendida} A população de cada setor censitário foi
+distribuída de forma uniforme sobre sua área. Considerou-se perto da rede quem
+mora a até 300~m de um trecho, seguindo pelas ruas. Os moradores foram
+ordenados pela renda média do seu setor e divididos em dez grupos de mesmo
+tamanho, os décimos de renda. Para resumir a desigualdade num só número,
+usou-se o índice de concentração~\cite{wagstaff1991}: zero indica acesso igual
+entre ricos e pobres, e quanto maior o valor, mais o acesso se concentra entre
+os mais ricos. O código e os dados estão em
 \url{https://github.com/Sarapessoa/artigo-ciencia-cidades}.
 
 % ---------------------------------------------------------------- resultados
 \section{Quais são os resultados e as conclusões?}
 
-\paragraph{Componentes} A rede forma 44 componentes, e 32 deles são trechos
-isolados (Fig.~\ref{fig:conectividade}a). O maior, aqui chamado de C1, tem
-241~km, ou 56\% do total, e cobre o Centro, a orla e um eixo em direção ao sul.
-Em seguida vêm dois conjuntos regionais, C2, com 67~km, no oeste, e C3, com
-64~km, no sudeste. Nenhum dos outros 41 passa de 12~km.
+\paragraph{Uma rede dividida} A rede tem 44 componentes
+(Fig.~\ref{fig:conectividade}a). O maior, chamado aqui de C1, tem 241~km, 56\%
+do total, e cobre o Centro, a orla e um eixo em direção ao sul. Os dois
+seguintes são grandes e regionais: C2, com 67~km, no oeste, e C3, com 64~km, no
+sudeste. Os outros 41 têm menos de 12~km cada, e 32 deles são trechos soltos.
 
-Em linha reta, C2 fica a 344~m de C1, e C3, a 686~m. No mapa, porém, nenhuma
-dessas distâncias corresponde a uma ligação possível.
-A de C2 passa por baixo do Viaduto Antônio Bezerra, e a de C3 atravessa a mata
-do Parque do Cocó. No caso de C2, o OpenStreetMap mostrou algo que a base
-oficial não tem. Uma ciclofaixa de 0,8~km no viaduto e em ruas próximas,
-cadastrada em 2024 e visível na imagem de satélite, já faz a ligação. Com ela,
-o maior componente passaria a reunir 72\% da extensão. C3 continua separado
-nas duas fontes. A menor ligação pelas ruas tem 799~m e cruza o Rio Cocó pela
-Av.~Eng. Santana Júnior, que não tem ciclofaixa. Somando essa ligação a outra
-de 56~m até C4, o maior componente chegaria a 89\%.
+C2 está separado de C1 pelo Viaduto Antônio Bezerra. No OpenStreetMap, porém,
+há uma ciclofaixa de 0,8~km, implantada em 2024 e visível na imagem de
+satélite, que já faz essa ligação, mas não aparece no mapa da Prefeitura. Com
+ela, C1 passaria a reunir 72\% da rede. C3 continua separado em todas as
+fontes. A menor ligação pelas ruas tem 799~m e atravessa o Rio Cocó pela
+Av.~Eng. Santana Júnior, que não tem ciclofaixa.
 
-\paragraph{Ligações faltantes} A curva da Fig.~\ref{fig:conectividade}c estende
-essa análise a todos os componentes. Escolhendo sempre o maior ganho por
-metro, 1,4~km de ligações, até C4, C2 e C3, levam o maior componente de 56\%
-para 90\% da extensão. Pela regra do mais próximo, são necessários 5,5~km para
-chegar ao mesmo ponto. Conectar a rede inteira exigiria 18~km, a maior parte
-gasta com fragmentos pequenos e afastados, que somam só 5\% da extensão. O
-resultado se parece com o que Natera Orozco \emph{et al.}~\cite{natera2020}
-observaram em outras cidades, onde poucos trechos curtos, bem localizados,
-unem a maior parte da rede.
+\paragraph{Poucas obras resolveriam a maior parte} Acrescentando primeiro as
+ligações de maior ganho, 1,4~km de novas ligações, até C4, C2 e C3, levariam C1
+de 56\% para 90\% da rede (Fig.~\ref{fig:conectividade}c). Ligar sempre o
+componente mais próximo exigiria 5,5~km para o mesmo resultado. Unir a rede
+inteira custaria 18~km, quase todos gastos com pequenos trechos soltos. É o
+mesmo padrão encontrado por Natera Orozco \emph{et al.}~\cite{natera2020} em
+outras cidades.
 
-\paragraph{Renda e acesso} A até 300~m pelas ruas, 48\% dos moradores de
-Fortaleza têm algum trecho cicloviário por perto, mas só 28\% estão perto de
-C1. Essa diferença aumenta nos bairros mais pobres
-(Fig.~\ref{fig:conectividade}b). No décimo de menor renda, 35\% dos moradores
-têm algum trecho por perto e apenas 11\% estão perto de C1. No décimo de maior
-renda, os valores são 78\% e 66\%. O índice de concentração ajuda a separar
-esses dois aspectos. Para ter algum trecho por perto, ele vale 0,15; para
-estar perto de C1, sobe para 0,33. Isso indica que a desigualdade é maior na
-conectividade do que na presença da infraestrutura. Os bairros pobres também
-têm ciclovias e ciclofaixas, mas com mais frequência em trechos separados do
-restante da rede. C2, por exemplo, atende principalmente bairros de baixa renda do oeste, como Bom Jardim, Bonsucesso e
-Canindezinho. Com a ligação já registrada no OpenStreetMap, o índice cai para
-0,17, e a parcela do décimo mais pobre perto da parte conectada passa de 11\%
-para 26\%. Na estratégia gulosa contando moradores em vez de quilômetros,
-C2 vira a primeira ligação, e 1,6~km bastam para 90\% dos moradores próximos
-à rede.
+\paragraph{Quem está perto da rede} Quase metade dos moradores (48\%) vive a
+até 300~m de algum trecho, mas só 28\% estão perto de C1. A diferença depende da
+renda (Fig.~\ref{fig:conectividade}b). Entre os 10\% mais pobres, 35\% têm
+algum trecho por perto, mas só 11\% estão perto de C1. Entre os 10\% mais
+ricos, esses valores são 78\% e 66\%. Os bairros pobres têm ciclovias, mas em
+pedaços isolados. Por isso o índice de concentração vale 0,15 para ter algum
+trecho por perto e o dobro, 0,33, para estar perto de C1. A ligação de C2, que
+já existe nas ruas, atende sobretudo bairros de baixa renda do oeste, como Bom
+Jardim e Canindezinho. Com ela, o índice cai para 0,17, e a parcela dos 10\%
+mais pobres perto da parte conectada passa de 11\% para 26\%.
 
-\paragraph{Sensibilidade} Os resultados mudam pouco com as escolhas do método. Com
-tolerâncias de 5 a 50~m, o maior componente fica entre 52\% e 57\% da
-extensão. A diferença por renda aparece
-também com 200 e 500~m, com a distância em linha reta e quando se incluem
-calçadas e caminhos de pedestres na malha.
+\paragraph{Sensibilidade} Os resultados mudam pouco quando se alteram as
+escolhas do método. Com margens de 5 a 50~m para ligar trechos, C1 fica entre
+52\% e 57\% da rede, e a diferença por renda se mantém com distâncias de 200 e
+500~m.
 
-\paragraph{Conclusão} Respondendo à primeira pergunta, a rede não é contínua.
-Só pouco mais da metade da extensão está num mesmo componente, e por isso o
-total de quilômetros dá uma ideia exagerada da rede que se pode percorrer sem
-passar por tráfego misto. Quanto à segunda pergunta, os moradores de baixa
-renda têm menos infraestrutura por perto e, quando têm, ela costuma estar em
-partes isoladas da rede. Os resultados também indicam onde agir. A ligação de
-C2 já existe e é a que mais reduz a diferença entre ricos e pobres, mas ainda
-precisa entrar na base oficial. A principal lacuna que resta é a travessia do
-Rio Cocó até C3. Acompanhar a política cicloviária também pela conectividade e
-pela população atendida, e não só pelos quilômetros, ajudaria a perceber esses
-problemas. Unir componentes, por outro lado, não resolve a falta de cobertura.
-Metade dos moradores não tem nenhum trecho a até 300~m, principalmente nas
-bordas do sul da cidade, em bairros como Jangurussu e Mondubim.
+\paragraph{Conclusão} A rede cicloviária de Fortaleza não é contínua. Só pouco
+mais da metade dela forma um conjunto único, e o total de quilômetros exagera
+o quanto se pode pedalar sem voltar ao trânsito comum. Os moradores mais pobres
+são os mais afetados, porque a infraestrutura perto deles costuma estar
+isolada. Duas medidas teriam grande efeito: registrar no mapa oficial a ligação
+de C2, que já existe, e construir a ligação de C3 sobre o Rio Cocó. Ligar os
+pedaços, porém, não resolve tudo. Metade dos moradores não tem nenhuma
+ciclovia ou ciclofaixa a até 300~m, sobretudo no sul da cidade, como em
+Jangurussu e Mondubim. Acompanhar a política cicloviária também pela
+conectividade e pela população atendida ajudaria a orientar os próximos
+investimentos.
 
-\paragraph{Limitações} Uma desconexão na base não impede ninguém de pedalar
-pelas vias comuns; ela mostra apenas onde falta infraestrutura dedicada. Da
-mesma forma, um encontro em nível não garante uma travessia sinalizada. O
-OpenStreetMap é mantido por voluntários. A ligação de C2 foi confirmada pelo
-histórico de edições e pela imagem, mas não em campo, e o cálculo das
-distâncias depende de as vielas estarem mapeadas. As ligações propostas
-indicam o comprimento mínimo, não se é viável construí-las, e a estratégia
-gulosa não garante a melhor combinação possível. A população foi suposta
-uniforme dentro de cada setor, e a renda é a média do setor, não de cada
-pessoa. Por fim, o grafo não considera o sentido de circulação, e a análise
-não mede segurança, conservação nem uso.
+\paragraph{Limitações} Estar longe da rede cicloviária não impede ninguém de
+pedalar pelas ruas comuns, e um encontro de ciclovias no mapa não garante uma
+travessia sinalizada. O OpenStreetMap é mantido por voluntários e pode estar
+incompleto. As ligações propostas indicam o comprimento mínimo, não se é
+viável construí-las. A renda usada é a média do setor, não de cada pessoa, e a
+população foi suposta uniforme dentro dele. A análise não mede segurança,
+conservação nem uso das ciclovias.
 
 % ---------------------------------------------------------------- refs
 \bibliographystyle{unsrt-pt}
