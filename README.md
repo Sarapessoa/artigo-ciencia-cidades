@@ -179,6 +179,21 @@ Limites:
 - A renda é a média do setor, então a análise é ecológica e não descreve indivíduos.
 - A data de referência dos setores (2022) coincide com a da base cicloviária.
 
+### Mapa por setor
+
+O script [analise/mapa_populacao.py](analise/mapa_populacao.py) classifica cada setor pela situação da maioria dos seus moradores, a até 300 m pelas ruas. O mapa fica em `figuras/mapa_populacao.png`, com a renda ao lado, e o resumo por bairro em `resultados/populacao_por_bairro.csv`.
+
+| Situação da maioria | Setores | Moradores |
+|---|---|---|
+| perto do maior componente | 1 225 | 690 mil (28%) |
+| perto só de componentes menores | 903 | 517 mil (21%) |
+| sem rede por perto | 2 178 | 1,22 milhão (50%) |
+
+O que o mapa mostra:
+
+- **Componentes menores.** A população perto só de componentes menores se concentra em dois blocos. O primeiro é o oeste (C2), de baixa renda: Bom Jardim (85% dos moradores nessa situação), Bonsucesso, Canindezinho, Genibaú, Granja Lisboa e Granja Portugal, todos com renda média abaixo de R$ 1.700. O segundo é o sudeste (C3), de renda média e alta: Eng. Luciano Cavalcante (R$ 6.899), Cidade dos Funcionários e Messejana. A fragmentação não atinge só a baixa renda, mas é no oeste que ela pesa sobre mais gente.
+- **Sem rede por perto.** Os maiores contingentes estão nas bordas da cidade, sobretudo ao sul: Jangurussu (59 mil moradores, 83%), Mondubim, Siqueira, Planalto Ayrton Senna e Lagoa Redonda. No noroeste, aparece Vila Velha.
+
 ## Texto
 
 O artigo é escrito em LaTeX em [texto/artigo.tex](texto/artigo.tex), com as referências em [texto/referencias.bib](texto/referencias.bib), e compilado localmente com o MiKTeX. O PDF resultante é [texto/artigo.pdf](texto/artigo.pdf).
