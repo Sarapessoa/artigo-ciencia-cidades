@@ -141,25 +141,43 @@ Pela regra de maior ganho, os três primeiros passos relevantes ligam C4 (68 m),
 
 ## População atendida
 
-O script [analise/populacao_atendida.py](analise/populacao_atendida.py) cruza a rede com os setores censitários do **Censo 2022** (IBGE), usando os moradores (`v0001`) e o rendimento nominal médio dos responsáveis pelos domicílios (`V06004`). A população de cada setor é tratada como uniforme na sua área e repartida numa grade de 50 m. Um morador é considerado atendido por um componente se algum trecho dele estiver a até 300 m em **linha reta**. Os resultados ficam em `resultados/populacao_*.csv` e em `figuras/populacao_renda.png`.
+O script [analise/populacao_atendida.py](analise/populacao_atendida.py) cruza a rede com os setores censitários do **Censo 2022** (IBGE), usando os moradores (`v0001`) e o rendimento nominal médio dos responsáveis pelos domicílios (`V06004`). A população de cada setor é tratada como uniforme na sua área e repartida numa grade de 50 m. Um morador é considerado atendido por um componente se algum trecho dele estiver a até 300 m **pelas ruas**. Os resultados ficam em `resultados/populacao_*.csv` e em `figuras/populacao_renda.png`.
 
-| Distância | Perto de algum trecho | Perto de C1 | Perto de C1 + C2 | Extensão alcançável média |
-|---|---|---|---|---|
-| 200 m | 45,9% | 26,5% | 35,8% | 73 km |
-| 300 m | 60,3% | 34,0% | 46,8% | 94 km |
-| 500 m | 78,2% | 43,4% | 60,4% | 121 km |
+A distância pelas ruas usa a malha viária do OSM de `conferir_lacunas.py`, com as arestas divididas a cada 20 m. Ela é a soma de três partes:
 
-A extensão alcançável é a do maior componente a até essa distância de cada morador, ou zero se não houver nenhum. C1 + C2 é o cenário em que a ligação já registrada no OSM (ver acima) entra na rede.
+1. a distância em linha reta da célula até o vértice mais próximo;
+2. o menor caminho pelas ruas;
+3. a chegada ao componente por um vértice a até 15 m dele.
 
-Por décimo de renda dos setores, a até 300 m:
+Na mediana, o caminho pelas ruas é 1,27 vez a distância em linha reta. A medida em linha reta foi mantida para comparação (coluna `medida`).
 
-- **Perto de C1:** 16% no décimo mais pobre e 72% no mais rico.
-- **Extensão alcançável:** 53 km no décimo mais pobre e 182 km no mais rico.
-- **Ligação de C2:** é a que mais beneficia os décimos de baixa renda. No primeiro décimo, o atendimento por C1 passa de 16% para 36%.
+| Distância | Medida | Perto de algum trecho | Perto de C1 | Perto de C1 + C2 | Extensão alcançável média |
+|---|---|---|---|---|---|
+| 200 m | ruas | 34,0% | 19,9% | 26,8% | 55 km |
+| **300 m** | **ruas** | **48,3%** | **27,7%** | **37,9%** | **76 km** |
+| 500 m | ruas | 68,0% | 37,8% | 52,9% | 105 km |
+| 300 m | linha reta | 60,3% | 34,0% | 46,8% | 94 km |
 
-A curva das ligações faltantes foi refeita com o ganho medido em **população atendida** em vez de extensão (`resultados/ligacoes_faltantes_populacao.csv`). A ordem dos passos relevantes muda: C2 vem primeiro (477 m, de 56% para 78% da população atendida), seguido de C4 e de C3. 1,6 km de ligações bastam para 90%.
+A extensão alcançável é a do maior componente a até essa distância de cada morador, ou zero se não houver nenhum. C1 + C2 é o cenário em que a ligação já registrada no OSM (ver acima) entra na rede. Entre os moradores perto de algum trecho, só 57% estão perto de C1.
 
-Limites: a distância é medida em linha reta, não pelas ruas. A renda é a média do setor, então a análise é ecológica e não descreve indivíduos. A data de referência dos setores (2022) coincide com a da base cicloviária.
+Por décimo de renda dos setores, a até 300 m pelas ruas:
+
+| Décimo | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 |
+|---|---|---|---|---|---|---|---|---|---|---|
+| Perto de algum trecho | 35% | 32% | 36% | 44% | 48% | 47% | 47% | 54% | 63% | 78% |
+| Perto de C1 | 11% | 9% | 14% | 15% | 25% | 25% | 27% | 39% | 46% | 66% |
+| Perto de C1 + C2 | 26% | 22% | 28% | 33% | 40% | 37% | 36% | 44% | 46% | 66% |
+| Extensão alcançável (km) | 37 | 32 | 45 | 51 | 71 | 70 | 73 | 101 | 119 | 166 |
+
+A desigualdade aparece de duas formas. A primeira é de cobertura: os mais pobres têm menos trechos por perto. A segunda é de conectividade: a infraestrutura perto deles pertence com mais frequência a componentes pequenos. No décimo mais rico, 84% dos atendidos estão perto de C1. No mais pobre, só 32%. A ligação de C2 é a que mais beneficia a baixa renda: no primeiro décimo, o atendimento por C1 passa de 11% para 26%.
+
+A curva das ligações faltantes foi refeita com o ganho medido em **população atendida** pelas ruas, em vez de extensão (`resultados/ligacoes_faltantes_populacao.csv`). C2 vem primeiro: com 477 m de ligação, o maior componente passa de 57% para 78% da população atendida. Depois vêm C4 e C3. Com 1,6 km de ligações, chega a 90%; com 3,0 km, a 95%.
+
+Limites:
+
+- A malha viária não inclui calçadas nem caminhos de pedestres (`footway`, `path`). Em áreas onde esses são o acesso principal, a distância pode estar superestimada.
+- A renda é a média do setor, então a análise é ecológica e não descreve indivíduos.
+- A data de referência dos setores (2022) coincide com a da base cicloviária.
 
 ## Texto
 

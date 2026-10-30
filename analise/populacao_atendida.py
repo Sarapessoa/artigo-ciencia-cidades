@@ -3,10 +3,14 @@
 Usa os setores censitários do Censo 2022 (IBGE): moradores (v0001) e rendimento nominal médio
 mensal dos responsáveis pelos domicílios (V06004). A população de cada setor é suposta uniforme
 na sua área e repartida numa grade de GRADE_M metros; cada célula é representada pelo seu
-centroide. Uma célula é "atendida" por um componente se algum trecho dele estiver a até D metros
-em linha reta.
+centroide. Uma célula é "atendida" por um componente se algum trecho dele estiver a até D metros.
 
-Indicadores, para cada D em DISTANCIAS:
+A distância é medida de duas formas. A principal ("ruas") segue a malha viária do OSM usada em
+conferir_lacunas.py, densificada a cada PASSO_M metros: vai da célula ao vértice mais próximo em
+linha reta, segue pelas ruas e chega ao componente por um vértice a até RAIO_RUAS_M dele. A outra
+("reta") é a distância em linha reta, mantida para comparação.
+
+Indicadores, para cada medida e cada D em DISTANCIAS:
 - fração da população perto de qualquer trecho, do maior componente (C1) e de C1 + C2, a união
   que o OpenStreetMap atual já registra (ver conferir_lacunas.py);
 - extensão alcançável: a extensão do maior componente a até D de cada morador (0 se nenhum);
@@ -16,9 +20,9 @@ Também refaz a curva das ligações faltantes com o ganho medido em população
 extensão (estratégia "maior ganho" de ligacoes_faltantes.py).
 
 Saídas:
-- resultados/populacao_atendida.csv: indicadores gerais por distância;
+- resultados/populacao_atendida.csv: indicadores gerais por medida e distância;
 - resultados/populacao_por_renda.csv: indicadores por décimo de renda;
-- resultados/populacao_por_setor.csv: indicadores por setor censitário;
+- resultados/populacao_por_setor.csv: indicadores por setor censitário (cenário principal);
 - resultados/ligacoes_faltantes_populacao.csv: passos da estratégia ponderada por população;
 - figuras/populacao_renda.png: atendimento por décimo de renda.
 
@@ -30,12 +34,15 @@ import zipfile
 
 import geopandas as gpd
 import matplotlib.pyplot as plt
+import networkx as nx
 import numpy as np
 import pandas as pd
-from shapely.geometry import box
+import shapely
+from shapely.geometry import Point, box
 
-from conferir_lacunas import ARQ_RUAS, TIPOS_RUA, malha_viaria, overpass, vertices_perto
-from ligacoes_faltantes import ESTRATEGIAS, crescer
+from conferir_lacunas import (ARQ_RUAS, RAIO_RUAS_M, TIPOS_RUA, malha_viaria, overpass,
+                              vertices_perto)
+from ligacoes_faltantes import ESTRATEGIAS, ORIGEM, crescer
 from rede import BRUTOS, CRS_METRICO, FIGURAS, RESULTADOS, cenario_principal
 
 FTP = "https://ftp.ibge.gov.br/Censos/Censo_Demografico_2022"
@@ -50,6 +57,8 @@ COD_FORTALEZA = "2304400"
 GRADE_M = 50
 DISTANCIAS = [200, 300, 500]  # metros
 D_PRINCIPAL = 300
+MEDIDA_PRINCIPAL = "ruas"
+PASSO_M = 20  # comprimento máximo das arestas da malha viária densificada
 
 
 def baixar(url, arquivo):
@@ -90,13 +99,53 @@ def grade(s):
     return g[["CD_SETOR", "NM_BAIRRO", "renda", "pop", "geometry"]].reset_index(drop=True)
 
 
-def perto(pontos, rede, d):
-    """Matriz booleana pontos x componentes: há trecho do componente a até d metros do ponto?"""
-    ip, it = rede.sindex.query(pontos.geometry, predicate="dwithin", distance=d)
-    n_comp = rede["componente"].max()
-    m = np.zeros((len(pontos), n_comp + 1), dtype=bool)
-    m[ip, rede["componente"].to_numpy()[it]] = True
-    return m
+def matriz_vazia(pontos, rede):
+    return np.full((len(pontos), rede["componente"].max() + 1), np.inf)
+
+
+def distancias_reta(pontos, rede, dmax):
+    """Matriz pontos x componentes com a distância em linha reta até o componente (inf além de dmax)."""
+    dist = matriz_vazia(pontos, rede)
+    ip, it = rede.sindex.query(pontos.geometry, predicate="dwithin", distance=dmax)
+    d = shapely.distance(pontos.geometry.values[ip], rede.geometry.values[it])
+    np.minimum.at(dist, (ip, rede["componente"].to_numpy()[it]), d)
+    return dist
+
+
+def densificar(R, passo=PASSO_M):
+    """Cópia da malha viária com arestas de no máximo `passo` metros, para que cada ponto tenha um
+    vértice próximo mesmo no meio de quarteirões longos."""
+    D = nx.Graph()
+    for a, b, w in R.edges(data="w"):
+        n = max(1, int(np.ceil(w / passo)))
+        pts = [a] + [(a[0] + (b[0] - a[0]) * t / n, a[1] + (b[1] - a[1]) * t / n)
+                     for t in range(1, n)] + [b]
+        D.add_weighted_edges_from(((u, v, w / n) for u, v in zip(pts, pts[1:])), weight="w")
+    return D
+
+
+def distancias_ruas(pontos, rede, R, acesso, dmax):
+    """A mesma matriz, com a distância pela malha viária: do ponto ao vértice mais próximo em linha
+    reta, dali pelas ruas até um vértice a até RAIO_RUAS_M do componente, e daí até ele."""
+    lista = list(R.nodes)
+    pos = {n: i for i, n in enumerate(lista)}
+    vertices = gpd.GeoSeries([Point(n) for n in lista], crs=CRS_METRICO)
+    (ip, iv), d_vert = vertices.sindex.nearest(pontos.geometry, return_distance=True)
+    _, primeiro = np.unique(ip, return_index=True)  # em caso de empate, o primeiro vértice
+    iv, d_vert = iv[primeiro], d_vert[primeiro]
+    dist = matriz_vazia(pontos, rede)
+    for k, vizinhos in acesso.items():
+        if not vizinhos:
+            continue
+        R.add_weighted_edges_from(((ORIGEM, n, d) for n, d in vizinhos.items()), weight="w")
+        alcance = nx.single_source_dijkstra_path_length(R, ORIGEM, cutoff=dmax, weight="w")
+        R.remove_node(ORIGEM)
+        dv = np.full(len(lista), np.inf)
+        for n, d in alcance.items():
+            if n != ORIGEM:
+                dv[pos[n]] = d
+        dist[:, k] = dv[iv] + d_vert
+    return dist
 
 
 def decimos(pontos):
@@ -110,13 +159,14 @@ def decimos(pontos):
 
 
 def figura(por_renda):
-    t = por_renda[por_renda["distancia_m"] == D_PRINCIPAL]
+    t = por_renda[(por_renda["medida"] == MEDIDA_PRINCIPAL)
+                  & (por_renda["distancia_m"] == D_PRINCIPAL)]
     fig, (a, b) = plt.subplots(1, 2, figsize=(9, 3.4), layout="constrained")
     x = t["decimo"]
     a.plot(x, t["pct_qualquer"], "o-", color="#888888", label="qualquer trecho")
     a.plot(x, t["pct_c1_c2"], "o--", color="#eb6834", label="C1 + C2 (ligação já no OSM)")
     a.plot(x, t["pct_c1"], "o-", color="#2a78d6", label="maior componente (C1)")
-    a.set(ylim=(0, 100), ylabel=f"% dos moradores a até {D_PRINCIPAL} m",
+    a.set(ylim=(0, 100), ylabel=f"% dos moradores a até {D_PRINCIPAL} m pelas ruas",
           xlabel="décimo de renda do setor (1 = mais pobre)", xticks=range(1, 11))
     a.legend(frameon=False, fontsize=8)
     b.bar(x, t["km_alcance_medio"], color="#2a78d6")
@@ -140,47 +190,58 @@ def main():
     print(f"{len(pontos)} células, {total:,.0f} moradores; "
           f"{pontos.loc[pontos['renda'].isna(), 'pop'].sum():,.0f} sem renda informada")
 
-    gerais, por_renda, por_setor = [], [], {}
-    for d in DISTANCIAS:
-        m = perto(pontos, rede, d)
-        qualquer, c1, c12 = m.any(axis=1), m[:, 1], m[:, 1] | m[:, 2]
-        alcance = (m * km_comp).max(axis=1)  # extensão do maior componente ao alcance
-        alcance_c12 = np.where(c12, km[1] + km[2], alcance)
-        linha = {"distancia_m": d,
-                 "pct_qualquer": 100 * pop[qualquer].sum() / total,
-                 "pct_c1": 100 * pop[c1].sum() / total,
-                 "pct_c1_c2": 100 * pop[c12].sum() / total,
-                 "pct_c1_entre_atendidos": 100 * pop[c1].sum() / pop[qualquer].sum(),
-                 "km_alcance_medio": (pop * alcance).sum() / total,
-                 "km_alcance_medio_c1_c2": (pop * alcance_c12).sum() / total}
-        gerais.append(linha)
-        df = pd.DataFrame({"decimo": pontos["decimo"], "renda": pontos["renda"], "pop": pop,
-                           "qualquer": qualquer * pop, "c1": c1 * pop, "c12": c12 * pop,
-                           "alcance": alcance * pop})
-        g = df.groupby("decimo").agg(pop=("pop", "sum"), qualquer=("qualquer", "sum"),
-                                     c1=("c1", "sum"), c12=("c12", "sum"),
-                                     alcance=("alcance", "sum"),
-                                     renda_min=("renda", "min"), renda_max=("renda", "max"))
-        por_renda.append(pd.DataFrame({
-            "distancia_m": d, "decimo": g.index.astype(int),
-            "renda_min": g["renda_min"].round(0), "renda_max": g["renda_max"].round(0),
-            "moradores": g["pop"].round(0),
-            "pct_qualquer": 100 * g["qualquer"] / g["pop"], "pct_c1": 100 * g["c1"] / g["pop"],
-            "pct_c1_c2": 100 * g["c12"] / g["pop"], "km_alcance_medio": g["alcance"] / g["pop"]}))
-        if d == D_PRINCIPAL:
-            st = pd.DataFrame({"CD_SETOR": pontos["CD_SETOR"], "NM_BAIRRO": pontos["NM_BAIRRO"],
-                               "renda": pontos["renda"], "pop": pop, "qualquer": qualquer * pop,
-                               "c1": c1 * pop, "alcance": alcance * pop})
-            st = st.groupby(["CD_SETOR", "NM_BAIRRO"]).agg(
-                renda=("renda", "first"), moradores=("pop", "sum"), qualquer=("qualquer", "sum"),
-                c1=("c1", "sum"), alcance=("alcance", "sum")).reset_index()
-            por_setor = pd.DataFrame({
-                "CD_SETOR": st["CD_SETOR"], "bairro": st["NM_BAIRRO"], "renda": st["renda"],
-                "moradores": st["moradores"].round(1),
-                "pct_qualquer": 100 * st["qualquer"] / st["moradores"],
-                "pct_c1": 100 * st["c1"] / st["moradores"],
-                "km_alcance_medio": st["alcance"] / st["moradores"]})
-            m_principal = m
+    R, nome = malha_viaria(overpass(ARQ_RUAS, [f'way["highway"~"^({TIPOS_RUA})$"]'],
+                                    tuple(rede.to_crs(4326).total_bounds)))
+    Rd = densificar(R)
+    acesso_d = vertices_perto(Rd, rede, com_distancia=True)
+    sem_via = [k for k in km if not acesso_d.get(k)]
+    if sem_via:
+        print("componentes sem via a até", RAIO_RUAS_M, "m:", sem_via)
+    dmax = max(DISTANCIAS)
+    dist = {"ruas": distancias_ruas(pontos, rede, Rd, acesso_d, dmax),
+            "reta": distancias_reta(pontos, rede, dmax)}
+
+    gerais, por_renda = [], []
+    for medida, dm in dist.items():
+        for d in DISTANCIAS:
+            m = dm <= d
+            qualquer, c1, c12 = m.any(axis=1), m[:, 1], m[:, 1] | m[:, 2]
+            alcance = (m * km_comp).max(axis=1)  # extensão do maior componente ao alcance
+            alcance_c12 = np.where(c12, km[1] + km[2], alcance)
+            gerais.append({"medida": medida, "distancia_m": d,
+                           "pct_qualquer": 100 * pop[qualquer].sum() / total,
+                           "pct_c1": 100 * pop[c1].sum() / total,
+                           "pct_c1_c2": 100 * pop[c12].sum() / total,
+                           "pct_c1_entre_atendidos": 100 * pop[c1].sum() / pop[qualquer].sum(),
+                           "km_alcance_medio": (pop * alcance).sum() / total,
+                           "km_alcance_medio_c1_c2": (pop * alcance_c12).sum() / total})
+            df = pd.DataFrame({"decimo": pontos["decimo"], "renda": pontos["renda"], "pop": pop,
+                               "qualquer": qualquer * pop, "c1": c1 * pop, "c12": c12 * pop,
+                               "alcance": alcance * pop})
+            g = df.groupby("decimo").agg(pop=("pop", "sum"), qualquer=("qualquer", "sum"),
+                                         c1=("c1", "sum"), c12=("c12", "sum"),
+                                         alcance=("alcance", "sum"),
+                                         renda_min=("renda", "min"), renda_max=("renda", "max"))
+            por_renda.append(pd.DataFrame({
+                "medida": medida, "distancia_m": d, "decimo": g.index.astype(int),
+                "renda_min": g["renda_min"].round(0), "renda_max": g["renda_max"].round(0),
+                "moradores": g["pop"].round(0),
+                "pct_qualquer": 100 * g["qualquer"] / g["pop"], "pct_c1": 100 * g["c1"] / g["pop"],
+                "pct_c1_c2": 100 * g["c12"] / g["pop"], "km_alcance_medio": g["alcance"] / g["pop"]}))
+            if medida == MEDIDA_PRINCIPAL and d == D_PRINCIPAL:
+                st = pd.DataFrame({"CD_SETOR": pontos["CD_SETOR"], "NM_BAIRRO": pontos["NM_BAIRRO"],
+                                   "renda": pontos["renda"], "pop": pop, "qualquer": qualquer * pop,
+                                   "c1": c1 * pop, "alcance": alcance * pop})
+                st = st.groupby(["CD_SETOR", "NM_BAIRRO"]).agg(
+                    renda=("renda", "first"), moradores=("pop", "sum"), qualquer=("qualquer", "sum"),
+                    c1=("c1", "sum"), alcance=("alcance", "sum")).reset_index()
+                por_setor = pd.DataFrame({
+                    "CD_SETOR": st["CD_SETOR"], "bairro": st["NM_BAIRRO"], "renda": st["renda"],
+                    "moradores": st["moradores"].round(1),
+                    "pct_qualquer": 100 * st["qualquer"] / st["moradores"],
+                    "pct_c1": 100 * st["c1"] / st["moradores"],
+                    "km_alcance_medio": st["alcance"] / st["moradores"]})
+                m_principal = m
 
     gerais = pd.DataFrame(gerais).round(2)
     por_renda = pd.concat(por_renda, ignore_index=True).round(2)
@@ -190,17 +251,17 @@ def main():
                               encoding="utf-8-sig")
     figura(por_renda)
     print(gerais.to_string(index=False))
-    print(por_renda[por_renda["distancia_m"] == D_PRINCIPAL].to_string(index=False))
+    for medida in dist:
+        print(por_renda[(por_renda["medida"] == medida) & (por_renda["distancia_m"] == D_PRINCIPAL)]
+              .to_string(index=False))
 
-    # Ligações faltantes com ganho em população atendida (a até D_PRINCIPAL de algum trecho)
+    # Ligações faltantes com ganho em população atendida (cenário principal)
     pop_comp = m_principal * pop[:, None]
 
     def valor(conjunto):
         return pop[m_principal[:, sorted(conjunto)].any(axis=1)].sum()
 
     atendida = pop[m_principal.any(axis=1)].sum()
-    R, nome = malha_viaria(overpass(ARQ_RUAS, [f'way["highway"~"^({TIPOS_RUA})$"]'],
-                                    tuple(rede.to_crs(4326).total_bounds)))
     acesso = vertices_perto(R, rede, com_distancia=True)
     passos = pd.DataFrame(crescer(R, nome, acesso, km, atendida, ESTRATEGIAS["maior ganho"],
                                   valor=valor)).drop(columns="geometry")
