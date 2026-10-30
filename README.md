@@ -48,12 +48,15 @@ Antes da análise, verificar licença ou condições de uso, disponibilidade do 
 
 O tamanho dos componentes será comparado principalmente por extensão, pois a quantidade de segmentos depende de como o arquivo foi desenhado e subdividido.
 
-## Figura planejada
+## Figura
 
-Uma figura composta por dois painéis:
+A figura do artigo (`figuras/conectividade.pdf`, gerada pelo notebook) tem três painéis:
 
-- **(a)** Mapa da rede, destacando o maior componente e os demais conjuntos conectados.
-- **(b)** Gráfico ordenado da extensão dos componentes, destacando a participação do maior no total.
+- **(a)** Mapa da rede, destacando os cinco maiores componentes e as ligações conferidas.
+- **(b)** Moradores a até 300 m da rede pelas ruas, por décimo de renda, com o índice de concentração de cada curva.
+- **(c)** Curva das ligações faltantes.
+
+O gráfico ordenado da extensão dos componentes, que ocupava o painel (b), saiu para dar lugar ao recorte de renda.
 
 ## Exigências do professor
 
