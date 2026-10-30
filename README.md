@@ -139,6 +139,28 @@ O script [analise/ligacoes_faltantes.py](analise/ligacoes_faltantes.py) adapta a
 
 Pela regra de maior ganho, os três primeiros passos relevantes ligam C4 (68 m), C2 (477 m) e C3 (818 m). A análise usa só a base de 2022: a ligação de C2, que o OSM já registra, entra aqui como se ainda fosse necessária.
 
+## População atendida
+
+O script [analise/populacao_atendida.py](analise/populacao_atendida.py) cruza a rede com os setores censitários do **Censo 2022** (IBGE), usando os moradores (`v0001`) e o rendimento nominal médio dos responsáveis pelos domicílios (`V06004`). A população de cada setor é tratada como uniforme na sua área e repartida numa grade de 50 m. Um morador é considerado atendido por um componente se algum trecho dele estiver a até 300 m em **linha reta**. Os resultados ficam em `resultados/populacao_*.csv` e em `figuras/populacao_renda.png`.
+
+| Distância | Perto de algum trecho | Perto de C1 | Perto de C1 + C2 | Extensão alcançável média |
+|---|---|---|---|---|
+| 200 m | 45,9% | 26,5% | 35,8% | 73 km |
+| 300 m | 60,3% | 34,0% | 46,8% | 94 km |
+| 500 m | 78,2% | 43,4% | 60,4% | 121 km |
+
+A extensão alcançável é a do maior componente a até essa distância de cada morador, ou zero se não houver nenhum. C1 + C2 é o cenário em que a ligação já registrada no OSM (ver acima) entra na rede.
+
+Por décimo de renda dos setores, a até 300 m:
+
+- **Perto de C1:** 16% no décimo mais pobre e 72% no mais rico.
+- **Extensão alcançável:** 53 km no décimo mais pobre e 182 km no mais rico.
+- **Ligação de C2:** é a que mais beneficia os décimos de baixa renda. No primeiro décimo, o atendimento por C1 passa de 16% para 36%.
+
+A curva das ligações faltantes foi refeita com o ganho medido em **população atendida** em vez de extensão (`resultados/ligacoes_faltantes_populacao.csv`). A ordem dos passos relevantes muda: C2 vem primeiro (477 m, de 56% para 78% da população atendida), seguido de C4 e de C3. 1,6 km de ligações bastam para 90%.
+
+Limites: a distância é medida em linha reta, não pelas ruas. A renda é a média do setor, então a análise é ecológica e não descreve indivíduos. A data de referência dos setores (2022) coincide com a da base cicloviária.
+
 ## Texto
 
 O artigo é escrito em LaTeX em [texto/artigo.tex](texto/artigo.tex), com as referências em [texto/referencias.bib](texto/referencias.bib), e compilado localmente com o MiKTeX. O PDF resultante é [texto/artigo.pdf](texto/artigo.pdf).

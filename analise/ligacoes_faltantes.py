@@ -31,17 +31,22 @@ ESTRATEGIAS = {
 ORIGEM = "__gigante__"
 
 
-def crescer(R, nome, acesso, km, total_km, escolha):
+def crescer(R, nome, acesso, km, total_km, escolha, valor=None):
     """Executa a estratégia gulosa a partir de C1; devolve uma linha por passo.
 
-    `acesso[k]` é {vértice da malha: distância até o componente k}."""
+    `acesso[k]` é {vértice da malha: distância até o componente k}. `valor(conjunto)` mede o que
+    um conjunto de componentes reúne (por padrão, a soma das extensões); o ganho de ligar um
+    componente é o quanto ele aumenta esse valor, e `pct_gigante` é o valor do gigante dividido
+    por `total_km`."""
+    if valor is None:
+        valor = lambda conjunto: sum(km[c] for c in conjunto)
     R = R.copy()
     # nó artificial ligado ao gigante; o peso de cada aresta é o acesso do gigante ao vértice
     R.add_weighted_edges_from(((ORIGEM, n, d) for n, d in acesso[1].items()), weight="w")
     restantes = {k for k in km if k != 1 and acesso.get(k)}
-    no_gigante, acumulado = km[1], 0.0
+    unidos, acumulado = {1}, 0.0
     passos = [{"passo": 0, "componente": 1, "km_componente": km[1], "ligacao_m": 0.0,
-               "acumulado_m": 0.0, "pct_gigante": 100 * no_gigante / total_km,
+               "acumulado_m": 0.0, "pct_gigante": 100 * valor(unidos) / total_km,
                "absorvidos": "", "ruas": "", "geometry": None}]
     while restantes:
         dist, caminhos = nx.single_source_dijkstra(R, ORIGEM, weight="w")
@@ -53,7 +58,8 @@ def crescer(R, nome, acesso, km, total_km, escolha):
                 candidatos[k] = (custos[fim], fim)
         if not candidatos:
             break
-        k = max(candidatos, key=lambda c: escolha(km[c], candidatos[c][0]))
+        atual = valor(unidos)
+        k = max(candidatos, key=lambda c: escolha(valor(unidos | {c}) - atual, candidatos[c][0]))
         d, fim = candidatos[k]
         cam = caminhos[fim][1:]  # sem o nó artificial
         nos_caminho = set(cam)
@@ -65,14 +71,14 @@ def crescer(R, nome, acesso, km, total_km, escolha):
                                for c in absorvidos)
         for c in {k} | absorvidos:
             R.add_weighted_edges_from(((ORIGEM, n, dd) for n, dd in acesso[c].items()), weight="w")
-            no_gigante += km[c]
+        unidos |= {k} | absorvidos
         restantes -= {k} | absorvidos
         acumulado += d + custo_absorvidos
         ruas = ruas_do_caminho(R, nome, cam)
         passos.append({
             "passo": len(passos), "componente": k, "km_componente": km[k],
             "ligacao_m": d + custo_absorvidos, "acumulado_m": acumulado,
-            "pct_gigante": 100 * no_gigante / total_km,
+            "pct_gigante": 100 * valor(unidos) / total_km,
             "absorvidos": " ".join(f"C{c}" for c in sorted(absorvidos)),
             "ruas": "; ".join(f"{n} ({m:.0f} m)" for n, m in sorted(ruas.items(), key=lambda x: -x[1])),
             "geometry": LineString(cam) if len(cam) > 1 else None,

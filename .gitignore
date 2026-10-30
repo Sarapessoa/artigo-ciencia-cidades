@@ -15,5 +15,7 @@ texto/overleaf.zip
 texto/overleaf/
 # malha viária do OSM (25 MB), baixada de novo por analise/conferir_lacunas.py
 dados/brutos/osm_ruas_fortaleza.json
+# setores censitários do Ceará (36 MB), baixados de novo por analise/populacao_atendida.py
+dados/brutos/CE_setores_CD2022.gpkg
 # recortes de satélite das lacunas
 resultados/lacunas/
