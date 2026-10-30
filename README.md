@@ -179,6 +179,26 @@ Limites:
 - A renda é a média do setor, então a análise é ecológica e não descreve indivíduos.
 - A data de referência dos setores (2022) coincide com a da base cicloviária.
 
+### Robustez e índice de concentração
+
+**Calçadas e caminhos de pedestres.** Em áreas de vielas, eles podem ser o acesso principal, e a malha viária usada não os inclui. Para testar, a medida `ruas_e_caminhos` acrescenta à malha os caminhos de pedestres do OSM (`footway`, `path`, `steps` e `corridor`), que somam 17 mil vias. Os resultados quase não mudam. A até 300 m, o atendimento por C1 passa de 27,7% para 27,9%. O gradiente por renda se mantém: de 11% no décimo mais pobre a 66% no mais rico. A ressalva é que o teste depende do quanto as vielas estão mapeadas no OSM.
+
+**Índice de concentração.** O índice resume a desigualdade por renda num número só. É o dobro da covariância entre o indicador e a posição de cada morador na distribuição de renda, dividido pela média do indicador. Vale 0 quando o indicador se distribui por igual entre ricos e pobres e fica positivo quando se concentra nos de maior renda. Para 300 m pelas ruas, ficam assim:
+
+| Indicador | Índice de concentração |
+|---|---|
+| Perto de algum trecho | 0,15 |
+| Perto de C1 | 0,33 |
+| Perto de C1 + C2 | 0,17 |
+| Extensão alcançável | 0,28 |
+| Extensão alcançável, com C2 ligado | 0,17 |
+
+O que os índices mostram:
+
+- **Conectividade e cobertura.** A desigualdade no acesso à parte conectada da rede (0,33) é o dobro da desigualdade em ter algum trecho por perto (0,15). A rede chega aos bairros pobres, mas em pedaços desconectados.
+- **Efeito de C2.** A ligação de C2 reduz a concentração do acesso a C1 de 0,33 para 0,17, quase o nível da simples cobertura.
+- **Outras distâncias e medidas.** O padrão se repete a 200 m e a 500 m e também em linha reta. Os valores estão nas colunas `ic_*` de `resultados/populacao_atendida.csv`.
+
 ### Mapa por setor
 
 O script [analise/mapa_populacao.py](analise/mapa_populacao.py) classifica cada setor pela situação da maioria dos seus moradores, a até 300 m pelas ruas. O mapa fica em `figuras/mapa_populacao.png`, com a renda ao lado, e o resumo por bairro em `resultados/populacao_por_bairro.csv`.

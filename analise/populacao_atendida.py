@@ -8,13 +8,17 @@ centroide. Uma célula é "atendida" por um componente se algum trecho dele esti
 A distância é medida de duas formas. A principal ("ruas") segue a malha viária do OSM usada em
 conferir_lacunas.py, densificada a cada PASSO_M metros: vai da célula ao vértice mais próximo em
 linha reta, segue pelas ruas e chega ao componente por um vértice a até RAIO_RUAS_M dele. A outra
-("reta") é a distância em linha reta, mantida para comparação.
+("reta") é a distância em linha reta, mantida para comparação. Um teste de sensibilidade
+("ruas_e_caminhos") soma à malha viária as calçadas e os caminhos de pedestres do OSM, que podem
+ser o acesso principal em áreas de vielas.
 
 Indicadores, para cada medida e cada D em DISTANCIAS:
 - fração da população perto de qualquer trecho, do maior componente (C1) e de C1 + C2, a união
   que o OpenStreetMap atual já registra (ver conferir_lacunas.py);
 - extensão alcançável: a extensão do maior componente a até D de cada morador (0 se nenhum);
-- os mesmos indicadores por décimo de renda dos setores, ponderado pela população.
+- os mesmos indicadores por décimo de renda dos setores, ponderado pela população;
+- o índice de concentração de cada indicador segundo a renda (colunas ic_*): 0 indica
+  distribuição igual entre ricos e pobres; positivo, concentração entre os de maior renda.
 
 Também refaz a curva das ligações faltantes com o ganho medido em população atendida em vez de
 extensão (estratégia "maior ganho" de ligacoes_faltantes.py).
@@ -59,6 +63,9 @@ DISTANCIAS = [200, 300, 500]  # metros
 D_PRINCIPAL = 300
 MEDIDA_PRINCIPAL = "ruas"
 PASSO_M = 20  # comprimento máximo das arestas da malha viária densificada
+# Caminhos de pedestres, somados à malha viária no teste de sensibilidade "ruas_e_caminhos"
+TIPOS_CAMINHO = "footway|path|steps|corridor"
+ARQ_CAMINHOS = BRUTOS / "osm_caminhos_fortaleza.json"
 
 
 def baixar(url, arquivo):
@@ -158,6 +165,18 @@ def decimos(pontos):
     return dec
 
 
+def concentracao(h, renda, peso):
+    """Índice de concentração de `h` segundo a renda: 2 cov(h, r) / média(h), com r a posição
+    relativa de cada morador na distribuição de renda (setores de mesma renda dividem a posição
+    média). Varia de -1 a 1; positivo indica `h` concentrado entre os de maior renda."""
+    t = pd.DataFrame({"h": np.asarray(h, dtype=float) * peso, "w": peso, "renda": renda}).dropna()
+    g = t.groupby("renda")[["h", "w"]].sum()
+    W, H = g["w"].sum(), g["h"].sum()
+    r = (g["w"].cumsum() - g["w"] / 2) / W
+    media = H / W
+    return 2 * ((g["h"] - g["w"] * media) * (r - 0.5)).sum() / (W * media)
+
+
 def figura(por_renda):
     t = por_renda[(por_renda["medida"] == MEDIDA_PRINCIPAL)
                   & (por_renda["distancia_m"] == D_PRINCIPAL)]
@@ -187,19 +206,26 @@ def main():
     km_comp = np.zeros(rede["componente"].max() + 1)
     for k, v in km.items():
         km_comp[k] = v
+    renda = pontos["renda"].to_numpy()
     print(f"{len(pontos)} células, {total:,.0f} moradores; "
           f"{pontos.loc[pontos['renda'].isna(), 'pop'].sum():,.0f} sem renda informada")
 
     R, nome = malha_viaria(overpass(ARQ_RUAS, [f'way["highway"~"^({TIPOS_RUA})$"]'],
                                     tuple(rede.to_crs(4326).total_bounds)))
-    Rd = densificar(R)
-    acesso_d = vertices_perto(Rd, rede, com_distancia=True)
-    sem_via = [k for k in km if not acesso_d.get(k)]
-    if sem_via:
-        print("componentes sem via a até", RAIO_RUAS_M, "m:", sem_via)
+    caixa = tuple(rede.to_crs(4326).total_bounds)
+    caminhos, _ = malha_viaria(overpass(ARQ_RUAS, [f'way["highway"~"^({TIPOS_RUA})$"]'], caixa)
+                               + overpass(ARQ_CAMINHOS, [f'way["highway"~"^({TIPOS_CAMINHO})$"]'],
+                                          caixa))
     dmax = max(DISTANCIAS)
-    dist = {"ruas": distancias_ruas(pontos, rede, Rd, acesso_d, dmax),
-            "reta": distancias_reta(pontos, rede, dmax)}
+    dist = {}
+    for medida, malha in [("ruas", R), ("ruas_e_caminhos", caminhos)]:
+        Rd = densificar(malha)
+        acesso_d = vertices_perto(Rd, rede, com_distancia=True)
+        sem_via = [k for k in km if not acesso_d.get(k)]
+        if sem_via:
+            print(medida, "- componentes sem via a até", RAIO_RUAS_M, "m:", sem_via)
+        dist[medida] = distancias_ruas(pontos, rede, Rd, acesso_d, dmax)
+    dist["reta"] = distancias_reta(pontos, rede, dmax)
 
     gerais, por_renda = [], []
     for medida, dm in dist.items():
@@ -214,7 +240,12 @@ def main():
                            "pct_c1_c2": 100 * pop[c12].sum() / total,
                            "pct_c1_entre_atendidos": 100 * pop[c1].sum() / pop[qualquer].sum(),
                            "km_alcance_medio": (pop * alcance).sum() / total,
-                           "km_alcance_medio_c1_c2": (pop * alcance_c12).sum() / total})
+                           "km_alcance_medio_c1_c2": (pop * alcance_c12).sum() / total,
+                           "ic_qualquer": concentracao(qualquer, renda, pop),
+                           "ic_c1": concentracao(c1, renda, pop),
+                           "ic_c1_c2": concentracao(c12, renda, pop),
+                           "ic_alcance": concentracao(alcance, renda, pop),
+                           "ic_alcance_c1_c2": concentracao(alcance_c12, renda, pop)})
             df = pd.DataFrame({"decimo": pontos["decimo"], "renda": pontos["renda"], "pop": pop,
                                "qualquer": qualquer * pop, "c1": c1 * pop, "c12": c12 * pop,
                                "alcance": alcance * pop})
