@@ -19,6 +19,7 @@
 \usepackage{flushend}
 \usepackage{titlesec}
 \usepackage{icomma}
+\usepackage{amsmath}
 \usepackage[colorlinks=true,allcolors=blue!70!black]{hyperref}
 
 \graphicspath{{../figuras/}{figuras/}} % ../figuras/ localmente; figuras/ no Overleaf
@@ -80,16 +81,22 @@ dos trajetos nem quem está próximo da rede. Essas dimensões se relacionam
 à acessibilidade~\cite{hansen1959} e à desigualdade na distribuição de
 infraestrutura urbana~\cite{bruno2024,xu2020}.
 
-A análise de redes oferece recursos para investigar essas
-questões~\cite{bettencourt2021,maia2023}, com estudos que identificam
-fragmentação mesmo em cidades com tradição cicloviária~\cite{natera2020}
-e mostram que os ganhos da expansão dependem das conexões entre
-trechos~\cite{szell2022}. Embora a conectividade ainda receba pouca atenção
-nas avaliações da infraestrutura~\cite{buehler2016}, ela orienta este
-trabalho, que investiga se as ciclovias e ciclofaixas de Fortaleza formam
-uma rede contínua e como a proximidade do maior componente varia por renda.
-Para isso, são identificados os componentes conectados, simuladas ligações
-entre eles e cruzada a rede com dados populacionais do Censo 2022.
+Na ciência de cidades, interconectividade e heterogeneidade são
+propriedades dos sistemas urbanos complexos~\cite{bettencourt2021}:
+o desempenho da infraestrutura depende das relações entre suas partes,
+e seus benefícios não se distribuem uniformemente. Quilômetros isolados
+e integrados, portanto, não oferecem a mesma continuidade. Estudos de
+redes cicloviárias mostram que os ganhos da expansão dependem de quais
+componentes são conectados~\cite{natera2020,szell2022}.
+
+A formação de componentes dialoga com a percolação em redes espaciais,
+usada para investigar agrupamentos urbanos em diferentes
+escalas~\cite{arcaute2016}. Aqui, essa perspectiva orienta a sensibilidade
+das conexões, sem estimar um limiar crítico. Já a acessibilidade relaciona
+oportunidades e impedância de deslocamento~\cite{hansen1959}; medimos
+apenas proximidade da infraestrutura, não acesso a destinos.
+Investiga-se como a conectividade da rede cadastrada e a proximidade
+de seu maior componente variam no espaço e por renda.
 
 % ---- figura
 \begin{figure*}[t]
@@ -115,23 +122,48 @@ imprecisões cartográficas, foi avaliada entre 0 e 50~m, enquanto a inspeção
 de 77 conexões incertas em imagens de satélite permitiu excluir
 11 cruzamentos em desnível.
 
+\paragraph{Modelo e conectividade} No grafo $G_\varepsilon=(V,E_\varepsilon)$,
+cada nó é um trecho de comprimento $w_v$, e cada aresta é uma conexão
+admitida após a triagem. Um componente é um conjunto máximo de nós
+ligados por caminhos. Para componentes $C_k$, define-se
+\begin{equation}
+ L_k=\sum_{v\in C_k}w_v,\qquad S=\frac{\max_k L_k}{\sum_{v\in V}w_v}.
+\end{equation}
+$S$ mede a fração da extensão no maior componente, evitando contar
+segmentos cuja quantidade depende da subdivisão cadastral. Variar
+$\varepsilon$ testa a regra geométrica, não simula novas obras.
+
 \paragraph{Ligações entre componentes} Uma estratégia gulosa adaptada
 de Natera Orozco \emph{et al.}~\cite{natera2020} compara dois critérios:
 menor distância ao componente principal e maior extensão incorporada da
-rede original por metro de ligação. Em ambos os casos, as conexões seguem
-os menores caminhos na malha viária, e o componente principal é atualizado
+rede original por metro de ligação, $g_j=\Delta L_j/\ell_j$, sendo
+$\Delta L_j$ a extensão incorporada e $\ell_j$ o comprimento da ligação,
+incluindo acessos. As conexões seguem os menores caminhos em uma malha
+viária distinta de $G_\varepsilon$, com comprimentos como pesos.
+O componente principal é atualizado
 a cada iteração com os caminhos e trechos incorporados para o cálculo
 seguinte. A extensão acumulada corresponde ao comprimento dessas ligações,
-sem representar seu custo financeiro.
+sem representar seu custo financeiro. Na curva, $S$ considera apenas
+a extensão original: novas ligações entram como custo, não como ganho.
 
 \paragraph{Proximidade da população} A população foi distribuída
 uniformemente por setor em uma grade de 50~m, considerando percursos de
 até 300~m pela malha viária, com acessos em linha reta entre grade, vias
-e trechos cicloviários. Para avaliar a desigualdade, os moradores foram
+e trechos cicloviários. Para população $p_i$ e distância $d_i$ da célula
+$i$ ao conjunto de trechos avaliado, a cobertura potencial é
+\begin{equation}
+ h_i(r)=\mathbf{1}\{d_i\leq r\},\qquad
+ P_r=\frac{\sum_i p_i h_i(r)}{\sum_i p_i}.
+\end{equation}
+Calcula-se $P_r$ para qualquer trecho, C1 e C1 unido a C2.
+Para avaliar a desigualdade, os moradores foram
 agrupados em décimos de igual população, ordenados pela renda média
 setorial, e foi calculado o índice de concentração~\cite{wagstaff1991},
-cujos valores positivos indicam concentração da proximidade nos grupos
-de maior renda. O código e os dados estão disponíveis em
+$IC=2\operatorname{Cov}_p(h,R)/P_r$, onde $R$ é a posição fracionária
+na ordenação por renda e a covariância é ponderada pela população.
+Valores positivos indicam concentração nos grupos de maior renda;
+zero indica ausência de concentração líquida por essa ordenação,
+não igualdade espacial. O código e os dados estão disponíveis em
 \url{https://github.com/Sarapessoa/artigo-ciencia-cidades}.
 
 % ---------------------------------------------------------------- resultados
@@ -158,7 +190,8 @@ original, contra 5,5~km pelo critério de menor distância
 registrada no OSM, pois a simulação parte da base municipal; portanto,
 não representam obras ainda necessárias. A integração completa exigiria
 cerca de 18~km pelo critério de maior ganho, concentrando o benefício
-nas primeiras conexões, como observado em outras cidades~\cite{natera2020}.
+nas primeiras conexões. Esse ganho expressa a interdependência da rede:
+uma ligação curta incorpora trajetos de componentes inteiros.
 
 \paragraph{Proximidade por renda} Enquanto 48\% dos moradores estão a
 até 300~m de algum trecho, 28\% estão próximos de C1, com diferenças
@@ -186,7 +219,8 @@ conectividade estrutural, sem considerar sentidos de circulação, segurança,
 uso ou acesso efetivo a destinos. A interpretação dos resultados depende
 da atualização e das diferenças temporais das fontes, assim como da
 distribuição uniforme da população nos setores e da renda média setorial,
-que não permite inferências individuais. Além disso, as ligações simuladas
+que não permite inferências individuais e pode ocultar diferenças
+internas aos setores. Além disso, as ligações simuladas
 exigem avaliação de viabilidade, e a estratégia gulosa não garante uma
 solução globalmente ótima.
 
