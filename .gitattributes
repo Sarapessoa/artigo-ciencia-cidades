@@ -2,3 +2,8 @@
 /material/data[[:space:]]sets/microdados_censo_escolar_2025_.zip filter=lfs diff=lfs merge=lfs -text
 /material/data[[:space:]]sets/offers.csv filter=lfs diff=lfs merge=lfs -text
 /output/pdf/*.pdf binary
+/resultados/triagem/*.png filter=lfs diff=lfs merge=lfs -text
+/resultados/lacunas/*.png filter=lfs diff=lfs merge=lfs -text
+/dados/brutos/osm_ruas_fortaleza.json filter=lfs diff=lfs merge=lfs -text
+/dados/brutos/osm_caminhos_fortaleza.json filter=lfs diff=lfs merge=lfs -text
+/dados/brutos/CE_setores_CD2022.gpkg filter=lfs diff=lfs merge=lfs -text

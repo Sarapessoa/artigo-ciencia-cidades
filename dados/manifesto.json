@@ -1,0 +1,560 @@
+{
+  "recuperado_em": "2026-11-09",
+  "observacao": "C?pias locais recuperadas; data de recupera??o n?o ? data de coleta. Hashes identificam os arquivos preservados, n?o certificam a execu??o hist?rica.",
+  "arquivos": [
+    {
+      "arquivo": "dados/brutos/CE_setores_CD2022.gpkg",
+      "bytes": 36413440,
+      "sha256": "397ca05c54f92a18ecd5151345820c68ce05a701d51d91322961c80b5db6942f",
+      "procedencia_local": "D:\\Mestrado\\ciencia-cidades\\artigo\\dados\\brutos\\CE_setores_CD2022.gpkg"
+    },
+    {
+      "arquivo": "dados/brutos/limite_fortaleza_ibge.geojson",
+      "bytes": 5097,
+      "sha256": "5056e714188ab643c0ef6fb0ac47d461867b12ad38b08e6cf2f83b26021372c4",
+      "procedencia_local": "j? presente neste checkout"
+    },
+    {
+      "arquivo": "dados/brutos/malha_cicloviaria.geojson",
+      "bytes": 331312,
+      "sha256": "c030f9da0d3635dac796cb57b71739aa7706060eb0b6e0d45b1e7161e324314f",
+      "procedencia_local": "j? presente neste checkout"
+    },
+    {
+      "arquivo": "dados/brutos/osm_caminhos_fortaleza.json",
+      "bytes": 9543159,
+      "sha256": "581d7a0ca3e96dd884d5531c08e129c41cd1f6b1ccae9cdedff2bd23907445e9",
+      "procedencia_local": "D:\\Mestrado\\ciencia-cidades\\artigo\\dados\\brutos\\osm_caminhos_fortaleza.json",
+      "elementos": 17378,
+      "osm_base": "2026-07-24T11:04:51Z"
+    },
+    {
+      "arquivo": "dados/brutos/osm_ciclovias_fortaleza.json",
+      "bytes": 2312302,
+      "sha256": "81ca51f66e06e48d6b42483c4bd3586355ebe5e1c94f9132c9f621cdeec0f929",
+      "procedencia_local": "j? presente neste checkout",
+      "elementos": 3079,
+      "osm_base": "2026-10-19T23:21:21Z"
+    },
+    {
+      "arquivo": "dados/brutos/osm_ruas_fortaleza.json",
+      "bytes": 24713694,
+      "sha256": "110ee2af2760a99607101e98f866d5e6b1d3ba8cb904c353f6fe825155fe7af5",
+      "procedencia_local": "D:\\Mestrado\\ciencia-cidades\\artigo\\dados\\brutos\\osm_ruas_fortaleza.json",
+      "elementos": 43072,
+      "osm_base": "2026-10-19T23:24:20Z"
+    },
+    {
+      "arquivo": "dados/brutos/osm_viadutos_tuneis.json",
+      "bytes": 526474,
+      "sha256": "d08fb5a9589d56bca81264cb43a5445ebee7a63aadf57a543034d7227483e14d",
+      "procedencia_local": "j? presente neste checkout",
+      "elementos": 1028,
+      "osm_base": "2026-10-19T21:30:21Z"
+    },
+    {
+      "arquivo": "dados/brutos/renda_setores_fortaleza.csv",
+      "bytes": 229371,
+      "sha256": "3f189eda8d5ab69a4d6e62b2e3df22db102b1d6960d2fc4ff64c1e70e471de48",
+      "procedencia_local": "j? presente neste checkout"
+    },
+    {
+      "arquivo": "resultados/triagem/0_250.png",
+      "bytes": 726340,
+      "sha256": "5712cb17a322c02394da43b663a33b27ede360bd5bfc074d1cb24976ece2a613",
+      "procedencia_local": "D:\\Mestrado\\ciencia-cidades\\artigo\\resultados\\triagem\\0_250.png"
+    },
+    {
+      "arquivo": "resultados/triagem/0_367.png",
+      "bytes": 747361,
+      "sha256": "92d170fc122a1c088259bba37be7e762969eee95d8eb77aaef1d40dd26446651",
+      "procedencia_local": "D:\\Mestrado\\ciencia-cidades\\artigo\\resultados\\triagem\\0_367.png"
+    },
+    {
+      "arquivo": "resultados/triagem/100_233.png",
+      "bytes": 691062,
+      "sha256": "faaaa084aa362e5818c2698f6a68634112f4dbda834bfce5c0395c187c522113",
+      "procedencia_local": "D:\\Mestrado\\ciencia-cidades\\artigo\\resultados\\triagem\\100_233.png"
+    },
+    {
+      "arquivo": "resultados/triagem/103_193.png",
+      "bytes": 740590,
+      "sha256": "8e18762ad63b80df0f22b880cdbe8e410ccc91848092d4852fa415a808d3b755",
+      "procedencia_local": "D:\\Mestrado\\ciencia-cidades\\artigo\\resultados\\triagem\\103_193.png"
+    },
+    {
+      "arquivo": "resultados/triagem/106_107.png",
+      "bytes": 655769,
+      "sha256": "18e9919bb7c084897c92121639901609323b2ae831539e6870aba9a345c0a87a",
+      "procedencia_local": "D:\\Mestrado\\ciencia-cidades\\artigo\\resultados\\triagem\\106_107.png"
+    },
+    {
+      "arquivo": "resultados/triagem/113_226.png",
+      "bytes": 730206,
+      "sha256": "9f7c5bb85c44e380abe3e882cd87bc3f967945014972845d4fb313582be1918d",
+      "procedencia_local": "D:\\Mestrado\\ciencia-cidades\\artigo\\resultados\\triagem\\113_226.png"
+    },
+    {
+      "arquivo": "resultados/triagem/119_318.png",
+      "bytes": 699207,
+      "sha256": "19de5fa0887a6242a6f32c0f683b215d9706931acdd2646bf244f2e3219e0520",
+      "procedencia_local": "D:\\Mestrado\\ciencia-cidades\\artigo\\resultados\\triagem\\119_318.png"
+    },
+    {
+      "arquivo": "resultados/triagem/11_194.png",
+      "bytes": 607922,
+      "sha256": "285eefecdc60663f1cbc365662ac916d5906458b24dbec357139823ec7aed209",
+      "procedencia_local": "D:\\Mestrado\\ciencia-cidades\\artigo\\resultados\\triagem\\11_194.png"
+    },
+    {
+      "arquivo": "resultados/triagem/11_206.png",
+      "bytes": 661022,
+      "sha256": "30f28fc8fc6198a4f8797f30477f4135e54a613a52fa887b4daf53e92fa8ae67",
+      "procedencia_local": "D:\\Mestrado\\ciencia-cidades\\artigo\\resultados\\triagem\\11_206.png"
+    },
+    {
+      "arquivo": "resultados/triagem/11_35.png",
+      "bytes": 682714,
+      "sha256": "c3216aafb7968b1f0eabe71432e1156d7977e8f7059911657726e5a96f9ec9e9",
+      "procedencia_local": "D:\\Mestrado\\ciencia-cidades\\artigo\\resultados\\triagem\\11_35.png"
+    },
+    {
+      "arquivo": "resultados/triagem/11_93.png",
+      "bytes": 710562,
+      "sha256": "29dec966ff283988029702013fc577a9157360f4eb79a6e7a2dfa87fd42b1cd2",
+      "procedencia_local": "D:\\Mestrado\\ciencia-cidades\\artigo\\resultados\\triagem\\11_93.png"
+    },
+    {
+      "arquivo": "resultados/triagem/123_284.png",
+      "bytes": 665463,
+      "sha256": "7b7fe23cbf19b4c16856a123611dae1a26ca39941869c501348c9a7692c6d484",
+      "procedencia_local": "D:\\Mestrado\\ciencia-cidades\\artigo\\resultados\\triagem\\123_284.png"
+    },
+    {
+      "arquivo": "resultados/triagem/12_77.png",
+      "bytes": 717835,
+      "sha256": "90bfbc0c60995499100a41bb72e8a1badfa9a8dbb12d579ca45d0268a59ef8f2",
+      "procedencia_local": "D:\\Mestrado\\ciencia-cidades\\artigo\\resultados\\triagem\\12_77.png"
+    },
+    {
+      "arquivo": "resultados/triagem/136_236.png",
+      "bytes": 679295,
+      "sha256": "2be3d5055953dca2c43aa3df4f3842c017e78f633a8231609b786fa6589d04b0",
+      "procedencia_local": "D:\\Mestrado\\ciencia-cidades\\artigo\\resultados\\triagem\\136_236.png"
+    },
+    {
+      "arquivo": "resultados/triagem/13_14.png",
+      "bytes": 674307,
+      "sha256": "2f9b3c8f369c8492f46ed587826b1a88ec736119f8b2b932b7b049de63961d26",
+      "procedencia_local": "D:\\Mestrado\\ciencia-cidades\\artigo\\resultados\\triagem\\13_14.png"
+    },
+    {
+      "arquivo": "resultados/triagem/13_285.png",
+      "bytes": 703248,
+      "sha256": "600dfa35b3b74e66e078cae712377e16a92844a81da7439daade13d3652ab126",
+      "procedencia_local": "D:\\Mestrado\\ciencia-cidades\\artigo\\resultados\\triagem\\13_285.png"
+    },
+    {
+      "arquivo": "resultados/triagem/145_283.png",
+      "bytes": 712637,
+      "sha256": "3de5b14b46afa0e05ec3e92ff6f1cb8ebd47a96fb77296661e0c1f3aa0c963ba",
+      "procedencia_local": "D:\\Mestrado\\ciencia-cidades\\artigo\\resultados\\triagem\\145_283.png"
+    },
+    {
+      "arquivo": "resultados/triagem/148_163.png",
+      "bytes": 793366,
+      "sha256": "bb25712860060d5a805fbe63209239e95b9d63b77ad92cbbfd7964671a3f01c2",
+      "procedencia_local": "D:\\Mestrado\\ciencia-cidades\\artigo\\resultados\\triagem\\148_163.png"
+    },
+    {
+      "arquivo": "resultados/triagem/14_16.png",
+      "bytes": 674090,
+      "sha256": "aec069d196f38210f01a6b890801a104f0645077a06d9bed856d9ec356b1bee3",
+      "procedencia_local": "D:\\Mestrado\\ciencia-cidades\\artigo\\resultados\\triagem\\14_16.png"
+    },
+    {
+      "arquivo": "resultados/triagem/14_306.png",
+      "bytes": 663145,
+      "sha256": "dc98d4a3a03fea84988b418aba67ad536cce21c003cfbf7f5ffa0a4e1e7ae27b",
+      "procedencia_local": "D:\\Mestrado\\ciencia-cidades\\artigo\\resultados\\triagem\\14_306.png"
+    },
+    {
+      "arquivo": "resultados/triagem/152_337.png",
+      "bytes": 708527,
+      "sha256": "433218f23e5f2cd04f032aa19e8020a558c200752f91b9b9248089fc06ee8f9c",
+      "procedencia_local": "D:\\Mestrado\\ciencia-cidades\\artigo\\resultados\\triagem\\152_337.png"
+    },
+    {
+      "arquivo": "resultados/triagem/153_154.png",
+      "bytes": 665803,
+      "sha256": "c4f2c76297ece12cd4b89a01cde1801de340d4ea9fad5a6a2d57d1453259e8c5",
+      "procedencia_local": "D:\\Mestrado\\ciencia-cidades\\artigo\\resultados\\triagem\\153_154.png"
+    },
+    {
+      "arquivo": "resultados/triagem/161_331.png",
+      "bytes": 622992,
+      "sha256": "c36a09b9f55493df650d176526300ed7151f224fd0470bfc72418d9a7adac461",
+      "procedencia_local": "D:\\Mestrado\\ciencia-cidades\\artigo\\resultados\\triagem\\161_331.png"
+    },
+    {
+      "arquivo": "resultados/triagem/161_341.png",
+      "bytes": 667234,
+      "sha256": "e734cfd3a025205bef48716624a2e874f0c3fa1fd33d6d181229f2187f9d4620",
+      "procedencia_local": "D:\\Mestrado\\ciencia-cidades\\artigo\\resultados\\triagem\\161_341.png"
+    },
+    {
+      "arquivo": "resultados/triagem/162_331.png",
+      "bytes": 614217,
+      "sha256": "eb47f62cc6fda7f0e065e6e53ab4e57a47be39c8f44dd30ea3f7ba583fe4883b",
+      "procedencia_local": "D:\\Mestrado\\ciencia-cidades\\artigo\\resultados\\triagem\\162_331.png"
+    },
+    {
+      "arquivo": "resultados/triagem/174_293.png",
+      "bytes": 659163,
+      "sha256": "582a7a0d1fefe5246f36e0fc94336c54605ac39b378dc29ef169b492da8ac92f",
+      "procedencia_local": "D:\\Mestrado\\ciencia-cidades\\artigo\\resultados\\triagem\\174_293.png"
+    },
+    {
+      "arquivo": "resultados/triagem/179_263.png",
+      "bytes": 636733,
+      "sha256": "876f423946cde4365b9dd649e24a81625c6468b3693b2938a4dec691d59aa5ad",
+      "procedencia_local": "D:\\Mestrado\\ciencia-cidades\\artigo\\resultados\\triagem\\179_263.png"
+    },
+    {
+      "arquivo": "resultados/triagem/17_179.png",
+      "bytes": 585956,
+      "sha256": "2ef6840e76a636502d85c08737d98c109101d7576b8759d8388c2128d3190f9e",
+      "procedencia_local": "D:\\Mestrado\\ciencia-cidades\\artigo\\resultados\\triagem\\17_179.png"
+    },
+    {
+      "arquivo": "resultados/triagem/17_45.png",
+      "bytes": 494180,
+      "sha256": "73ab8ba8dcd8586fc1c3bf8865b44e990a75699404185c8a25171e8fecf63791",
+      "procedencia_local": "D:\\Mestrado\\ciencia-cidades\\artigo\\resultados\\triagem\\17_45.png"
+    },
+    {
+      "arquivo": "resultados/triagem/186_188.png",
+      "bytes": 666560,
+      "sha256": "08e5e237aed90528a3943f1be2c13e00c40fc30efb67ec21af08877998e7e194",
+      "procedencia_local": "D:\\Mestrado\\ciencia-cidades\\artigo\\resultados\\triagem\\186_188.png"
+    },
+    {
+      "arquivo": "resultados/triagem/190_402.png",
+      "bytes": 739155,
+      "sha256": "f0573dafd2f107cde6cd163c240476fede88717e787e9c0b2c80d40c9ffa9ef9",
+      "procedencia_local": "D:\\Mestrado\\ciencia-cidades\\artigo\\resultados\\triagem\\190_402.png"
+    },
+    {
+      "arquivo": "resultados/triagem/1_225.png",
+      "bytes": 698488,
+      "sha256": "6f9eda6beacde6ceb4004df4e251d09e91755a0e283e910b978b68f8cc6988ea",
+      "procedencia_local": "D:\\Mestrado\\ciencia-cidades\\artigo\\resultados\\triagem\\1_225.png"
+    },
+    {
+      "arquivo": "resultados/triagem/1_230.png",
+      "bytes": 709710,
+      "sha256": "d4c483f1796cab4ff45094ffc7397127443718c79dd2e95aca9a44ee3fea124d",
+      "procedencia_local": "D:\\Mestrado\\ciencia-cidades\\artigo\\resultados\\triagem\\1_230.png"
+    },
+    {
+      "arquivo": "resultados/triagem/1_232.png",
+      "bytes": 734762,
+      "sha256": "6d528760267ebe5795c58433e7c958ff235a644af1313ada0acec9894c6f244e",
+      "procedencia_local": "D:\\Mestrado\\ciencia-cidades\\artigo\\resultados\\triagem\\1_232.png"
+    },
+    {
+      "arquivo": "resultados/triagem/1_290.png",
+      "bytes": 673141,
+      "sha256": "9e189f8f8952174c58a42e19619de1670f702376ffb7367ba58ef399dfec857d",
+      "procedencia_local": "D:\\Mestrado\\ciencia-cidades\\artigo\\resultados\\triagem\\1_290.png"
+    },
+    {
+      "arquivo": "resultados/triagem/1_331.png",
+      "bytes": 736204,
+      "sha256": "728b10284738049de8ab0ec3496d7470b64bca1b364f4df3a3724be3cd6fc58d",
+      "procedencia_local": "D:\\Mestrado\\ciencia-cidades\\artigo\\resultados\\triagem\\1_331.png"
+    },
+    {
+      "arquivo": "resultados/triagem/1_94.png",
+      "bytes": 681322,
+      "sha256": "040de1f5de2eccf4c3cd1131f03151c5f6bf5b5792c99de501433d5482591d62",
+      "procedencia_local": "D:\\Mestrado\\ciencia-cidades\\artigo\\resultados\\triagem\\1_94.png"
+    },
+    {
+      "arquivo": "resultados/triagem/225_227.png",
+      "bytes": 695663,
+      "sha256": "bfcb0ded7823c15fc3b7bddaac6b4faf0da6bb13ae757cd85a92c37c8b1626ef",
+      "procedencia_local": "D:\\Mestrado\\ciencia-cidades\\artigo\\resultados\\triagem\\225_227.png"
+    },
+    {
+      "arquivo": "resultados/triagem/225_341.png",
+      "bytes": 696754,
+      "sha256": "05b4aee2906af65bd7a86c2d89c4901115c525fc28f8789bf001f210d68c9e46",
+      "procedencia_local": "D:\\Mestrado\\ciencia-cidades\\artigo\\resultados\\triagem\\225_341.png"
+    },
+    {
+      "arquivo": "resultados/triagem/228_383.png",
+      "bytes": 761477,
+      "sha256": "ac419efa6bc7f0c1b8c62ead5ca143df2d27a9b30bf32af676a09456249337f7",
+      "procedencia_local": "D:\\Mestrado\\ciencia-cidades\\artigo\\resultados\\triagem\\228_383.png"
+    },
+    {
+      "arquivo": "resultados/triagem/229_289.png",
+      "bytes": 669773,
+      "sha256": "c36d5e886cb61d910ce6e24ad94a94d958f08e5ee9443753e528cfe39fe4a4b7",
+      "procedencia_local": "D:\\Mestrado\\ciencia-cidades\\artigo\\resultados\\triagem\\229_289.png"
+    },
+    {
+      "arquivo": "resultados/triagem/23_55.png",
+      "bytes": 708985,
+      "sha256": "aae949b8e6887687c15c5bf596baa22791b76c2ac02d38a8693fd2682fd09fad",
+      "procedencia_local": "D:\\Mestrado\\ciencia-cidades\\artigo\\resultados\\triagem\\23_55.png"
+    },
+    {
+      "arquivo": "resultados/triagem/271_382.png",
+      "bytes": 695385,
+      "sha256": "76a63e18e8204801a87a8fcf0f0c3e8c212852d128ee69384eff024cf404a3d0",
+      "procedencia_local": "D:\\Mestrado\\ciencia-cidades\\artigo\\resultados\\triagem\\271_382.png"
+    },
+    {
+      "arquivo": "resultados/triagem/277_382.png",
+      "bytes": 691484,
+      "sha256": "d3acec56ccecff7107ac619baae9c889b140d57071783689c55c4b97b176ea51",
+      "procedencia_local": "D:\\Mestrado\\ciencia-cidades\\artigo\\resultados\\triagem\\277_382.png"
+    },
+    {
+      "arquivo": "resultados/triagem/280_373.png",
+      "bytes": 584316,
+      "sha256": "c98668373ffc5c9dad3600159ffefd1c90524092ceaa105142f7079c95d1b94d",
+      "procedencia_local": "D:\\Mestrado\\ciencia-cidades\\artigo\\resultados\\triagem\\280_373.png"
+    },
+    {
+      "arquivo": "resultados/triagem/283_384.png",
+      "bytes": 720498,
+      "sha256": "fb7ec0ea96a68cef123312f2d6db5c62648f6e1ca7d12d721ace727d11dc4525",
+      "procedencia_local": "D:\\Mestrado\\ciencia-cidades\\artigo\\resultados\\triagem\\283_384.png"
+    },
+    {
+      "arquivo": "resultados/triagem/286_398.png",
+      "bytes": 597665,
+      "sha256": "07d6d207f6685672771ce9b0a89a4acb887407c1e68674b430f0f73895efb083",
+      "procedencia_local": "D:\\Mestrado\\ciencia-cidades\\artigo\\resultados\\triagem\\286_398.png"
+    },
+    {
+      "arquivo": "resultados/triagem/28_136.png",
+      "bytes": 676576,
+      "sha256": "db830e9978d92f9bf270e1a8febaf88bdbbefac6821732880b9f6a1825030509",
+      "procedencia_local": "D:\\Mestrado\\ciencia-cidades\\artigo\\resultados\\triagem\\28_136.png"
+    },
+    {
+      "arquivo": "resultados/triagem/299_303.png",
+      "bytes": 716017,
+      "sha256": "2b4adf35014cda98efaf50eff70cb79a72517f37e3740a52a985e10978817a8f",
+      "procedencia_local": "D:\\Mestrado\\ciencia-cidades\\artigo\\resultados\\triagem\\299_303.png"
+    },
+    {
+      "arquivo": "resultados/triagem/2_153.png",
+      "bytes": 683355,
+      "sha256": "c32a04a6b4e3ac801653fab8ec852a749b9171699b369aeb3eb82fc14fd28109",
+      "procedencia_local": "D:\\Mestrado\\ciencia-cidades\\artigo\\resultados\\triagem\\2_153.png"
+    },
+    {
+      "arquivo": "resultados/triagem/2_237.png",
+      "bytes": 561047,
+      "sha256": "78967647ae0d84a6cf5071d684f9141091487e8fed14e76fe688350e3989b223",
+      "procedencia_local": "D:\\Mestrado\\ciencia-cidades\\artigo\\resultados\\triagem\\2_237.png"
+    },
+    {
+      "arquivo": "resultados/triagem/2_263.png",
+      "bytes": 563073,
+      "sha256": "3a34e9d98f83ffe4b02ecd7c87ce2b154b01105f7dc071e27202c8fdb63a9d34",
+      "procedencia_local": "D:\\Mestrado\\ciencia-cidades\\artigo\\resultados\\triagem\\2_263.png"
+    },
+    {
+      "arquivo": "resultados/triagem/2_404.png",
+      "bytes": 584856,
+      "sha256": "0896507f07d6bf86df15e9b44346e3b19da61f7d71a650bf43bebf55b5e8ae49",
+      "procedencia_local": "D:\\Mestrado\\ciencia-cidades\\artigo\\resultados\\triagem\\2_404.png"
+    },
+    {
+      "arquivo": "resultados/triagem/318_322.png",
+      "bytes": 711240,
+      "sha256": "f0e8281d795f037d71821d55d6eb343d4063c22d33895cfa1073c9f60cc45696",
+      "procedencia_local": "D:\\Mestrado\\ciencia-cidades\\artigo\\resultados\\triagem\\318_322.png"
+    },
+    {
+      "arquivo": "resultados/triagem/318_355.png",
+      "bytes": 674221,
+      "sha256": "f47a0e0a0976f6cdaf1dd911d73ca1fb69bbcae76d90c51c45b81c7ece015bbe",
+      "procedencia_local": "D:\\Mestrado\\ciencia-cidades\\artigo\\resultados\\triagem\\318_355.png"
+    },
+    {
+      "arquivo": "resultados/triagem/318_356.png",
+      "bytes": 702796,
+      "sha256": "1208ed8a9845116fe011b8cd2b6f7dbe796662daf9ecdbbedf088cc42237c350",
+      "procedencia_local": "D:\\Mestrado\\ciencia-cidades\\artigo\\resultados\\triagem\\318_356.png"
+    },
+    {
+      "arquivo": "resultados/triagem/318_369.png",
+      "bytes": 745372,
+      "sha256": "7ca1c1b0026756d6b42b871240a977c375fe19c613041eaa3cd95d788a1ae5ae",
+      "procedencia_local": "D:\\Mestrado\\ciencia-cidades\\artigo\\resultados\\triagem\\318_369.png"
+    },
+    {
+      "arquivo": "resultados/triagem/31_71.png",
+      "bytes": 754636,
+      "sha256": "00e177216ab6753c477c41b1453ce112d0d1d8182aba4edc5df3d9c5b5260296",
+      "procedencia_local": "D:\\Mestrado\\ciencia-cidades\\artigo\\resultados\\triagem\\31_71.png"
+    },
+    {
+      "arquivo": "resultados/triagem/322_371.png",
+      "bytes": 762485,
+      "sha256": "7d6ac23548db48e146cf67b273373c49988d63b4eb489df4410f98310ba2e1ce",
+      "procedencia_local": "D:\\Mestrado\\ciencia-cidades\\artigo\\resultados\\triagem\\322_371.png"
+    },
+    {
+      "arquivo": "resultados/triagem/331_341.png",
+      "bytes": 658455,
+      "sha256": "09e46693ea149168338c0fb2e6e17e3499aa25ce46458accb238e9719b996bc4",
+      "procedencia_local": "D:\\Mestrado\\ciencia-cidades\\artigo\\resultados\\triagem\\331_341.png"
+    },
+    {
+      "arquivo": "resultados/triagem/375_376.png",
+      "bytes": 561723,
+      "sha256": "84ac3f029c3df029948c38e84776c3487b3ee8abf5d73572ad4f073131a80e91",
+      "procedencia_local": "D:\\Mestrado\\ciencia-cidades\\artigo\\resultados\\triagem\\375_376.png"
+    },
+    {
+      "arquivo": "resultados/triagem/378_405.png",
+      "bytes": 690461,
+      "sha256": "36064d5127991ac17dba98c321a4a0f4283aecc156af85ef386abbc30c464015",
+      "procedencia_local": "D:\\Mestrado\\ciencia-cidades\\artigo\\resultados\\triagem\\378_405.png"
+    },
+    {
+      "arquivo": "resultados/triagem/37_57.png",
+      "bytes": 735392,
+      "sha256": "639beaebf3f805e7befd2f2b7a488386d9a66a4f45e83f133ebaa83598bcca5f",
+      "procedencia_local": "D:\\Mestrado\\ciencia-cidades\\artigo\\resultados\\triagem\\37_57.png"
+    },
+    {
+      "arquivo": "resultados/triagem/42_71.png",
+      "bytes": 708848,
+      "sha256": "50dd01b9e9e74d12ae704fbf66e449e564c4faa9db6eb39c12e1a2dbf81f2d60",
+      "procedencia_local": "D:\\Mestrado\\ciencia-cidades\\artigo\\resultados\\triagem\\42_71.png"
+    },
+    {
+      "arquivo": "resultados/triagem/4_272.png",
+      "bytes": 704390,
+      "sha256": "bdcd54844d1a13823eb64c6a91fff67cbb0fbef8940137a59379fdb4cf3809bb",
+      "procedencia_local": "D:\\Mestrado\\ciencia-cidades\\artigo\\resultados\\triagem\\4_272.png"
+    },
+    {
+      "arquivo": "resultados/triagem/4_58.png",
+      "bytes": 639612,
+      "sha256": "5f3d9074640e08f7784a23218dcba9e37238cb5336dc43c3ed75389a4f48c976",
+      "procedencia_local": "D:\\Mestrado\\ciencia-cidades\\artigo\\resultados\\triagem\\4_58.png"
+    },
+    {
+      "arquivo": "resultados/triagem/50_59.png",
+      "bytes": 671573,
+      "sha256": "52bdf7eb86d35b0f8d91f4cbdd924671f21f5481535b00c95bba939537580c08",
+      "procedencia_local": "D:\\Mestrado\\ciencia-cidades\\artigo\\resultados\\triagem\\50_59.png"
+    },
+    {
+      "arquivo": "resultados/triagem/52_367.png",
+      "bytes": 720120,
+      "sha256": "c82c178603619e1495af38756965e58d9d59a078b1d03203ce7e4866d44d28e9",
+      "procedencia_local": "D:\\Mestrado\\ciencia-cidades\\artigo\\resultados\\triagem\\52_367.png"
+    },
+    {
+      "arquivo": "resultados/triagem/54_55.png",
+      "bytes": 679949,
+      "sha256": "b07fa3997e3a00d2fbf33c4c8ea45f0654a91b3eda5a1270173d32d7ef983379",
+      "procedencia_local": "D:\\Mestrado\\ciencia-cidades\\artigo\\resultados\\triagem\\54_55.png"
+    },
+    {
+      "arquivo": "resultados/triagem/62_403.png",
+      "bytes": 620767,
+      "sha256": "b53b95ba9d4becb1142a580d318ab95f085b02f915aecd5fde106e0bfaedcf03",
+      "procedencia_local": "D:\\Mestrado\\ciencia-cidades\\artigo\\resultados\\triagem\\62_403.png"
+    },
+    {
+      "arquivo": "resultados/triagem/66_68.png",
+      "bytes": 688461,
+      "sha256": "d0ea751bb8881bb0a7d98a69b57d6a0948b11820e5de891a634fb106f5253a8d",
+      "procedencia_local": "D:\\Mestrado\\ciencia-cidades\\artigo\\resultados\\triagem\\66_68.png"
+    },
+    {
+      "arquivo": "resultados/triagem/67_242.png",
+      "bytes": 738519,
+      "sha256": "174e5a57f9d81ced491d6da88c0ad6b0f2a1742cb837ac8152b87719704e33d1",
+      "procedencia_local": "D:\\Mestrado\\ciencia-cidades\\artigo\\resultados\\triagem\\67_242.png"
+    },
+    {
+      "arquivo": "resultados/triagem/68_344.png",
+      "bytes": 760988,
+      "sha256": "8a83bddded2b679420874db0546397831357eafa99a44cc0f23272e28fb2e2d6",
+      "procedencia_local": "D:\\Mestrado\\ciencia-cidades\\artigo\\resultados\\triagem\\68_344.png"
+    },
+    {
+      "arquivo": "resultados/triagem/81_249.png",
+      "bytes": 665482,
+      "sha256": "8240a5581b076792588245cbce1c75ebff41b73a78c4efe8d03128b97ef6652e",
+      "procedencia_local": "D:\\Mestrado\\ciencia-cidades\\artigo\\resultados\\triagem\\81_249.png"
+    },
+    {
+      "arquivo": "resultados/triagem/89_367.png",
+      "bytes": 649690,
+      "sha256": "42d461ff370de68eb9c45477a12ad8a31d3c0b5b675055565a513d4a2ef584ca",
+      "procedencia_local": "D:\\Mestrado\\ciencia-cidades\\artigo\\resultados\\triagem\\89_367.png"
+    },
+    {
+      "arquivo": "resultados/triagem/98_133.png",
+      "bytes": 738041,
+      "sha256": "ec184c3beae9ec9a15231d96c92869113106b78ef169bdf95fbbd95d7d48f9c3",
+      "procedencia_local": "D:\\Mestrado\\ciencia-cidades\\artigo\\resultados\\triagem\\98_133.png"
+    },
+    {
+      "arquivo": "resultados/triagem/98_99.png",
+      "bytes": 667158,
+      "sha256": "01ab2fb63b11d897935810ed2d49408c52f8742947e83c0e3ebe4cce2b084770",
+      "procedencia_local": "D:\\Mestrado\\ciencia-cidades\\artigo\\resultados\\triagem\\98_99.png"
+    },
+    {
+      "arquivo": "resultados/lacunas/lacuna_C1_C2.png",
+      "bytes": 1310665,
+      "sha256": "f4d4bd135b3668c35b7a4e039d57cfc9470becbc99f0e321119a4c0e41713d63",
+      "procedencia_local": "D:\\Mestrado\\ciencia-cidades\\artigo\\resultados\\lacunas\\lacuna_C1_C2.png"
+    },
+    {
+      "arquivo": "resultados/lacunas/lacuna_C1_C3.png",
+      "bytes": 1090731,
+      "sha256": "38b3b848021f5e7f48a2c0a06744400daa2685d08657b7a75c9c711e435c26c8",
+      "procedencia_local": "D:\\Mestrado\\ciencia-cidades\\artigo\\resultados\\lacunas\\lacuna_C1_C3.png"
+    },
+    {
+      "arquivo": "resultados/lacunas/lacuna_C1_C4.png",
+      "bytes": 1077841,
+      "sha256": "f01f83797b34aaaa942db010b5840469e58876b5e8fedf1f85659439fd029a20",
+      "procedencia_local": "D:\\Mestrado\\ciencia-cidades\\artigo\\resultados\\lacunas\\lacuna_C1_C4.png"
+    },
+    {
+      "arquivo": "resultados/lacunas/lacuna_C1_C5.png",
+      "bytes": 1180119,
+      "sha256": "c2604abe143870aefc42599fc640cfff39df433465b126fc85d1e9c7faad732e",
+      "procedencia_local": "D:\\Mestrado\\ciencia-cidades\\artigo\\resultados\\lacunas\\lacuna_C1_C5.png"
+    },
+    {
+      "arquivo": "resultados/triagem_conexoes.csv",
+      "bytes": 4017,
+      "sha256": "ff1ff63644d084d49f767f15deb42378f185496978f60b42b18a84d2abd79369",
+      "procedencia_local": "j? presente neste checkout"
+    },
+    {
+      "arquivo": "resultados/fonte.json",
+      "bytes": 497,
+      "sha256": "2b2243e1ba4cdfbdcc75f7242eb6c6032ece835feed0be6a017d5b62cbe5372b",
+      "procedencia_local": "j? presente neste checkout"
+    }
+  ]
+}

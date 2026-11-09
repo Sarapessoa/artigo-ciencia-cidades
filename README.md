@@ -81,6 +81,10 @@ Erros geométricos e desatualização cadastral podem produzir descontinuidades 
 
 ## Como reproduzir
 
+Instale o Git LFS e execute `git lfs pull` ap?s clonar para obter as bases grandes
+e as imagens preservadas. Consulte [o invent?rio dos dados](dados/README.md)
+para fontes, hashes e limites do acervo.
+
 ```
 python -m venv .venv
 .venv/Scripts/python -m pip install -r requirements.txt
