@@ -1,6 +1,8 @@
 .venv/
 .ipynb_checkpoints/
 __pycache__/
+# imagens temporárias de conferência dos PDFs
+/tmp/pdfs/
 # recortes de imagem de satélite (Esri World Imagery), regeneráveis com analise/triagem_conexoes.py
 resultados/triagem/
 

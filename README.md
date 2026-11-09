@@ -241,6 +241,24 @@ O endereço aparece em Menu → Integrations → Git e só é necessário na pri
 
 Para compilar localmente, sem Overleaf, use `powershell -File texto/compilar.ps1`. O script roda `pdflatex`, `bibtex` e `pdflatex` mais duas vezes, com os auxiliares em `texto/build/`. O LaTeX Workshop do VS Code usa a mesma sequência (`.vscode/settings.json`).
 
-## Próxima etapa
+## Apresentação do artigo
+
+A versão acadêmica, com 23 slides, está em
+[apresentacao_artigo_cicloviaria_fortaleza_academica.pdf](output/pdf/apresentacao_artigo_cicloviaria_fortaleza_academica.pdf).
+Inclui contexto, fontes dos dados, método, exemplos didáticos, resultados e limitações.
+
+Para gerar novamente no Windows, com as fontes Arial instaladas:
+
+```powershell
+python -m pip install -r texto/requirements-apresentacao.txt
+python texto/gerar_apresentacao.py
+```
+
+O gerador usa os resultados e a figura já existentes no repositório. Ele verifica
+as 23 páginas e os limites dos textos, e salva imagens de conferência em
+`tmp/pdfs/apresentacao/`. Essas imagens são temporárias, não são versionadas e
+podem ser removidas após a revisão visual.
+
+## Próxima etapa do artigo
 
 Criar o projeto no Overleaf e revisar o rascunho.
