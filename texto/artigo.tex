@@ -62,7 +62,7 @@ Ciência de Dados Aplicado à Ciência de Cidades \quad$\cdot$\quad Prof. Hygor 
 
 \begin{quote}\small
 \noindent\textbf{Resumo.}
-Este trabalho analisa a conectividade da rede cicloviária de Fortaleza e a proximidade da população por renda, utilizando grafos e dados da Prefeitura, do Censo 2022 e do OpenStreetMap. Os 429~km da base municipal formam 44 componentes, dos quais o maior concentra 56\% da extensão e está a até 300~m de apenas 11\% dos moradores do décimo de menor renda setorial, contra 66\% no de maior renda. A inclusão de uma ligação registrada no OpenStreetMap e ausente da base reduz o índice de concentração de 0,33 para 0,17, indicando que a avaliação da infraestrutura deve considerar sua conectividade e distribuição, além da extensão total.
+A extensão total da infraestrutura cicloviária, medida em quilômetros, não informa, por si só, se os trechos estão conectados nem como a proximidade da população à rede varia conforme a renda. O estudo examina essas duas questões em Fortaleza, utilizando grafos e dados da Prefeitura, do Censo 2022 e do OpenStreetMap. A comparação por renda utiliza a média dos setores censitários. Os 429~km da base municipal formam 44 componentes, dos quais o maior concentra 56\% da extensão e está a até 300~m de apenas 11\% dos moradores do décimo de menor renda setorial, contra 66\% no de maior renda. A inclusão de uma ligação registrada no OpenStreetMap e ausente da base reduz o índice de concentração de 0,33 para 0,17, o que mostra a influência da atualização cadastral na análise da desigualdade.
 
 \vspace{0.15cm}
 \noindent\textbf{Palavras-chave:} redes espaciais; infraestrutura cicloviária; desigualdade de acesso.
@@ -74,22 +74,25 @@ Este trabalho analisa a conectividade da rede cicloviária de Fortaleza e a prox
 % ---------------------------------------------------------------- problema
 \section{Qual é o problema?}
 
-A extensão é frequentemente usada para divulgar o avanço da infraestrutura
-cicloviária em Fortaleza~\cite{opovo2022}, mas não informa a continuidade
-dos trajetos nem quem está próximo da rede. Essas dimensões se relacionam
-à acessibilidade~\cite{hansen1959} e à desigualdade na distribuição de
-infraestrutura urbana~\cite{bruno2024,xu2020}.
+A extensão total, medida em quilômetros, é frequentemente usada para
+divulgar o avanço da infraestrutura cicloviária em Fortaleza~\cite{opovo2022}.
+No entanto, esse indicador não informa, por si só, se os trechos estão
+conectados nem como a proximidade da população à rede varia conforme a renda.
+Um morador próximo de uma ciclovia isolada não dispõe da mesma continuidade
+de infraestrutura que outro próximo de uma rede extensa. A conectividade
+é, por isso, uma das dimensões da acessibilidade~\cite{hansen1959} e à distribuição da infraestrutura
+urbana~\cite{bruno2024,xu2020}.
 
-A análise de redes oferece recursos para investigar essas
-questões~\cite{bettencourt2021,maia2023}, com estudos que identificam
-fragmentação mesmo em cidades com tradição cicloviária~\cite{natera2020}
-e mostram que os ganhos da expansão dependem das conexões entre
-trechos~\cite{szell2022}. Embora a conectividade ainda receba pouca atenção
-nas avaliações da infraestrutura~\cite{buehler2016}, ela orienta este
-trabalho, que investiga se as ciclovias e ciclofaixas de Fortaleza formam
-uma rede contínua e como a proximidade do maior componente varia por renda.
-Para isso, são identificados os componentes conectados, simuladas ligações
-entre eles e cruzada a rede com dados populacionais do Censo 2022.
+A representação da infraestrutura como rede permite identificar quais
+trechos estão conectados~\cite{bettencourt2021,maia2023}.
+Estudos identificam fragmentação mesmo em cidades com tradição
+cicloviária~\cite{natera2020} e mostram que os ganhos da expansão dependem
+das conexões entre trechos~\cite{szell2022}. Apesar disso, a conectividade
+ainda recebe pouca atenção nas avaliações da infraestrutura~\cite{buehler2016}.
+Este trabalho investiga como as ciclovias e ciclofaixas de
+Fortaleza se conectam e como a proximidade da população ao maior conjunto
+conectado varia por renda. Também estima a extensão das ligações
+necessárias para integrar os conjuntos separados.
 
 % ---- figura
 \begin{figure*}[t]
@@ -102,93 +105,104 @@ entre eles e cruzada a rede com dados populacionais do Censo 2022.
 % ---------------------------------------------------------------- método
 \section{O que foi feito para resolvê-lo?}
 
-\paragraph{Dados e representação da rede} Foram utilizadas a malha cicloviária municipal~\cite{fortaleza2024}
-(406 trechos, 429~km, majoritariamente referenciados em 2022), a população
-e o rendimento nominal médio dos responsáveis pelos domicílios por setor
-do Censo 2022~\cite{ibge2022} e a malha viária do OpenStreetMap
-(OSM)~\cite{osm2026}. Excluíram-se 17~km de ciclorrotas e passeios
-compartilhados, sem espaço exclusivo para bicicletas, e os trechos
-selecionados foram representados como nós de um grafo não direcionado,
-com arestas entre aqueles que se intersectam ou cuja extremidade fica
-a até 10~m de outro trecho. Essa tolerância, adotada para acomodar
-imprecisões cartográficas, foi avaliada entre 0 e 50~m, enquanto a inspeção
-de 77 conexões incertas em imagens de satélite permitiu excluir
-11 cruzamentos em desnível.
+\paragraph{Dados e representação da rede} Foram utilizadas a malha
+cicloviária municipal~\cite{fortaleza2024} (406 trechos, 429~km,
+majoritariamente referenciados em 2022), dados de população e rendimento nominal
+médio dos responsáveis pelos domicílios por setor do Censo 2022~\cite{ibge2022}
+e a malha viária do OpenStreetMap (OSM)~\cite{osm2026}. Foram excluídos
+17~km de ciclorrotas e passeios compartilhados, sem espaço exclusivo
+para bicicletas.
 
-\paragraph{Ligações entre componentes} Uma estratégia gulosa adaptada
-de Natera Orozco \emph{et al.}~\cite{natera2020} compara dois critérios:
-menor distância ao componente principal e maior extensão incorporada da
-rede original por metro de ligação. Em ambos os casos, as conexões seguem
-os menores caminhos na malha viária, e o componente principal é atualizado
-a cada iteração com os caminhos e trechos incorporados para o cálculo
-seguinte. A extensão acumulada corresponde ao comprimento dessas ligações,
-sem representar seu custo financeiro.
+Para identificar a continuidade da infraestrutura, cada trecho selecionado
+foi representado como um nó de um grafo não direcionado. As arestas ligam
+trechos que se intersectam ou cuja extremidade fica a até 10~m de outro
+trecho. Cada conjunto conectado constitui um componente, comparado aos
+demais por sua extensão. A tolerância de 10~m acomoda imprecisões
+cartográficas e foi avaliada entre 0 e 50~m. A inspeção de 77 conexões
+incertas em imagens de satélite permitiu excluir 11 cruzamentos em desnível.
 
-\paragraph{Proximidade da população} A população foi distribuída
-uniformemente por setor em uma grade de 50~m, considerando percursos de
-até 300~m pela malha viária, com acessos em linha reta entre grade, vias
-e trechos cicloviários. Para avaliar a desigualdade, os moradores foram
-agrupados em décimos de igual população, ordenados pela renda média
-setorial, e foi calculado o índice de concentração~\cite{wagstaff1991},
-cujos valores positivos indicam concentração da proximidade nos grupos
-de maior renda. O código e os dados estão disponíveis em
+\paragraph{Ligações entre componentes} A partir dos componentes encontrados,
+foram simulados caminhos que os ligassem ao maior conjunto conectado. Uma estratégia gulosa adaptada de Natera Orozco
+\emph{et al.}~\cite{natera2020} seleciona, a cada passo, o componente mais
+próximo do principal ou aquele com maior extensão original incorporada
+por metro de ligação. Os caminhos seguem a malha viária e são incorporados
+ao componente principal antes do passo seguinte. Seu comprimento acumulado
+mede a extensão das ligações, sem representar custo financeiro.
+
+\paragraph{Proximidade da população} A comparação entre moradores próximos
+de qualquer trecho e moradores próximos do maior componente permite
+distinguir a cobertura da rede de sua continuidade. A população foi distribuída uniformemente por
+setor em uma grade de 50~m, considerando percursos de até 300~m pela malha
+viária, com acessos em linha reta entre grade, vias e trechos cicloviários.
+Os moradores foram agrupados em décimos de igual população, ordenados
+pela renda média setorial. O índice de concentração~\cite{wagstaff1991}
+resume essa distribuição: valores positivos indicam maior proximidade nos
+grupos de maior renda. O código e os dados estão disponíveis em
 \url{https://github.com/Sarapessoa/artigo-ciencia-cidades}.
 
 % ---------------------------------------------------------------- resultados
 \section{Quais são os resultados e as conclusões?}
 
-\paragraph{Fragmentação} A rede apresenta 44 componentes
-(Fig.~\ref{fig:conectividade}a), dos quais C1 reúne 241~km (56\% do total)
+\paragraph{Fragmentação} A representação da rede resulta em 44 componentes
+(Fig.~\ref{fig:conectividade}a). O maior, C1, reúne 241~km (56\% do total)
 e abrange o Centro, a orla e um eixo ao sul. C2 soma 67~km no oeste,
-e C3, 64~km no sudeste, enquanto os demais têm menos de 12~km cada
-e incluem 32 trechos isolados.
+e C3, 64~km no sudeste. Os demais têm menos de 12~km cada e incluem
+32 trechos isolados.
 
-Uma ciclofaixa de 0,8~km na região do Viaduto Antônio Bezerra, registrada
-no OSM desde 2024 e visível em imagem de satélite, indica uma ligação
-C1--C2 ausente da base. A incorporação dessa ligação elevaria C1 a 72\%
-da extensão, embora a data do registro não determine a da implantação.
-Já C3 permanece
-desconectado nas fontes consultadas, e a menor ligação viária tem 799~m
-pela Av.~Eng. Santana Júnior sobre o Rio Cocó, em um percurso sem ciclofaixa.
+Parte dessa fragmentação depende da atualização da base. Uma ciclofaixa
+de 0,8~km na região do Viaduto Antônio Bezerra, registrada no OSM desde
+2024 e visível em imagem de satélite, liga C1 a C2, mas está ausente do
+cadastro municipal. Sua incorporação elevaria C1 a 72\% da extensão;
+a data do registro, contudo, não determina a da implantação. Já C3
+permanece desconectado nas fontes consultadas. A menor ligação viária
+até C1 tem 799~m pela Av.~Eng. Santana Júnior, sobre o Rio Cocó,
+em um percurso sem ciclofaixa.
 
-\paragraph{Ligações simuladas} Pelo critério de maior ganho, 1,4~km de
-ligações elevariam a participação de C1 de 56\% para 90\% da extensão
-original, contra 5,5~km pelo critério de menor distância
-(Fig.~\ref{fig:conectividade}c). Os 1,4~km incluem a conexão de C2 já
-registrada no OSM, pois a simulação parte da base municipal; portanto,
-não representam obras ainda necessárias. A integração completa exigiria
-cerca de 18~km pelo critério de maior ganho, concentrando o benefício
-nas primeiras conexões, como observado em outras cidades~\cite{natera2020}.
+\paragraph{Ligações simuladas} Na simulação com os componentes da base
+municipal, a escolha das ligações modifica a extensão necessária para
+integrá-los. Pelo critério de maior ganho, 1,4~km de ligações elevariam a
+participação de C1 de 56\% para 90\% da extensão original, contra
+5,5~km pelo critério de menor distância (Fig.~\ref{fig:conectividade}c).
+Esses 1,4~km incluem a ligação de C2 já registrada no OSM e, portanto,
+não correspondem integralmente a obras ainda necessárias. A integração
+completa exigiria cerca de 18~km pelo critério de maior ganho. Os ganhos
+se concentram nas primeiras conexões, como observado em outras
+cidades~\cite{natera2020}.
 
-\paragraph{Proximidade por renda} Enquanto 48\% dos moradores estão a
-até 300~m de algum trecho, 28\% estão próximos de C1, com diferenças
-conforme a renda setorial: no décimo de menor renda, essas proporções são
-de 35\% e 11\%, contra 78\% e 66\% no de maior renda
-(Fig.~\ref{fig:conectividade}b). O índice de concentração passa de 0,15
-para qualquer trecho a 0,33 para C1, mas cai para 0,17 com a inclusão de
-C2, cenário em que a proporção do primeiro décimo próxima do componente
-principal sobe de 11\% para 26\%. Dessa forma, a atualização cadastral
-também altera o diagnóstico da desigualdade.
+\paragraph{Proximidade por renda} A comparação com os dados do Censo
+mostra quem está próximo dos trechos e do maior componente. Enquanto 48\%
+da população está a até 300~m de algum trecho pela malha viária, apenas
+28\% está à mesma distância de C1. No décimo de menor renda setorial,
+essas proporções são 35\% e 11\%, contra 78\% e 66\% no de maior renda
+(Fig.~\ref{fig:conectividade}b). Os moradores dos setores de menor renda estão menos próximos da
+infraestrutura, sobretudo quando se considera apenas C1.
 
-Na análise de sensibilidade, C1 concentra entre 52\% e 57\% da extensão
-para tolerâncias de conexão de 5 a 50~m, enquanto o gradiente por renda
-se mantém para distâncias de acesso de 200 e 500~m.
+O índice de concentração é 0,15 para
+qualquer trecho e 0,33 para C1. Ao incorporar C2, o índice do componente
+principal cai para 0,17, e a proporção de moradores do primeiro décimo
+próxima dele passa de 11\% para 26\%. Incluir essa ligação no cadastro reduz a fragmentação representada
+e a diferença de proximidade entre os grupos de renda.
 
-\paragraph{Conclusão} Os resultados mostram uma rede cadastrada
-fragmentada, cujo maior componente está mais próximo da população de
-setores de maior renda, e apontam para a atualização da ligação de C2
-e a avaliação da conexão de C3 sobre o Rio Cocó. A integração dos componentes deve
-acompanhar a expansão da cobertura, pois cerca de metade dos moradores
-não dispõe de infraestrutura a até 300~m.
+Ao variar a tolerância de conexão de 5 a 50~m, C1 concentra entre 52\% e 57\% da extensão
+da rede. A diferença por renda também se mantém quando a distância de
+acesso passa de 300~m para 200 ou 500~m.
 
-\paragraph{Limitações} A análise se restringe à proximidade e à
-conectividade estrutural, sem considerar sentidos de circulação, segurança,
-uso ou acesso efetivo a destinos. A interpretação dos resultados depende
-da atualização e das diferenças temporais das fontes, assim como da
-distribuição uniforme da população nos setores e da renda média setorial,
-que não permite inferências individuais. Além disso, as ligações simuladas
-exigem avaliação de viabilidade, e a estratégia gulosa não garante uma
-solução globalmente ótima.
+\paragraph{Limitações} A análise mede
+proximidade e conectividade estrutural, sem avaliar sentidos de circulação,
+segurança, uso ou acesso efetivo a destinos. Os resultados dependem da
+atualização e das diferenças temporais das fontes, da distribuição uniforme
+da população e da renda média setorial, que não permite inferências
+individuais. As ligações simuladas exigem avaliação de viabilidade, e a
+estratégia gulosa não garante uma solução globalmente ótima.
+
+\paragraph{Conclusão} A rede cadastrada apresenta fragmentação, e a
+proximidade de seu maior componente se concentra nos setores de maior
+renda. A ligação de C2 mostra que uma conexão ausente do cadastro pode
+alterar as duas medidas, enquanto C3 permanece separado nas fontes
+consultadas. Cabe atualizar o registro de C2 e avaliar a viabilidade de
+ligar C3 sobre o Rio Cocó. A ampliação da cobertura também é necessária,
+pois cerca de metade dos moradores está a mais de 300~m da infraestrutura
+pela malha viária.
 
 % ---------------------------------------------------------------- refs
 \bibliographystyle{unsrt-pt}
